@@ -1,6 +1,6 @@
 # -- Zsh -----------------------------------------------------------------------
 # Path to your oh-my-zsh configuration.
-ZSH="/Users/alex/.dotfiles/.oh-my-zsh"
+ZSH="/Users/alex/.oh-my-zsh"
 
 # -- Editor --------------------------------------------------------------------
 EDITOR="vim"
