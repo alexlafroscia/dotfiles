@@ -8,11 +8,7 @@ source 'tools/colors.sh'
 # -- Internal Functions --------------------------------------------------------
 
 exists() {
-  if [ type "$1" >/dev/null 2>/dev/null ]; then
-    return 1
-  else
-    return 0
-  fi
+  type "$1" >/dev/null 2>/dev/null
 }
 
 echo_header() {
@@ -26,16 +22,6 @@ echo_item() {
     echored "---> $1"
   else
     echo "---> $1"
-  fi
-}
-
-echo_sub_item() {
-  if [ "$2" == "green" ]; then
-    echogreen "     ---> $1"
-  elif [ "$2" == "red" ]; then
-    echored "     ---> $1"
-  else
-    echo "     ---> $1"
   fi
 }
 
@@ -82,14 +68,17 @@ fi
 
 # -- RBENV ---------------------------------------------------------------------
 
-echo_header "RBENV Setup"
 
 # Install rbenv
 if exists "rbenv"; then
   echo_item "rbenv is already installed" "green"
- else
-  git clone https://github.com/sstephenson/rbenv.git ~/.rbenv
-  git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
+else
+  if get_boolean_response "Do you want to install rbenv?"; then
+    git clone https://github.com/sstephenson/rbenv.git ~/.rbenv
+    git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
+  else
+    echo_item "Skipping rbenv install" "red"
+  fi
 fi
 
 echo ""
