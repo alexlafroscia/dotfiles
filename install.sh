@@ -66,8 +66,17 @@ elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
 
 fi
 
-# -- RBENV ---------------------------------------------------------------------
+# -- GIT -----------------------------------------------------------------------
 
+if get_boolean_response "Do you want to install the Git configuration files?"
+then
+  ln -sf $HOME/.dotfiles/gitignore_global $HOME/.gitignore_global
+  echo_item "Linked global .gitignore" "green"
+fi
+
+echo ""
+
+# -- RBENV ---------------------------------------------------------------------
 
 # Install rbenv
 if exists "rbenv"; then
