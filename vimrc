@@ -87,6 +87,8 @@ endif
 
 
 " Make it obvious where 80 characters is
+" Lifted from StackOverflow user Jeremy W. Sherman
+" http://stackoverflow.com/a/3765575/2250435
 if exists('+colorcolumn')
     set textwidth=80
     set colorcolumn=+1
