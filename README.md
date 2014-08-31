@@ -9,6 +9,7 @@ My dotfile configutation
 3. [Tweaking my dotfiles](#tweaking-my-dotfiles)
 4. [Resetting Vim Plugins](#resetting-vim-plugins)
 5. [Todo list](#todo-list)
+6. [Credits](#credits)
 
 # Installing the doftiles
 
@@ -69,3 +70,7 @@ this, there's what I did, and what I'd recommend that you do, too
       installing certain tools
 - [ ] Automatically install [oh my zsh](https://github.com/robbyrussell/oh-my-zsh)
 - [ ] Install NPM if needed, along with Bower and other global packages
+
+# Credits
+- The [thoughtbot dotfiles](https://github.com/thoughtbot/dotfiles), which I borrowed substantially from
+- [Eduardo's dotfiles](https://github.com/eduardolundgren/dotfiles)
