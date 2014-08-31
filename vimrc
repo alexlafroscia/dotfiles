@@ -87,8 +87,12 @@ endif
 
 
 " Make it obvious where 80 characters is
-set textwidth=80
-set colorcolumn=+1
+if exists('+colorcolumn')
+    set textwidth=80
+    set colorcolumn=+1
+else
+    au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
+endif
 
 " Numbers
 set number
