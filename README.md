@@ -7,7 +7,8 @@ My dotfile configutation
 1. [Installing the dotfiles](#installing-the-dotfiles)
 2. [Adding your own configuration](#adding-your-own-configuration)
 3. [Tweaking my dotfiles](#tweaking-my-dotfiles)
-4. [Todo list](#todo-list)
+4. [Resetting Vim Plugins](#resetting-vim-plugins)
+5. [Todo list](#todo-list)
 
 # Installing the doftiles
 
@@ -42,6 +43,25 @@ Adding to my own dotfiles is totally welcome too, especially if you're forking
 this repo to manage your own.  If that's the case, make sure to edit the files
 within the `~/.dotfiles` repository, since the files in your home directory are
 actually just symlinks anyway.
+
+# Resetting Vim Plugins
+Under some circumstances, like with limited disk space (I've encountered this
+trying to use these dotfiles in a server that my school set up) you don't want
+to install all of the plugins, or some of them will fail to install.  To correct
+this, there's what I did, and what I'd recommend that you do, too
+
+1. Delete all of your Vim plugins
+```bash
+rm -rf ~/.vim/bundle
+```
+
+2. Re-install the Vim configuration from the .dotfiles
+```bash
+~/.dotfiles/install.sh
+```
+
+3. Comment out any plugins that you don't want to install from `vimrc.bundles`
+4. Run `:PluginInstall` from within Vim
 
 # Todo List
 - [ ] Add a configuration set in the beginning of the script to optionally skip
