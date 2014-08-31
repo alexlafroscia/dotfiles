@@ -9,12 +9,16 @@ call vundle#begin()
 " Let Vundle manage Vundle
 Plugin 'gmarik/Vundle.vim'
 
-" Define bundles via Github repos
+" Most important plugins at the top, in case disk space is an issue
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'kien/ctrlp.vim'
+Plugin 'bling/vim-airline'
+Plugin 'scrooloose/nerdtree'
+
+" Other plugins (mostly from the throughtbot dotfiles)
 Plugin 'christoomey/vim-run-interactive'
-Plugin 'croaky/vim-colors-github'
 Plugin 'danro/rename.vim'
 Plugin 'kchmck/vim-coffee-script'
-Plugin 'kien/ctrlp.vim'
 Plugin 'pbrisbin/vim-mkdir'
 Plugin 'scrooloose/syntastic'
 Plugin 'slim-template/vim-slim'
@@ -28,11 +32,7 @@ Plugin 'vim-ruby/vim-ruby'
 Plugin 'vim-scripts/matchit.zip'
 Plugin 'vim-scripts/tComment'
 Plugin 'chriskempson/base16-vim'
-Plugin 'scrooloose/nerdtree'
-Plugin 'zenorocha/dracula-theme'
 Plugin 'mustache/vim-mustache-handlebars'
-Plugin 'bling/vim-airline'
-Plugin 'altercation/vim-colors-solarized'
 
 " Add Markdown support
 Plugin 'godlygeek/tabular'
@@ -45,9 +45,6 @@ Plugin 'lukaszkorecki/CoffeeTags'
 
 " Comment/Uncomment lines of code
 Plugin 'scrooloose/nerdcommenter'
-
-" Disabled plugins
-" Plugin 'airblade/vim-gitgutter'
 
 if filereadable(expand("~/.vimrc.bundles.local"))
   source ~/.vimrc.bundles.local
