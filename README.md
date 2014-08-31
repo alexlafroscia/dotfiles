@@ -12,19 +12,19 @@ My dotfile configutation
 
 # Installing the doftiles
 
-#### 1. Pull the project into your home directory
-```bash
-git clone https://github.com/alexlafroscia/.dotfiles.git ~/.dotfiles
-```
+1. Pull the project into your home directory
+   ```bash
+   git clone https://github.com/alexlafroscia/.dotfiles.git ~/.dotfiles
+   ```
 
-#### 2. Run the installation script
-```bash
-~/.dotfiles/install.sh
-```
+2. Run the installation script
+   ```bash
+   ~/.dotfiles/install.sh
+   ```
 
-#### 3. ???
+3. ???
 
-### 4. Profit
+4. Profit
 
 # Adding your own configuration
 If you want to add your own configuration without making changes without
@@ -51,16 +51,17 @@ to install all of the plugins, or some of them will fail to install.  To correct
 this, there's what I did, and what I'd recommend that you do, too
 
 1. Delete all of your Vim plugins
-```bash
-rm -rf ~/.vim/bundle
-```
+   ```bash
+   rm -rf ~/.vim/bundle
+   ```
 
 2. Re-install the Vim configuration from the .dotfiles
-```bash
-~/.dotfiles/install.sh
-```
+   ```bash
+   ~/.dotfiles/install.sh
+   ```
 
 3. Comment out any plugins that you don't want to install from `vimrc.bundles`
+
 4. Run `:PluginInstall` from within Vim
 
 # Todo List
