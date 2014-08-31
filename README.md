@@ -44,7 +44,7 @@ within the `~/.dotfiles` repository, since the files in your home directory are
 actually just symlinks anyway.
 
 # Todo List
-[ ] Add a configuration set in the beginning of the script to optionally skip
-    installing certain tools
-[ ] Automatically install [oh my zsh](https://github.com/robbyrussell/oh-my-zsh)
-[ ] Install NPM if needed, along with Bower and other global packages
+- [ ] Add a configuration set in the beginning of the script to optionally skip
+      installing certain tools
+- [ ] Automatically install [oh my zsh](https://github.com/robbyrussell/oh-my-zsh)
+- [ ] Install NPM if needed, along with Bower and other global packages
