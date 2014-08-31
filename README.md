@@ -13,7 +13,7 @@ My dotfile configutation
 
 #### 1. Pull the project into your home directory
 ```bash
-git clone git@github.com:alexlafroscia/.dotfiles.git ~/.dotfiles
+git clone https://github.com/alexlafroscia/.dotfiles.git ~/.dotfiles
 ```
 
 #### 2. Run the installation script
