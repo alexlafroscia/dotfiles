@@ -5,7 +5,6 @@ set nocompatible
 " Set bash as the prompt for Vim
 set shell=/bin/bash
 
-
 " Leader
 let mapleader = ","
 
@@ -19,7 +18,6 @@ set showcmd       " display incomplete commands
 set incsearch     " do incremental searching
 set laststatus=2  " Always display the status line
 set autowrite     " Automatically :write before running commands
-" set timeoutlen=50
 set t_Co=256      " force vim to use 256 colors
 
 " Switch syntax highlighting on, when the terminal has colors
@@ -115,6 +113,9 @@ endfunction
 inoremap <Tab> <c-r>=InsertTabWrapper()<cr>
 inoremap <S-Tab> <c-n>
 
+
+
+
 " Exclude Javascript files in :Rtags via rails.vim due to warnings when parsing
 let g:Tlist_Ctags_Cmd="ctags --exclude='*.js'"
 
@@ -172,7 +173,10 @@ syntax enable
 set background=dark
 colorscheme solarized
 
-"smart indent when entering insert mode with i on empty lines
+
+" -- FUNCTIONS -----------------------------------------------------------------
+
+" Smart indent when entering insert mode with i on empty lines
 function! IndentWithI()
   if len(getline('.')) == 0
     return "\"_ddO"
@@ -181,6 +185,13 @@ function! IndentWithI()
   endif
 endfunction
 nnoremap <expr> i IndentWithI()
+
+
+" Open folder in finder
+function OpenInFinder()
+  call system('open ' . getcwd())
+endfunction
+nnoremap <leader>f :call OpenInFinder()<CR>
 
 
 " -- Tagbar --------------------------------------------------------------------
