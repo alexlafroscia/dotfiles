@@ -1,68 +1,20 @@
 #!/bin/bash
 # Install .dotfiles
 
-# -- Output Colors -------------------------------------------------------------
+# -- Import from other scripts -------------------------------------------------
 
 source 'tools/colors.sh'
-
-# -- Internal Functions --------------------------------------------------------
-
-exists() {
-  type "$1" >/dev/null 2>/dev/null
-}
-
-echo_header() {
-  echo "     === $1 ==="
-}
-
-echo_item() {
-  if [ "$2" == "green" ]; then
-    echogreen "---> $1"
-  elif [ "$2" == "red" ]; then
-    echored "---> $1"
-  else
-    echo "---> $1"
-  fi
-}
-
-get_boolean_response() {
-  while true; do
-    read -p "$1 (Y/N) " yn
-    case $yn in
-      [Yy]* ) return 0;;
-      [Nn]* ) return 1;;
-      * ) echo "Please answer yes or no";;
-    esac
-  done
-}
+source 'tools/functions.sh'
 
 # -- OSX- or Linux-Specific Setup ----------------------------------------------
 
-if [ "$(uname)" == "Darwin" ]; then
-  # Setup for OSX Systems
+if system_is_OSX; then
 
-  # Install Homebrew if it's not installed
-  if exists "brew"; then
-    echo_item "Homebrew is already installed" green
-  else
-    if get_boolean_response "Do you want to install Homebrew?"; then
-      ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
-    else
-      echo_item "Skipping Homebrew install" "red"
-    fi
-  fi
+  source 'install/osx.sh'
 
-  echo ""
+elif system_is_linux; then
 
-elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
-  # Setup for Linux systems
-
-  # Install Git
-  if exists "git"; then
-    echo_item "Git is already installed" "green"
-  else
-    sudo apt-get install git
-  fi
+  source 'install/ubuntu.sh'
 
 fi
 
@@ -72,22 +24,8 @@ if get_boolean_response "Do you want to install the Git configuration files?"
 then
   ln -sf $HOME/.dotfiles/gitignore_global $HOME/.gitignore_global
   echo_item "Linked global .gitignore" "green"
-fi
-
-echo ""
-
-# -- RBENV ---------------------------------------------------------------------
-
-# Install rbenv
-if exists "rbenv"; then
-  echo_item "rbenv is already installed" "green"
 else
-  if get_boolean_response "Do you want to install rbenv?"; then
-    git clone https://github.com/sstephenson/rbenv.git ~/.rbenv
-    git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
-  else
-    echo_item "Skipping rbenv install" "red"
-  fi
+  echo_item "Ignoring Git configuration" red
 fi
 
 echo ""
@@ -159,6 +97,8 @@ then
     git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
     echo_item "Vundle installed" "green"
   fi
-
+else
+  echo_item "Ignoring Vim configuration" red
 fi
 
+echo ""
