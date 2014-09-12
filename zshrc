@@ -1,6 +1,6 @@
 # -- Zsh -----------------------------------------------------------------------
 # Path to your oh-my-zsh configuration.
-ZSH="/Users/alex/.oh-my-zsh"
+ZSH="$HOME/.oh-my-zsh"
 
 # -- Editor --------------------------------------------------------------------
 EDITOR="vim"
@@ -41,9 +41,12 @@ fi
 # export PATH="$HOME/.rbenv/bin:$PATH"
 # eval "$(rbenv init -)"
 
-# -- Update --------------------------------------------------------------------
-dotfiles
-
 # -- Solarized 256 Color Hack --------------------------------------------------
 export TERM="screen-256color"
 alias tmux="tmux -2"
+
+# -- Functions -----------------------------------------------------------------
+
+tmuxx() {
+  tmux a || tmux new
+}
