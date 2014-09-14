@@ -214,6 +214,12 @@ let g:tagbar_type_markdown = {
 let g:vim_markdown_folding_disabled=1 " Disable folding
 
 
+" -- vim-zenmode ---------------------------------------------------------------
+let g:zenmode_background = "dark"
+let g:zenmode_colorscheme = "solarized"
+let g:zenmode_font ="Cousine 12"
+
+
 " Local config
 if filereadable($HOME . "/.vimrc.local")
   source ~/.vimrc.local

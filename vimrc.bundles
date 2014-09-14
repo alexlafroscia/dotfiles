@@ -34,9 +34,11 @@ Plugin 'vim-scripts/tComment'
 Plugin 'chriskempson/base16-vim'
 Plugin 'mustache/vim-mustache-handlebars'
 
+Plugin 'mattn/emmet-vim'
+
 " Add Markdown support
 Plugin 'godlygeek/tabular'
-Plugin 'plasticboy/vim-markdown'
+" Plugin 'plasticboy/vim-markdown'
 
 " ctags related stuff
 Plugin 'vim-scripts/ctags.vim'
@@ -45,6 +47,12 @@ Plugin 'lukaszkorecki/CoffeeTags'
 
 " Comment/Uncomment lines of code
 Plugin 'scrooloose/nerdcommenter'
+
+" Zen Mode
+" Plugin 'mmai/vim-zenmode'
+" Plugin 'junegunn/goyo.vim'
+" Plugin 'amix/vim-zenroom2' " Currently there's a bug that makes it not work
+Plugin 'bilalq/lite-dfm'
 
 if filereadable(expand("~/.vimrc.bundles.local"))
   source ~/.vimrc.bundles.local

@@ -10,11 +10,11 @@ source 'tools/functions.sh'
 
 if system_is_OSX; then
 
-  source 'install/osx.sh'
+  source 'scripts/osx.sh'
 
 elif system_is_linux; then
 
-  source 'install/ubuntu.sh'
+  source 'scripts/ubuntu.sh'
 
 fi
 
@@ -24,6 +24,9 @@ if get_boolean_response "Do you want to install the Git configuration files?"
 then
   ln -sf $HOME/.dotfiles/gitignore_global $HOME/.gitignore_global
   echo_item "Linked global .gitignore" "green"
+
+  ln -sf $HOME/.dotfiles/gitconfig $HOME/.gitconfig
+  echo_item "Linked gitconfig" "green"
 else
   echo_item "Ignoring Git configuration" red
 fi
