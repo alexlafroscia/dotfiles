@@ -54,6 +54,9 @@ Plugin 'scrooloose/nerdcommenter'
 " Plugin 'amix/vim-zenroom2' " Currently there's a bug that makes it not work
 Plugin 'bilalq/lite-dfm'
 
+" Syntax Highlighting
+Plugin 'wavded/vim-stylus'  " Stylus
+
 if filereadable(expand("~/.vimrc.bundles.local"))
   source ~/.vimrc.bundles.local
 endif
