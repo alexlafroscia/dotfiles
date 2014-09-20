@@ -42,3 +42,17 @@ else
 fi
 
 echo ""
+
+# -- htop ----------------------------------------------------------------------
+
+if exists "htop"; then
+  echo_item "htop is already installed" green
+else
+  if get_boolean_response "Do you want to install htop?"; then
+    sudo apt-get install htop
+  else
+    echo_item "Skipping htop install" red
+  fi
+fi
+
+echo ""
