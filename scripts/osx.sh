@@ -26,3 +26,20 @@ else
     echo_item "Skipping rbenv install" red
   fi
 fi
+
+echo ""
+
+# -- npm -----------------------------------------------------------------------
+
+if exists "npm"; then
+  echo_item "npm is already installed" green
+else
+  if get_boolean_response "Do you want to install npm?"; then
+    brew install node
+    source ./node.sh
+  else
+    echo_item "Skipping npm install" red
+  fi
+fi
+
+echo ""

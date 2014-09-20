@@ -25,3 +25,19 @@ else
 fi
 
 echo ""
+
+# -- npm -----------------------------------------------------------------------
+
+if exists "npm"; then
+  echo_item "npm is already installed" green
+else
+  if get_boolean_response "Do you want to install npm?"; then
+    curl -sL https://deb.nodesource.com/setup | sudo bash -
+    sudo apt-get install -y nodejs
+    source ./node.sh
+  else
+    echo_item "Skipping npm install" red
+  fi
+fi
+
+echo ""
