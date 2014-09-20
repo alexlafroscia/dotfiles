@@ -22,6 +22,7 @@ if exists "rbenv"; then
 else
   if get_boolean_response "Do you want to install rbenv?"; then
     brew install rbenv ruby-install
+    rbenv rehash
   else
     echo_item "Skipping rbenv install" red
   fi
