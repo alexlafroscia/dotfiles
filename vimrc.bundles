@@ -36,6 +36,9 @@ Plugin 'mustache/vim-mustache-handlebars'
 
 Plugin 'mattn/emmet-vim'
 
+" Run commands in Tmux from Vim
+Plugin 'jgdavey/tslime.vim'
+
 " Add Markdown support
 Plugin 'godlygeek/tabular'
 " Plugin 'plasticboy/vim-markdown'
