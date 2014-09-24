@@ -50,3 +50,7 @@ alias tmux="tmux -2"
 tmuxx() {
   tmux a || tmux new
 }
+
+function marked {
+  open -a "Marked 2.app" $@
+}

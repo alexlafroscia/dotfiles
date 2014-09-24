@@ -188,11 +188,19 @@ nnoremap <expr> i IndentWithI()
 
 
 " Open folder in finder
-function OpenInFinder()
+function! OpenInFinder()
   call system('open ' . getcwd())
 endfunction
 nnoremap <leader>f :call OpenInFinder()<CR>
 
+
+" Open current file in Marked
+function! MarkedPreview()
+  :w
+  exec ':silent !open -a "Marked 2.app" ' . expand("%")
+  redraw!
+endfunction
+map <leader>md :call MarkedPreview()<CR>
 
 " -- Tagbar --------------------------------------------------------------------
 
