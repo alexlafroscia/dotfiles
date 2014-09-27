@@ -59,6 +59,7 @@ Plugin 'bilalq/lite-dfm'
 
 " Syntax Highlighting
 Plugin 'wavded/vim-stylus'  " Stylus
+Plugin 'wting/rust.vim'     " Rust
 
 if filereadable(expand("~/.vimrc.bundles.local"))
   source ~/.vimrc.bundles.local
