@@ -28,6 +28,9 @@ source $ZSH/oh-my-zsh.sh
 unsetopt correct_all
 unsetopt correct
 
+# -- Variables -----------------------------------------------------------------
+export EDITOR=/usr/local/bin/vim
+
 # -- Aliases -------------------------------------------------------------------
 if [[ -f "$HOME/.dotfiles/aliases" ]]; then
   source $HOME/.dotfiles/aliases
@@ -54,3 +57,13 @@ tmuxx() {
 function marked {
   open -a "Marked 2.app" $@
 }
+
+# -- Tmuxinator ----------------------------------------------------------------
+if type "tmuxinator" >/dev/null 2>/dev/null; then
+  source $HOME/.dotfiles/bin/tmuxinator.zsh
+fi
+
+# -- Local Configuration -------------------------------------------------------
+if [[ -f "$HOME/.zshrc.local" ]]; then
+  source $HOME/.zshrc.local
+fi
