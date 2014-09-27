@@ -231,6 +231,18 @@ let g:zenmode_colorscheme = "solarized"
 let g:zenmode_font ="Cousine 12"
 
 
+" -- Syntastic -----------------------------------------------------------------
+
+" Silence certain HTML warnings
+let g:syntastic_html_tidy_ignore_errors = [
+  \  'plain text isn''t allowed in <head> elements',
+  \  '<base> escaping malformed URI reference',
+  \  'discarding unexpected <body>',
+  \  '<script> escaping malformed URI reference',
+  \  '</head> isn''t allowed in <body> elements'
+  \ ]
+
+
 " Local config
 if filereadable($HOME . "/.vimrc.local")
   source ~/.vimrc.local
