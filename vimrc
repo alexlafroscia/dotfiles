@@ -239,7 +239,8 @@ let g:syntastic_html_tidy_ignore_errors = [
   \  '<base> escaping malformed URI reference',
   \  'discarding unexpected <body>',
   \  '<script> escaping malformed URI reference',
-  \  '</head> isn''t allowed in <body> elements'
+  \  '</head> isn''t allowed in <body> elements',
+  \  'missing <li>'
   \ ]
 
 
