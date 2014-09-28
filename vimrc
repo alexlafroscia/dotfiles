@@ -240,7 +240,12 @@ let g:syntastic_html_tidy_ignore_errors = [
   \  'discarding unexpected <body>',
   \  '<script> escaping malformed URI reference',
   \  '</head> isn''t allowed in <body> elements',
-  \  'missing <li>'
+  \  'missing <li>',
+  \  '<input> isn''t allowed in <body> elements'
+  \ ]
+
+let g:syntastic_coffee_coffeelint_ignore_errors = [
+  \  'Backticks are forbidden'
   \ ]
 
 
