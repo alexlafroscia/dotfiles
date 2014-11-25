@@ -9,58 +9,39 @@ call vundle#begin()
 " Let Vundle manage Vundle
 Plugin 'gmarik/Vundle.vim'
 
-" Most important plugins at the top, in case disk space is an issue
+" Must-Haves and Basic Setup
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'kien/ctrlp.vim'
 Plugin 'bling/vim-airline'
-Plugin 'scrooloose/nerdtree'
-
-" Other plugins (mostly from the throughtbot dotfiles)
-Plugin 'christoomey/vim-run-interactive'
-Plugin 'danro/rename.vim'
-Plugin 'kchmck/vim-coffee-script'
-Plugin 'pbrisbin/vim-mkdir'
 Plugin 'scrooloose/syntastic'
-Plugin 'slim-template/vim-slim'
-Plugin 'thoughtbot/vim-rspec'
-Plugin 'tpope/vim-bundler'
-Plugin 'tpope/vim-endwise'
-Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-rails'
+Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/nerdcommenter'
 Plugin 'tpope/vim-surround'
-Plugin 'vim-ruby/vim-ruby'
+Plugin 'tpope/vim-fugitive'
 Plugin 'vim-scripts/matchit.zip'
-Plugin 'vim-scripts/tComment'
-Plugin 'chriskempson/base16-vim'
-Plugin 'mustache/vim-mustache-handlebars'
 
-Plugin 'mattn/emmet-vim'
+" Language-Specific Plugins
+Plugin 'pangloss/vim-javascript'            " JavaScript
+Plugin 'mxw/vim-jsx'                        " JSX
+Plugin 'kchmck/vim-coffee-script'           " CoffeeScript
+Plugin 'vim-ruby/vim-ruby'                  " Ruby...
+Plugin 'tpope/vim-endwise'
+Plugin 'tpope/vim-rails'                    " ...on Rails
+Plugin 'tpope/vim-bundler'
+Plugin 'thoughtbot/vim-rspec'
+Plugin 'mattn/emmet-vim'                    " HTML
+Plugin 'wavded/vim-stylus'                  " Stylus
+Plugin 'wting/rust.vim'                     " Rusth
+Plugin 'mustache/vim-mustache-handlebars'   " Handlebars
 
 " Run commands in Tmux from Vim
 Plugin 'jgdavey/tslime.vim'
 
-" Add Markdown support
-Plugin 'godlygeek/tabular'
-" Plugin 'plasticboy/vim-markdown'
-
 " ctags related stuff
 Plugin 'vim-scripts/ctags.vim'
 Plugin 'majutsushi/tagbar'
-Plugin 'lukaszkorecki/CoffeeTags'
 
-" Comment/Uncomment lines of code
-Plugin 'scrooloose/nerdcommenter'
-
-" Zen Mode
-" Plugin 'mmai/vim-zenmode'
-" Plugin 'junegunn/goyo.vim'
-" Plugin 'amix/vim-zenroom2' " Currently there's a bug that makes it not work
-Plugin 'bilalq/lite-dfm'
-
-" Syntax Highlighting
-Plugin 'wavded/vim-stylus'  " Stylus
-Plugin 'wting/rust.vim'     " Rust
-
+" Install any machine-only plugins
 if filereadable(expand("~/.vimrc.bundles.local"))
   source ~/.vimrc.bundles.local
 endif
