@@ -1,5 +1,7 @@
 [user]
     editor = vim
+    email = alex@lafroscia.com
+    name = Alex LaFroscia
 [alias]
     # Add
     ad = add
