@@ -19,6 +19,8 @@ Plugin 'scrooloose/nerdcommenter'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-fugitive'
 Plugin 'vim-scripts/matchit.zip'
+Plugin 'edkolev/tmuxline.vim'
+Plugin 'ervandew/supertab'
 
 " Language-Specific Plugins
 Plugin 'pangloss/vim-javascript'            " JavaScript
