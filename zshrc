@@ -58,6 +58,10 @@ function marked {
   open -a "Marked 2.app" $@
 }
 
+# -- Tmux ----------------------------------------------------------------------
+
+export DISABLE_AUTO_TITLE="true"
+
 # -- Tmuxinator ----------------------------------------------------------------
 if type "tmuxinator" >/dev/null 2>/dev/null; then
   source $HOME/.dotfiles/bin/tmuxinator.zsh
