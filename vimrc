@@ -194,7 +194,7 @@ nnoremap <leader>f :call OpenInFinder()<CR>
 " Open current file in Marked
 function! MarkedPreview()
   :w
-  exec ':silent !open -a "Marked 2.app" ' . expand("%")
+  exec ':silent !open -a "Marked 2.app" ' . shellescape('%:p')
   redraw!
 endfunction
 map <leader>md :call MarkedPreview()<CR>
