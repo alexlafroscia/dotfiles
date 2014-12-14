@@ -166,9 +166,12 @@ nnoremap <leader>ri :RunInInteractiveShell<space>
 noremap <leader>t :TagbarToggle<cr>
 
 " Solarized
-syntax enable
-set background=dark
-colorscheme solarized
+" Only try to activate it if it has been installed
+if filereadable($HOME . "/.vim/bundle/vim-colors-solarized/colors/solarized.vim")
+  syntax enable
+  set background=dark
+  colorscheme solarized
+endif
 
 
 " -- FUNCTIONS -----------------------------------------------------------------
