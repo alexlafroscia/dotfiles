@@ -102,6 +102,7 @@ then
     echo_item "Vundle plugin already installed" "green"
    else
     git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+    vim +PluginInstall
     echo_item "Vundle installed" "green"
   fi
 else
