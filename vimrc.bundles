@@ -35,6 +35,7 @@ Plugin 'mattn/emmet-vim'                    " HTML
 Plugin 'wavded/vim-stylus'                  " Stylus
 Plugin 'wting/rust.vim'                     " Rusth
 Plugin 'mustache/vim-mustache-handlebars'   " Handlebars
+Plugin 'reedes/vim-pencil'                  " Markdown, Writing
 
 " Run commands in Tmux from Vim
 Plugin 'jgdavey/tslime.vim'
