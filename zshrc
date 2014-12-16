@@ -58,6 +58,10 @@ function marked {
   open -a "Marked 2.app" $@
 }
 
+pyserve() {
+  python -m SimpleHTTPServer
+}
+
 # -- Tmux ----------------------------------------------------------------------
 
 export DISABLE_AUTO_TITLE="true"
