@@ -21,6 +21,7 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'vim-scripts/matchit.zip'
 Plugin 'edkolev/tmuxline.vim'
 Plugin 'ervandew/supertab'
+Plugin 'rking/ag.vim'                       " Search
 
 " Language-Specific Plugins
 Plugin 'pangloss/vim-javascript'            " JavaScript
