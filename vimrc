@@ -202,6 +202,12 @@ function! MarkedPreview()
 endfunction
 map <leader>md :call MarkedPreview()<CR>
 
+
+function! OpenInGitTower()
+  call system('gittower ' . getcwd())
+endfunction
+nnoremap <leader>gt :call OpenInGitTower()<CR>
+
 " -- Tagbar --------------------------------------------------------------------
 
 " Add support for markdown files in tagbar.
