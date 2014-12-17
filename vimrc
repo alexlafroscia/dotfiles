@@ -171,6 +171,8 @@ if filereadable($HOME . "/.vim/bundle/vim-colors-solarized/colors/solarized.vim"
   syntax enable
   set background=dark
   colorscheme solarized
+  " Color the gutter correctly
+  highlight SignColumn ctermbg=8
 endif
 
 
