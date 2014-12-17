@@ -257,6 +257,14 @@ let g:syntastic_coffee_coffeelint_ignore_errors = [
   \ ]
 
 
+" -- vim-pencil ----------------------------------------------------------------
+
+augroup pencil
+  autocmd!
+  autocmd FileType markdown,mkd,md,text call pencil#init({'wrap': 'soft'})
+augroup END
+
+
 " Local config
 if filereadable($HOME . "/.vimrc.local")
   source ~/.vimrc.local
