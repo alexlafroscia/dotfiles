@@ -80,6 +80,9 @@ if executable('ag')
   let g:ctrlp_use_caching = 0
 endif
 
+" Show hidden files, but only some of them
+let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
+let g:ctrlp_show_hidden = 1
 
 " Make it obvious where 80 characters is
 " Lifted from StackOverflow user Jeremy W. Sherman
@@ -249,13 +252,20 @@ let g:syntastic_html_tidy_ignore_errors = [
   \  '<script> escaping malformed URI reference',
   \  '</head> isn''t allowed in <body> elements',
   \  'missing <li>',
-  \  '<input> isn''t allowed in <body> elements'
+  \  '<input> isn''t allowed in <body> elements',
+  \  'trimming empty <span>',
+  \  'trimming empty <i>'
   \ ]
 
 let g:syntastic_coffee_coffeelint_ignore_errors = [
   \  'Backticks are forbidden'
   \ ]
 
+let g:syntastic_handlebars_checkers = ['handlebars']
+
+" -- vim-mustache-handlebars ---------------------------------------------------
+
+let g:mustache_abbreviations = 1
 
 " -- vim-pencil ----------------------------------------------------------------
 
@@ -265,7 +275,12 @@ augroup pencil
 augroup END
 
 
-" Local config
+" -- Local config --------------------------------------------------------------
+"    If there are settings that are needed on this machine but that don't need
+"    to be synced to the Git repository, they can be put in .vimrc.local.  Those
+"    settings will be read anytime this file is read and will override any
+"    settings in here.
+
 if filereadable($HOME . "/.vimrc.local")
   source ~/.vimrc.local
 endif
