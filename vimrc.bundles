@@ -42,6 +42,7 @@ Plugin 'wting/rust.vim'                     " Rusth
 Plugin 'cespare/vim-toml'
 Plugin 'mustache/vim-mustache-handlebars'   " Handlebars
 Plugin 'reedes/vim-pencil'                  " Markdown, Writing
+Plugin 'groenewege/vim-less'                " Less
 
 " Run commands in Tmux from Vim
 Plugin 'jgdavey/tslime.vim'
