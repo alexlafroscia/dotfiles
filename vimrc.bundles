@@ -25,6 +25,7 @@ Plugin 'rking/ag.vim'                       " Search
 Plugin 'Lokaltog/vim-easymotion'            " Move like the wind!
 Plugin 'vim-scripts/ctags.vim'              " ctags related stuff
 Plugin 'majutsushi/tagbar'
+Plugin 'editorconfig/editorconfig-vim'      " .editorconfig support
 
 " Language-Specific Plugins
 Plugin 'pangloss/vim-javascript'            " JavaScript
