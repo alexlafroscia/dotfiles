@@ -25,6 +25,7 @@ plugins=(git rbenv bower bundle git-flow)
 source $ZSH/oh-my-zsh.sh
 
 # -- Options -------------------------------------------------------------------
+setopt   auto_name_dirs
 unsetopt correct_all
 unsetopt correct
 
