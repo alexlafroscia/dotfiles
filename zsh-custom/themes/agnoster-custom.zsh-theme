@@ -168,7 +168,7 @@ prompt_dir() {
   if name=$( jq -e '.name' < "$package_path/package.json" ) 2> /dev/null; then
     # Instead of printing out the full path, print out the name of the package
     # from the package.json and append the current subdirectory
-    prompt_segment blue black "`echo $name | tr -d "[:punct:]"`$subdirectory_path"
+    prompt_segment blue black "`echo $name | tr -d '"'`$subdirectory_path"
   else
     prompt_segment blue black '%~'
   fi
