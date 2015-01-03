@@ -46,6 +46,9 @@ fi
 # export PATH="$HOME/.rbenv/bin:$PATH"
 # eval "$(rbenv init -)"
 
+# -- Virtual Env ---------------------------------------------------------------
+VIRTUAL_ENV_DISABLE_PROMPT=true
+
 # -- Solarized 256 Color Hack --------------------------------------------------
 export TERM="screen-256color"
 alias tmux="tmux -2"
