@@ -275,6 +275,13 @@ augroup pencil
 augroup END
 
 
+" -- vim-goyo ------------------------------------------------------------------
+
+autocmd User GoyoEnter Limelight
+autocmd User GoyoLeave Limelight!
+
+let g:limelight_conceal_ctermfg = 'DarkGrey'
+
 " -- Local config --------------------------------------------------------------
 "    If there are settings that are needed on this machine but that don't need
 "    to be synced to the Git repository, they can be put in .vimrc.local.  Those
