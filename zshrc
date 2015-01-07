@@ -47,7 +47,10 @@ fi
 # eval "$(rbenv init -)"
 
 # -- Virtual Env ---------------------------------------------------------------
-VIRTUAL_ENV_DISABLE_PROMPT=true
+if [[ -f "/usr/local/bin/virtualenvwrapper.sh" ]]; then
+  source /usr/local/bin/virtualenvwrapper.sh
+fi
+#VIRTUAL_ENV_DISABLE_PROMPT=true
 
 # -- Solarized 256 Color Hack --------------------------------------------------
 export TERM="screen-256color"
