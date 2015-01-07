@@ -232,10 +232,6 @@ let g:tagbar_type_markdown = {
 \ }
 
 
-" -- vim-markdown --------------------------------------------------------------
-let g:vim_markdown_folding_disabled=1 " Disable folding
-
-
 " -- vim-zenmode ---------------------------------------------------------------
 let g:zenmode_background = "dark"
 let g:zenmode_colorscheme = "solarized"
@@ -275,12 +271,6 @@ augroup pencil
 augroup END
 
 
-" -- vim-goyo ------------------------------------------------------------------
-
-autocmd User GoyoEnter Limelight
-autocmd User GoyoLeave Limelight!
-
-let g:limelight_conceal_ctermfg = 'DarkGrey'
 
 " -- Local config --------------------------------------------------------------
 "    If there are settings that are needed on this machine but that don't need
