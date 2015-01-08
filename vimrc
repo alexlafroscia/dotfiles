@@ -136,6 +136,9 @@ nnoremap <Leader>l :call RunLastSpec()<CR>
 " Run commands that require an interactive shell
 nnoremap <Leader>r :RunInInteractiveShell<space>
 
+" Smarter pasting
+nnoremap <Leader>p :set invpaste paste?<CR>
+
 " Treat <li> and <p> tags like the block tags they are
 let g:html_indent_tags = 'li\|p'
 
