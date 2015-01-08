@@ -216,6 +216,15 @@ function! OpenInGitTower()
 endfunction
 nnoremap <leader>gt :call OpenInGitTower()<CR>
 
+
+function! OpenInAtom()
+  :w
+  exec ':silent !atom ' . shellescape('%:p')
+  redraw!
+endfunction
+nnoremap <leader>a :call OpenInAtom()<CR>
+
+
 " -- Tagbar --------------------------------------------------------------------
 
 " Add support for markdown files in tagbar.
