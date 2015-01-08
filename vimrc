@@ -52,7 +52,8 @@ augroup vimrcEx
   autocmd BufRead,BufNewFile *.md set filetype=markdown
 
   " Enable spellchecking for Markdown
-  autocmd FileType markdown setlocal spell
+  " Also, indent 4 spaces
+  autocmd FileType markdown setlocal spell shiftwidth=4 tabstop=4
 
   " Allow stylesheets to autocomplete hyphenated words
   autocmd FileType css,scss,sass setlocal iskeyword+=-
