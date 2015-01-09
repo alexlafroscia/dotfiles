@@ -3,8 +3,8 @@
 
 # -- Import from other scripts -------------------------------------------------
 
-source 'tools/colors.sh'
-source 'tools/functions.sh'
+source 'scripts/helpers/colors.sh'
+source 'scripts/helpers/functions.sh'
 
 # -- OSX- or Linux-Specific Setup ----------------------------------------------
 
