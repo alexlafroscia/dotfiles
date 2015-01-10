@@ -47,7 +47,7 @@ then
 
   # Tmux config
   rm $HOME/.tmux.conf
-  ln -sf $HOME/.dotfiles/tmux.conf $HOME/.tmux.conf
+  ln -sf $HOME/.dotfiles/tmux/tmux.conf $HOME/.tmux.conf
   echo_item "Updated tmux configutation" "green"
 
   # Vim config

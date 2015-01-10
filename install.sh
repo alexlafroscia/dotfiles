@@ -79,7 +79,7 @@ echo ""
 # -- TMUX ----------------------------------------------------------------------
 if get_boolean_response "Do you want to install the Tmux configuration file?"
 then
-  ln -sf $HOME/.dotfiles/tmux.conf $HOME/.tmux.conf
+  ln -sf $HOME/.dotfiles/tmux/tmux.conf $HOME/.tmux.conf
   echo_item "Linked tmux configutation" "green"
 else
   echo_item "Ignoring Tmux configuration" "red"
