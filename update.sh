@@ -27,12 +27,12 @@ Is this correct?";
 then
   # Global gitignore config
   rm $HOME/.gitignore_global
-  ln -sf $HOME/.dotfiles/gitignore_global $HOME/.gitignore_global
+  ln -sf $HOME/.dotfiles/git/gitignore_global $HOME/.gitignore_global
   echo_item "Updated global .gitignore" "green"
 
   # Global git config
   rm $HOME/.gitconfig
-  ln -sf $HOME/.dotfiles/gitconfig $HOME/.gitconfig
+  ln -sf $HOME/.dotfiles/git/gitconfig $HOME/.gitconfig
   echo_item "Updated gitconfig" "green"
 
   # ZSH config

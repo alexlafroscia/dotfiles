@@ -22,10 +22,10 @@ fi
 
 if get_boolean_response "Do you want to install the Git configuration files?"
 then
-  ln -sf $HOME/.dotfiles/gitignore_global $HOME/.gitignore_global
+  ln -sf $HOME/.dotfiles/git/gitignore_global $HOME/.gitignore_global
   echo_item "Linked global .gitignore" "green"
 
-  ln -sf $HOME/.dotfiles/gitconfig $HOME/.gitconfig
+  ln -sf $HOME/.dotfiles/git/gitconfig $HOME/.gitconfig
   echo_item "Linked gitconfig" "green"
 else
   echo_item "Ignoring Git configuration" red
