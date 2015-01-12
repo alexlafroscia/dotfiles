@@ -94,7 +94,6 @@ echo ""
 if get_boolean_response "Do you want to install the Vim configuration file?"
 then
   ln -sf $HOME/.dotfiles/vimrc $HOME/.vimrc
-  ln -sf $HOME/.dotfiles/vimrc.bundles $HOME/.vimrc.bundles
   echo_item "Linked vim configuration" "green"
 
   # Install Vundle

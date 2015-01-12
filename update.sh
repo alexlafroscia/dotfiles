@@ -52,9 +52,7 @@ then
 
   # Vim config
   rm $HOME/.vimrc
-  rm $HOME/.vimrc.bundles
   ln -sf $HOME/.dotfiles/vimrc $HOME/.vimrc
-  ln -sf $HOME/.dotfiles/vimrc.bundles $HOME/.vimrc.bundles
   vim +PluginInstall
   echo_item "Updated vim configuration" "green"
 else
