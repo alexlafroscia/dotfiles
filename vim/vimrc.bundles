@@ -53,6 +53,7 @@ Plugin 'junegunn/limelight.vim'             " Highlight current block of text
 " Run commands in Tmux from Vim
 Plugin 'jgdavey/tslime.vim'
 Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'tpope/vim-dispatch'                 " Run tasks asychronously from Vim
 
 " Install any machine-only plugins
 if filereadable(expand("~/.vimrc.bundles.local"))
