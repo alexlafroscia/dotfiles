@@ -93,7 +93,7 @@ echo ""
 # TODO: Ask if the user wants to copy the current configuration to a .local file
 if get_boolean_response "Do you want to install the Vim configuration file?"
 then
-  ln -sf $HOME/.dotfiles/vimrc $HOME/.vimrc
+  ln -sf $HOME/.dotfiles/vim/vimrc $HOME/.vimrc
   echo_item "Linked vim configuration" "green"
 
   # Install Vundle
