@@ -44,6 +44,7 @@ Plugin 'mustache/vim-mustache-handlebars'   " Handlebars
 Plugin 'reedes/vim-pencil'                  " Markdown, Writing
 Plugin 'nelstrom/vim-markdown-folding'
 Plugin 'groenewege/vim-less'                " Less
+Plugin 'jeffkreeftmeijer/vim-numbertoggle'  " Smarter line numbers
 
 " Writing Tools
 Plugin 'junegunn/goyo.vim'                  " Remove Vim distractions

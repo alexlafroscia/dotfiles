@@ -172,6 +172,9 @@ noremap <Leader>n :NERDTreeToggle<cr>
 nnoremap <leader>ri :RunInInteractiveShell<space>
 noremap <leader>t :TagbarToggle<cr>
 
+" Joel's faster escape trick
+inoremap jk <Esc>
+
 " Solarized
 " Only try to activate it if it has been installed
 if filereadable($HOME . "/.vim/bundle/vim-colors-solarized/colors/solarized.vim")
