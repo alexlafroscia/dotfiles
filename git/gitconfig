@@ -53,6 +53,9 @@
 
     # Sync
     sync = plu && pso
+
+    # REKT
+    rekt = reset --hard HEAD
 [color]
   diff = auto
   status = auto
@@ -73,3 +76,4 @@
     default = tracking
 [core]
     excludesfile = ~/.gitignore_global
+    editor = vim
