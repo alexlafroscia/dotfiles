@@ -25,8 +25,15 @@ plugins=(git rbenv bower bundle git-flow)
 # -- Oh My Zsh -----------------------------------------------------------------
 source $ZSH/oh-my-zsh.sh
 
+# -- Named Directories ---------------------------------------------------------
+unsetopt auto_name_dirs
+
+# If you want to make your own names directories, so that they appear as
+#   ~_directory-name_
+# in Agnoster's path, follow the below pattern
+hash -d dotfiles=/Users/alex/.dotfiles
+
 # -- Options -------------------------------------------------------------------
-setopt   auto_name_dirs
 unsetopt correct_all
 unsetopt correct
 
