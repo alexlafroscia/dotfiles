@@ -173,7 +173,7 @@ nnoremap <leader>ri :RunInInteractiveShell<space>
 noremap <leader>t :TagbarToggle<cr>
 
 " Joel's faster escape trick
-inoremap jk <Esc>
+inoremap kj <Esc>
 
 " Solarized
 " Only try to activate it if it has been installed
