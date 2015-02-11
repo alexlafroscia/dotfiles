@@ -314,6 +314,9 @@ augroup pencil
 augroup END
 
 
+" -- emmet-vim -----------------------------------------------------------------
+
+let g:user_emmet_leader_key='<C-E>'
 
 " -- Local config --------------------------------------------------------------
 "    If there are settings that are needed on this machine but that don't need
