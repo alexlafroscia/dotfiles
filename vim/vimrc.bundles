@@ -46,6 +46,12 @@ Plugin 'nelstrom/vim-markdown-folding'
 Plugin 'groenewege/vim-less'                " Less
 Plugin 'jeffkreeftmeijer/vim-numbertoggle'  " Smarter line numbers
 
+" Java
+Plugin 'bpdp/vim-java'
+Plugin 'adragomir/javacomplete'
+Plugin 'vim-scripts/groovy.vim'
+Plugin 'tfnico/vim-gradle'                  " Groovy and Gradle
+
 " Writing Tools
 Plugin 'junegunn/goyo.vim'                  " Remove Vim distractions
 Plugin 'junegunn/limelight.vim'             " Highlight current block of text
