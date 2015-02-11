@@ -61,6 +61,9 @@ Plugin 'jgdavey/tslime.vim'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'tpope/vim-dispatch'                 " Run tasks asychronously from Vim
 
+" Dash (Requires Dash and a Mac)
+Plugin 'rizzatti/dash.vim'
+
 " Install any machine-only plugins
 if filereadable(expand("~/.vimrc.bundles.local"))
   source ~/.vimrc.bundles.local
