@@ -327,3 +327,8 @@ let g:user_emmet_leader_key='<C-E>'
 if filereadable($HOME . "/.vimrc.local")
   source ~/.vimrc.local
 endif
+
+" Per-project local config
+if filereadable(glob('./.vimrc.local'))
+  source ./.vimrc.local
+endif
