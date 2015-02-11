@@ -257,6 +257,29 @@ let g:zenmode_background = "dark"
 let g:zenmode_colorscheme = "solarized"
 let g:zenmode_font ="Cousine 12"
 
+" -- goyo ----------------------------------------------------------------------
+
+function! WriteMode()
+  :w
+  redraw!
+endfunction
+nnoremap <leader>w :call WriteMode()<CR>
+
+
+let g:goyo_bottom_margin = 100
+
+function! s:goyo_enter()
+  set scrolloff=999
+endfunction
+
+function! s:goyo_leave()
+  set scrolloff=3
+endfunction
+
+autocmd! User GoyoEnter
+autocmd! User GoyoLeave
+autocmd  User GoyoEnter nested call <SID>goyo_enter()
+autocmd  User GoyoLeave nested call <SID>goyo_leave()
 
 " -- Syntastic -----------------------------------------------------------------
 
