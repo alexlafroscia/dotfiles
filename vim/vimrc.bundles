@@ -66,6 +66,8 @@ Plugin 'tpope/vim-dispatch'                 " Run tasks asychronously from Vim
 " Dash (Requires Dash and a Mac)
 Plugin 'rizzatti/dash.vim'
 
+Plugin 'osyo-manga/vim-over'
+
 " Install any machine-only plugins
 if filereadable(expand("~/.vimrc.bundles.local"))
   source ~/.vimrc.bundles.local
