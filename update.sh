@@ -55,6 +55,13 @@ then
   ln -sf $HOME/.dotfiles/vim/vimrc $HOME/.vimrc
   vim +PluginInstall
   echo_item "Updated vim configuration" "green"
+
+  # NVim Config
+  rm $HOME/.nvimrc
+  ln -sf $HOME/.dotfiles/nvim/nvimrc $HOME/.nvimrc
+  nvim +PluginInstall
+  echo_item "Updated neovim configuration" "green"
+
 else
   echo_item "Update failed" red
   exit 1
