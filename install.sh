@@ -109,13 +109,3 @@ else
 fi
 
 echo ""
-
-# -- NVIM -----------------------------------------------------------------------
-# Link the dotfiles
-
-# TODO: Ask if the user wants to copy the current configuration to a .local file
-if get_boolean_response "Do you want to install the NeoVim configuration file?"
-then
-  ln -sf $HOME/.dotfiles/nvim/nvimrc $HOME/.nvimrc
-  echo_item "Linked neovim configuration" "green"
-echo ""
