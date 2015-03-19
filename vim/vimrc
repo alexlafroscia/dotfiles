@@ -60,6 +60,9 @@ augroup vimrcEx
 
   " Allow stylesheets to autocomplete hyphenated words
   autocmd FileType css,scss,sass setlocal iskeyword+=-
+
+  " Configure Dispatch for Java files
+  autocmd FileType java let b:dispatch = 'javac %'
 augroup END
 
 " Softtabs, 2 spaces
