@@ -50,8 +50,8 @@ if [[ -f "$HOME/.aliases" ]]; then
 fi
 
 # -- Rbenv ---------------------------------------------------------------------
-# export PATH="$HOME/.rbenv/bin:$PATH"
-# eval "$(rbenv init -)"
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
 
 # -- Virtual Env ---------------------------------------------------------------
 if [[ -f "/usr/local/bin/virtualenvwrapper.sh" ]]; then
@@ -113,3 +113,5 @@ fi
 if [[ -f "$HOME/.zshrc.local" ]]; then
   source $HOME/.zshrc.local
 fi
+
+export PATH="$PATH:$HOME/.dotfiles/bin"
