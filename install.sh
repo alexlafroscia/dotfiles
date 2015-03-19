@@ -95,6 +95,7 @@ if get_boolean_response "Do you want to install the Vim configuration file?"
 then
   ln -sf $HOME/.dotfiles/vim/vimrc $HOME/.vimrc
   ln -sf $HOME/.dotfiles/vim/UltiSnips $HOME/.vim/
+  ln -sf $HOME/.dotfiles/vim/colors $HOME/.vim/
   echo_item "Linked vim configuration" "green"
 
   # Install Vundle
