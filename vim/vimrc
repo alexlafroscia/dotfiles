@@ -182,15 +182,10 @@ noremap <leader>t :TagbarToggle<cr>
 " Joel's faster escape trick
 inoremap kj <Esc>
 
-" Solarized
-" Only try to activate it if it has been installed
-if filereadable($HOME . "/.vim/bundle/vim-colors-solarized/colors/solarized.vim")
-  syntax enable
-  set background=dark
-  colorscheme solarized
-  " Color the gutter correctly
-  highlight SignColumn ctermbg=8
-endif
+" Theme
+syntax enable
+set background=dark
+colorscheme base16-tomorrow
 
 
 " -- FUNCTIONS -----------------------------------------------------------------
