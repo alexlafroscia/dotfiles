@@ -52,16 +52,13 @@ Plugin 'vim-scripts/groovy.vim'
 Plugin 'tfnico/vim-gradle'                  " Groovy and Gradle
 
 " Writing Tools
-Plugin 'junegunn/goyo.vim'                  " Remove Vim distractions
-Plugin 'junegunn/limelight.vim'             " Highlight current block of text
+" Plugin 'junegunn/goyo.vim'                  " Remove Vim distractions
+" Plugin 'junegunn/limelight.vim'             " Highlight current block of text
 
 " Run commands in Tmux from Vim
 Plugin 'jgdavey/tslime.vim'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'tpope/vim-dispatch'                 " Run tasks asychronously from Vim
-
-" Dash (Requires Dash and a Mac)
-Plugin 'rizzatti/dash.vim'
 
 Plugin 'osyo-manga/vim-over'
 
