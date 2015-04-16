@@ -1,0 +1,26 @@
+# Get input from the user, by default through standard in
+snippet scanner "Get input from user" b
+Scanner ${1:input} = new Scanner(${2:System.in});
+endsnippet
+
+
+snippet psv "public static void..." b
+public static void ${1:method_name}(${0}) {
+  ${0}
+}
+endsnippet
+
+
+###
+# JavaDoc
+###
+
+# Function paramter
+snippet docp "Javdoc Method Parameter"
+@param ${1:name} ${2:description}
+endsnippet
+
+# Function Return
+snippet docr "Javadoc Function Return"
+@return ${1:description}
+endsnippet
