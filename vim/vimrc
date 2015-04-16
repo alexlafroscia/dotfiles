@@ -68,6 +68,9 @@ augroup vimrcEx
 
   " Configure Dispatch for Java files
   autocmd FileType java let b:dispatch = 'javac %'
+
+  " Edit vimwiki pages in pencil mode
+  autocmd BufRead,BufNewFile *.wiki call pencil#init({'wrap': 'soft'})
 augroup END
 
 " Softtabs, 2 spaces
@@ -320,6 +323,24 @@ augroup END
 " -- emmet-vim -----------------------------------------------------------------
 
 let g:user_emmet_leader_key='<C-E>'
+
+" -- vimwiki -------------------------------------------------------------------
+"    VimWiki is an awesome plugin for creating shared wikis of information that
+"    are accessible from any Vim session you might be in.  Below is my
+"    configuration, which sets up one generate wiki and then a second, separate
+"    one for work
+
+let wiki_main = {}
+let wiki_main.path = '~/Dropbox/Documents/wikis/main/'
+
+let wiki_qualaris = {}
+let wiki_qualaris.path = '~/Dropbox/Documents/wikis/qualaris/'
+let wiki_qualaris.diary_rel_path = 'notebook/'
+let wiki_qualaris.diary_index = 'notebook'
+let wiki_qualaris.diary_header = 'Lab Notebook'
+
+let g:vimwiki_list = [wiki_main, wiki_qualaris]
+let g:vimwiki_folding = ''
 
 " -- ultisnipts ----------------------------------------------------------------
 

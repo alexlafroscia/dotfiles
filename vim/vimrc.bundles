@@ -28,6 +28,7 @@ Plugin 'Lokaltog/vim-easymotion'            " Move like the wind!
 Plugin 'vim-scripts/ctags.vim'              " ctags related stuff
 Plugin 'majutsushi/tagbar'
 Plugin 'editorconfig/editorconfig-vim'      " .editorconfig support
+Plugin 'vimwiki/vimwiki'
 Plugin 'ryanoasis/vim-webdevicons'
 
 " Language-Specific Plugins
