@@ -19,6 +19,11 @@ set incsearch     " do incremental searching
 set laststatus=2  " Always display the status line
 set autowrite     " Automatically :write before running commands
 set t_Co=256      " force vim to use 256 colors
+set noshowmode
+
+" Highlight search matches
+set hlsearch
+nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
 
 " Switch syntax highlighting on, when the terminal has colors
 " Also switch on highlighting the last used search pattern.
