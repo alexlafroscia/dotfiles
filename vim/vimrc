@@ -3,7 +3,7 @@
 set nocompatible
 
 " Set bash as the prompt for Vim
-set shell=/bin/bash
+set shell=/usr/local/bin/zsh
 
 " Leader
 let mapleader = ","
