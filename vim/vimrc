@@ -20,6 +20,7 @@ set laststatus=2  " Always display the status line
 set autowrite     " Automatically :write before running commands
 set t_Co=256      " force vim to use 256 colors
 set noshowmode
+set timeoutlen=1000 ttimeoutlen=0
 
 " Highlight search matches
 set hlsearch
@@ -71,6 +72,10 @@ augroup vimrcEx
 
   " Edit vimwiki pages in pencil mode
   autocmd BufRead,BufNewFile *.wiki call pencil#init({'wrap': 'soft'})
+
+  " Go
+  " Don't show whitespace, since saving will clean it up automatically anyway
+  autocmd FileType go set nolist
 augroup END
 
 " Softtabs, 2 spaces
@@ -112,6 +117,10 @@ endif
 " Numbers
 set number
 set numberwidth=5
+
+" Easier use of tabs
+nnoremap tn :tabnew<CR>
+nnoremap tx :tabclose<CR>
 
 " Tab completion
 " will insert tab at beginning of line,
@@ -165,22 +174,21 @@ nnoremap <C-l> <C-w>l
 " Run commands in Tmux
 nmap <C-c><C-c> <Plug>NormalModeSentToTmux
 
-" configure syntastic syntax checking to check on open as well as save
-let g:syntastic_check_on_open=1
-let g:syntastic_html_tidy_ignore_errors=[" proprietary attribute \"ng-"]
-
 " Set spellfile to location that is guaranteed to exist, can be symlinked to
 " Dropbox or kept in Git and managed outside of thoughtbot/dotfiles using rcm.
 set spellfile=$HOME/.vim-spell-en.utf-8.add
 
-" vim-airline
+" -- vim-airline ---------------------------------------------------------------
 let g:airline_powerline_fonts = 1 " Enable the patched Powerline fonts
 let g:airline_section_x = '%{PencilMode()}'
+" Tabline
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#show_buffers = 0
 
 " Custom Keybindings
-noremap <Leader>n :NERDTreeToggle<cr>
 nnoremap <leader>ri :RunInInteractiveShell<space>
-noremap <leader>t :TagbarToggle<cr>
+noremap <leader>tb :TagbarToggle<cr>
+nnoremap <leader>g :GundoToggle<cr>
 
 " Joel's faster escape trick
 inoremap kj <Esc>
@@ -234,6 +242,15 @@ endfunction
 nnoremap <leader>a :call OpenInAtom()<CR>
 
 
+" -- NERDTree ------------------------------------------------------------------
+
+" Key remap
+noremap <Leader>n :NERDTreeToggle<cr>
+
+" Filestypes to ignore
+" Array of regular expressions to match ommisions by
+let NERDTreeIgnore = ['\.class']
+
 " -- Tagbar --------------------------------------------------------------------
 
 " Add support for markdown files in tagbar.
@@ -266,7 +283,6 @@ function! WriteMode()
 endfunction
 nnoremap <leader>w :call WriteMode()<CR>
 
-
 let g:goyo_bottom_margin = 100
 
 function! s:goyo_enter()
@@ -284,6 +300,9 @@ autocmd  User GoyoLeave nested call <SID>goyo_leave()
 
 " -- Syntastic -----------------------------------------------------------------
 
+" configure syntastic syntax checking to check on open as well as save
+let g:syntastic_check_on_open=1
+
 " Silence certain HTML warnings
 let g:syntastic_html_tidy_ignore_errors = [
   \  'plain text isn''t allowed in <head> elements',
@@ -294,14 +313,18 @@ let g:syntastic_html_tidy_ignore_errors = [
   \  'missing <li>',
   \  '<input> isn''t allowed in <body> elements',
   \  'trimming empty <span>',
-  \  'trimming empty <i>'
+  \  'trimming empty <i>',
+  \  'proprietary attribute \"ng-'
   \ ]
+
+let g:syntastic_javascript_checkers = ['jshint']
+let g:syntastic_java_checkers = ['javac']
 
 let g:syntastic_coffee_coffeelint_ignore_errors = [
   \  'Backticks are forbidden'
   \ ]
 
-let g:syntastic_handlebars_checkers = ['handlebars']
+let g:syntastic_html_handlebars_checkers = ['handlebars']
 
 " -- vim-mustache-handlebars ---------------------------------------------------
 
@@ -359,6 +382,31 @@ function! g:UltiSnips_Complete()
 endfunction
 
 au InsertEnter * exec "inoremap <silent> " . g:UltiSnipsExpandTrigger . " <C-R>=g:UltiSnips_Complete()<cr>"
+
+" -- Distraction Free ----------------------------------------------------------
+
+nnoremap <Leader>df <Esc>:DistractionsToggle<CR>
+
+let g:distraction_free#toggle_limelight = 1
+let g:distraction_free#toggle_tmux = 1
+
+let g:distraction_free#toggle_options = [
+  \ 'cursorline',
+  \ 'colorcolumn',
+  \ 'cursorcolumn',
+  \ 'number',
+  \ 'relativenumber',
+  \ 'list',
+  \ 'ruler',
+  \ 'showtabline',
+  \ 'laststatus',
+  \ 'gitgutter'
+\]
+
+" -- vim-go --------------------------------------------------------------------
+
+" Enable Dispatch for GoRun and GoBuild -> I made this!
+let g:go_dispatch_enabled = 1
 
 " -- Local config --------------------------------------------------------------
 "    If there are settings that are needed on this machine but that don't need
