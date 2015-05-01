@@ -45,6 +45,7 @@ Plugin 'reedes/vim-pencil'                  " Markdown, Writing
 Plugin 'nelstrom/vim-markdown-folding'
 Plugin 'groenewege/vim-less'                " Less
 Plugin 'jeffkreeftmeijer/vim-numbertoggle'  " Smarter line numbers
+Plugin 'fatih/vim-go'                       " Better Go support
 
 " Java
 Plugin 'bpdp/vim-java'
