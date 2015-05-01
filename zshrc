@@ -108,11 +108,16 @@ export DISABLE_AUTO_TITLE="true"
 if type "tmuxinator" >/dev/null 2>/dev/null; then
   source $HOME/.dotfiles/bin/tmuxinator.zsh
 fi
+# -- TheFuck -------------------------------------------------------------------
+#    https://github.com/nvbn/thefuck
+
+alias fuck='$(thefuck $(fc -ln -1))'
 
 # -- Local Configuration -------------------------------------------------------
 if [[ -f "$HOME/.zshrc.local" ]]; then
   source $HOME/.zshrc.local
 fi
+
 
 export PATH="$PATH:$HOME/.dotfiles/bin"
 
