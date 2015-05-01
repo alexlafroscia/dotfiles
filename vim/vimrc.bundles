@@ -10,7 +10,7 @@ Plugin 'gmarik/Vundle.vim'                  " Let Vundle manage Vundle
 
 " Must-Haves and Basic Setup
 Plugin 'altercation/vim-colors-solarized'   " So pretty!
-Plugin 'kien/ctrlp.vim'                     " Gotta go fast!
+Plugin 'ctrlpvim/ctrlp.vim'                 " Gotta go fast!
 Plugin 'bling/vim-airline'                  " Handy info
 Plugin 'scrooloose/syntastic'               " Linting in Vim
 Plugin 'scrooloose/nerdtree'                " Navigate the filesystem, in Vim
