@@ -115,3 +115,9 @@ if [[ -f "$HOME/.zshrc.local" ]]; then
 fi
 
 export PATH="$PATH:$HOME/.dotfiles/bin"
+
+# -- Xiki ----------------------------------------------------------------------
+if [[ -f "$HOME/.xsh" ]]; then
+  source $HOME/.xsh
+fi
+
