@@ -52,10 +52,6 @@ Plugin 'adragomir/javacomplete'
 Plugin 'vim-scripts/groovy.vim'
 Plugin 'tfnico/vim-gradle'                  " Groovy and Gradle
 
-" Writing Tools
-" Plugin 'junegunn/goyo.vim'                  " Remove Vim distractions
-" Plugin 'junegunn/limelight.vim'             " Highlight current block of text
-
 " Run commands in Tmux from Vim
 Plugin 'jgdavey/tslime.vim'
 Plugin 'christoomey/vim-tmux-navigator'
