@@ -105,9 +105,12 @@ extract () {
 export DISABLE_AUTO_TITLE="true"
 
 # -- Tmuxinator ----------------------------------------------------------------
+
 if type "tmuxinator" >/dev/null 2>/dev/null; then
   source $HOME/.dotfiles/bin/tmuxinator.zsh
 fi
+alias mux=tmuxinator
+
 # -- TheFuck -------------------------------------------------------------------
 #    https://github.com/nvbn/thefuck
 
