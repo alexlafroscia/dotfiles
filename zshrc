@@ -33,6 +33,10 @@ unsetopt auto_name_dirs
 # in Agnoster's path, follow the below pattern
 hash -d dotfiles=/Users/alex/.dotfiles
 
+# -- Completion Config ---------------------------------------------------------
+
+zstyle ':completion:*:*:vim:*:*files' ignored-patterns '*.class'
+
 # -- Options -------------------------------------------------------------------
 unsetopt correct_all
 unsetopt correct
