@@ -37,6 +37,11 @@ hash -d dotfiles=/Users/alex/.dotfiles
 
 zstyle ':completion:*:*:vim:*:*files' ignored-patterns '*.class'
 
+# -- Command History -----------------------------------------------------------
+
+export HISTSIZE=500
+export SAVEHIST=500
+
 # -- Options -------------------------------------------------------------------
 unsetopt correct_all
 unsetopt correct
