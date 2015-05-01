@@ -68,7 +68,7 @@ echo ""
 
 if get_boolean_response "Do you want to install Bash configuration files?"; then
   # -- BASH PROFILE
-  ln -sf $HOME/.dotfiles/bash_profile $HOME/.bash_profile
+  ln -sf $HOME/.dotfiles/bash/bash_profile $HOME/.bash_profile
   echo_item "Linked bash_profile" "green"
 else
   echo_item "Ignoring Bash configuration" "red"

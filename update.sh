@@ -42,7 +42,7 @@ then
 
   # Bash config
   rm $HOME/.bash_profile
-  ln -sf $HOME/.dotfiles/bash_profile $HOME/.bash_profile
+  ln -sf $HOME/.dotfiles/bash/bash_profile $HOME/.bash_profile
   echo_item "Updated bash_profile" "green"
 
   # Tmux config
