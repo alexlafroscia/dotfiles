@@ -5,6 +5,9 @@ set nocompatible
 " Set bash as the prompt for Vim
 set shell=/usr/local/bin/zsh
 
+" Config file paths
+let &runtimepath = "$HOME/.dotfiles/vim, " . &runtimepath
+
 " Leader
 let mapleader = ","
 
@@ -34,7 +37,7 @@ endif
 
 " Source file to find Vundle packages
 if filereadable(expand("~/.dotfiles/vim/bundles.vim"))
-  source ~/.dotfiles/vim/bundles.vim
+  runtime bundles.vim
 endif
 
 filetype plugin indent on
