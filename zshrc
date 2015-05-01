@@ -60,6 +60,13 @@ fi
 
 alias vim=nvim
 
+# -- Java ----------------------------------------------------------------------
+export JAVA_HOME="/Library/Java/Home"
+export JUNIT_HOME="/Library/junit"
+export PATH="$PATH:$JUNIT_HOME"
+export CLASSPATH="$CLASSPATH:$JUNIT_HOME/junit-4.12.jar:$JUNIT_HOME/hamcrest-core-1.3.jar"
+alias jtest=java\ org.junit.runner.JUnitCore
+
 # -- Rbenv ---------------------------------------------------------------------
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
