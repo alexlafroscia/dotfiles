@@ -8,7 +8,7 @@ call vundle#begin()
 
 Plugin 'gmarik/Vundle.vim'                  " Let Vundle manage Vundle
 
-" Must-Haves and Basic Setup
+" Editor Extensions
 Plugin 'altercation/vim-colors-solarized'   " So pretty!
 Plugin 'ctrlpvim/ctrlp.vim'                 " Gotta go fast!
 Plugin 'bling/vim-airline'                  " Handy info
@@ -17,6 +17,7 @@ Plugin 'scrooloose/nerdtree'                " Navigate the filesystem, in Vim
 Plugin 'scrooloose/nerdcommenter'           " Easy comments, baby!
 Plugin 'tpope/vim-surround'                 " Change word surroundings
 Plugin 'tpope/vim-fugitive'                 " Git stuff in Vim
+Plugin 'tpope/vim-projectionist'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'vim-scripts/matchit.zip'            " More powerful % matching
 Plugin 'edkolev/tmuxline.vim'               " Make the Tmux bar match Vim
@@ -33,6 +34,7 @@ Plugin 'ryanoasis/vim-webdevicons'
 
 " Language-Specific Plugins
 Plugin 'pangloss/vim-javascript'            " JavaScript
+Plugin 'marijnh/tern_for_vim'
 Plugin 'mxw/vim-jsx'                        " JSX
 Plugin 'kchmck/vim-coffee-script'           " CoffeeScript
 Plugin 'vim-ruby/vim-ruby'                  " Ruby...
