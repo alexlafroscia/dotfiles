@@ -20,7 +20,7 @@ ZSH_THEME="agnoster-custom"
 #
 # Which plugins would you like to load?
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git rbenv bower bundle git-flow)
+plugins=(git brew tmux tmuxinator rbenv bower bundle git-flow virtualenvwrapper)
 
 # -- Oh My Zsh -----------------------------------------------------------------
 source $ZSH/oh-my-zsh.sh
