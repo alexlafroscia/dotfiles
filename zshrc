@@ -58,6 +58,8 @@ if [[ -f "$HOME/.aliases" ]]; then
     source $HOME/.aliases
 fi
 
+alias vim=nvim
+
 # -- Rbenv ---------------------------------------------------------------------
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
