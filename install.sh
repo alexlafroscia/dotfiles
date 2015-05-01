@@ -39,7 +39,7 @@ if exists "zsh"; then
   if get_boolean_response "Do you want to install ZSH configuration files?"; then
 
     # -- ZSHRC
-    ln -sf $HOME/.dotfiles/zshrc $HOME/.zshrc
+    ln -sf $HOME/.dotfiles/zsh/zshrc $HOME/.zshrc
     echo_item "Linked zshrc" "green"
 
     # -- OH MY ZSH

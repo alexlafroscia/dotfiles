@@ -37,7 +37,7 @@ then
 
   # ZSH config
   rm $HOME/.zshrc
-  ln -sf $HOME/.dotfiles/zshrc $HOME/.zshrc
+  ln -sf $HOME/.dotfiles/zsh/zshrc $HOME/.zshrc
   echo_item "Updated zshrc" "green"
 
   # Bash config
