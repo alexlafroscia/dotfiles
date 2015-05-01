@@ -32,8 +32,9 @@ if (&t_Co > 2 || has("gui_running")) && !exists("syntax_on")
   syntax on
 endif
 
-if filereadable(expand("~/.dotfiles/vim/vimrc.bundles"))
-  source ~/.dotfiles/vim/vimrc.bundles
+" Source file to find Vundle packages
+if filereadable(expand("~/.dotfiles/vim/bundles.vim"))
+  source ~/.dotfiles/vim/bundles.vim
 endif
 
 filetype plugin indent on
