@@ -3,6 +3,9 @@
 " Leader
 let mapleader = ","
 
+" Set bash as the prompt for Vim
+set shell=/usr/local/bin/zsh
+
 " Theme
 syntax enable
 set background=dark

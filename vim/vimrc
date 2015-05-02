@@ -1,3 +1,7 @@
+" Use Vim settings, rather then Vi settings. This setting must be as early as
+" possible, as it has side effects.
+set nocompatible
+
 " Functions used for loading additional config
 function LanguageConfig(filename)
   let l:filename = "lang_config/" . a:filename . ".vim"
@@ -9,14 +13,7 @@ function PluginConfig(filename)
   exec "runtime " . l:filename
 endfunction
 
-" Use Vim settings, rather then Vi settings. This setting must be as early as
-" possible, as it has side effects.
-set nocompatible
-
-" Set bash as the prompt for Vim
-set shell=/usr/local/bin/zsh
-
-" Config file paths
+" Config file paths to make '.dotfiles/vim' visible to runtime
 let &runtimepath = "$HOME/.dotfiles/vim, " . &runtimepath
 
 augroup vimrcEx
