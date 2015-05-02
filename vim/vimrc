@@ -34,6 +34,7 @@ augroup vimrcEx
   call PluginConfig("vim-go")
   call PluginConfig("vim-mustache-handlebars")
   call PluginConfig("vim-pencil")
+  call PluginConfig("vim-rails")
   call PluginConfig("vim-wiki")
 
   " Language Configuration

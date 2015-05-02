@@ -44,12 +44,6 @@ filetype plugin indent on
 " Highlight search matches
 set hlsearch
 
-" Switch syntax highlighting on, when the terminal has colors
-" Also switch on highlighting the last used search pattern.
-if (&t_Co > 2 || has("gui_running")) && !exists("syntax_on")
-  syntax on
-endif
-
 " Make it obvious where 80 characters is
 " Lifted from StackOverflow user Jeremy W. Sherman
 " http://stackoverflow.com/a/3765575/2250435
@@ -74,9 +68,6 @@ autocmd BufWritePre * :%s/\s\+$//e
 " Open new split panes to right and bottom, which feels more natural
 set splitbelow
 set splitright
-
-" Treat <li> and <p> tags like the block tags they are
-let g:html_indent_tags = 'li\|p'
 
 
 " ======================= NORMAL MODE REMAPS =================================
