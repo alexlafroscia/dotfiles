@@ -65,6 +65,8 @@ autocmd BufReadPost *
 " Automatically clean trailing whitespace
 autocmd BufWritePre * :%s/\s\+$//e
 
+autocmd BufRead,BufNewFile COMMIT_EDITMSG call pencil#init({'wrap': 'soft'})
+
 " Open new split panes to right and bottom, which feels more natural
 set splitbelow
 set splitright
