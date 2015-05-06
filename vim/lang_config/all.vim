@@ -66,6 +66,7 @@ autocmd BufReadPost *
 autocmd BufWritePre * :%s/\s\+$//e
 
 autocmd BufRead,BufNewFile COMMIT_EDITMSG call pencil#init({'wrap': 'soft'})
+                                      \ | set textwidth=0
 
 " Open new split panes to right and bottom, which feels more natural
 set splitbelow
