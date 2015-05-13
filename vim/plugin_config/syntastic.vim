@@ -23,3 +23,5 @@ let g:syntastic_coffee_coffeelint_ignore_errors = [
   \ ]
 
 let g:syntastic_html_handlebars_checkers = ['handlebars']
+
+let g:syntastic_scss_checkers = ['scss_lint']

@@ -21,8 +21,9 @@ Plugin 'tpope/vim-projectionist'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'vim-scripts/matchit.zip'            " More powerful % matching
 Plugin 'edkolev/tmuxline.vim'               " Make the Tmux bar match Vim
+Plugin 'ervandew/supertab'                  " Autocomplete
 Plugin 'Valloric/YouCompleteMe'
-Plugin 'SirVer/ultisnips'
+Plugin 'SirVer/ultisnips'                   " Snippets
 Plugin 'honza/vim-snippets'
 Plugin 'rking/ag.vim'                       " Search
 Plugin 'Lokaltog/vim-easymotion'            " Move like the wind!
@@ -40,6 +41,7 @@ Plugin 'kchmck/vim-coffee-script'           " CoffeeScript
 Plugin 'vim-ruby/vim-ruby'                  " Ruby...
 Plugin 'tpope/vim-endwise'
 Plugin 'mattn/emmet-vim'                    " HTML
+Plugin 'othree/html5.vim'
 Plugin 'wting/rust.vim'                     " Rust
 Plugin 'cespare/vim-toml'
 Plugin 'mustache/vim-mustache-handlebars'   " Handlebars

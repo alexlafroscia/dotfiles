@@ -27,6 +27,7 @@ augroup vimrcEx
   call PluginConfig("ctrlp")
   call PluginConfig("emmet-vim")
   call PluginConfig("nerdtree")
+  call PluginConfig("supertab")
   call PluginConfig("syntastic")
   call PluginConfig("tagbar")
   call PluginConfig("ultisnips")
@@ -36,6 +37,7 @@ augroup vimrcEx
   call PluginConfig("vim-pencil")
   call PluginConfig("vim-rails")
   call PluginConfig("vim-wiki")
+  call PluginConfig("YouCompleteMe")
 
   " Language Configuration
   call LanguageConfig("css")
