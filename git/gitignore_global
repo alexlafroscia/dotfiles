@@ -1,3 +1,6 @@
+# DB Files
+sqlite-backup.db
+
 # Compiled Python files
 *.pyc
 
