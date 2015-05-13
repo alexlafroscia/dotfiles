@@ -1,7 +1,7 @@
 " ========================= GENERAL CONFIG ===================================
 
 " Leader
-let mapleader = ","
+let mapleader = " "
 
 " Set bash as the prompt for Vim
 set shell=/usr/local/bin/zsh
