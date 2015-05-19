@@ -30,7 +30,7 @@ Plug 'reedes/vim-pencil'                  " Markdown, Writing
 
 " Language-Specific Plugins
 Plug 'pangloss/vim-javascript',           { 'for': 'javascript' }
-Plug 'marijnh/tern_for_vim',              { 'for': 'javascript' }
+Plug 'marijnh/tern_for_vim',              { 'for': 'javascript', 'do': 'npm install' }
 Plug 'mxw/vim-jsx',                       { 'for': 'javascript' }
 Plug 'kchmck/vim-coffee-script',          { 'for': 'coffeescript' }
 Plug 'vim-ruby/vim-ruby',                 { 'for': 'ruby' }
