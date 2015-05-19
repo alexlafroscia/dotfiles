@@ -94,17 +94,15 @@ echo ""
 if get_boolean_response "Do you want to install the Vim configuration file?"
 then
   ln -sf $HOME/.dotfiles/vim/vimrc $HOME/.vimrc
-  ln -sf $HOME/.dotfiles/vim/UltiSnips $HOME/.vim/
-  ln -sf $HOME/.dotfiles/vim/colors $HOME/.vim/
   echo_item "Linked vim configuration" "green"
 
   # Install Vundle
-  if [ -d $HOME/.vim/bundle/Vundle.vim ]; then
-    echo_item "Vundle plugin already installed" "green"
+  if [ -d $HOME/.vim/autoload/plug.vim ]; then
+    echo_item "vim-plug already installed" "green"
    else
-    git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-    vim +PluginInstall
-    echo_item "Vundle installed" "green"
+     curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    vim +PlugInstall
+    echo_item "vim-plug installed" "green"
   fi
 else
   echo_item "Ignoring Vim configuration" red

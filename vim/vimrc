@@ -14,7 +14,7 @@ function PluginConfig(filename)
 endfunction
 
 " Config file paths to make '.dotfiles/vim' visible to runtime
-let &runtimepath = "$HOME/.dotfiles/vim, " . &runtimepath
+let &runtimepath .= ",$HOME/.dotfiles/vim"
 
 augroup vimrcEx
   autocmd!
@@ -23,7 +23,7 @@ augroup vimrcEx
   call LanguageConfig("all")
 
   " Plugin Configuration
-  call PluginConfig("bundles")
+  call PluginConfig("vim-plug")
   call PluginConfig("ctrlp")
   call PluginConfig("emmet-vim")
   call PluginConfig("nerdtree")
