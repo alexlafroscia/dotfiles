@@ -13,8 +13,8 @@ Plug 'ctrlpvim/ctrlp.vim'                 " Gotta go fast!
 Plug 'bling/vim-airline'                  " Handy info
 Plug 'scrooloose/syntastic'               " Linting in Vim
 Plug 'scrooloose/nerdtree',               { 'on': 'NERDTreeToggle' }
-Plug 'scrooloose/nerdcommenter'           " Easy comments, baby!
 Plug 'tpope/vim-surround'                 " Change word surroundings
+Plug 'tpope/vim-commentary'               " Comments stuff
 Plug 'tpope/vim-fugitive'                 " Git stuff in Vim
 Plug 'tpope/vim-projectionist'
 Plug 'tpope/vim-dispatch'                 " Run tasks asychronously from Vim
@@ -39,10 +39,11 @@ Plug 'reedes/vim-pencil'                  " Markdown, Writing
 Plug 'pangloss/vim-javascript',           { 'for': 'javascript' }
 Plug 'marijnh/tern_for_vim',              { 'for': 'javascript', 'do': 'npm install' }
 Plug 'mxw/vim-jsx',                       { 'for': 'javascript' }
+Plug '~/projects/vim-plugins/vim-ember-cli'
 Plug 'kchmck/vim-coffee-script',          { 'for': 'coffeescript' }
 Plug 'vim-ruby/vim-ruby',                 { 'for': 'ruby' }
 Plug 'tpope/vim-endwise',                 { 'for': 'ruby' }
-Plug 'mattn/emmet-vim',                   { 'for': 'html' }
+Plug 'mattn/emmet-vim'
 Plug 'othree/html5.vim',                  { 'for': 'html' }
 Plug 'wting/rust.vim',                    { 'for': 'rust' }
 Plug 'cespare/vim-toml',                  { 'for': 'rust' }
