@@ -45,6 +45,7 @@ augroup vimrcEx
   call LanguageConfig("java")
   call LanguageConfig("markdown")
   call LanguageConfig("ruby")
+  call LanguageConfig("vim")
   call LanguageConfig("wiki")
 augroup END
 
