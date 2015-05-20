@@ -95,15 +95,6 @@ if get_boolean_response "Do you want to install the Vim configuration file?"
 then
   ln -sf $HOME/.dotfiles/vim/vimrc $HOME/.vimrc
   echo_item "Linked vim configuration" "green"
-
-  # Install Vundle
-  if [ -d $HOME/.vim/autoload/plug.vim ]; then
-    echo_item "vim-plug already installed" "green"
-   else
-     curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-    vim +PlugInstall
-    echo_item "vim-plug installed" "green"
-  fi
 else
   echo_item "Ignoring Vim configuration" red
 fi
