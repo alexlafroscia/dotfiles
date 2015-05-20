@@ -3,12 +3,12 @@
 set nocompatible
 
 " Functions used for loading additional config
-function LanguageConfig(filename)
+function! LanguageConfig(filename)
   let l:filename = "lang_config/" . a:filename . ".vim"
   exec "runtime " . l:filename
 endfunction
 
-function PluginConfig(filename)
+function! PluginConfig(filename)
   let l:filename = "plugin_config/" . a:filename . ".vim"
   exec "runtime " . l:filename
 endfunction
