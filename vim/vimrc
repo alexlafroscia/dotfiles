@@ -20,10 +20,10 @@ augroup vimrcEx
   autocmd!
 
   " Load configuration common across all filetypes
+  call PluginConfig("vim-plug")
   call LanguageConfig("all")
 
   " Plugin Configuration
-  call PluginConfig("vim-plug")
   call PluginConfig("ctrlp")
   call PluginConfig("emmet-vim")
   call PluginConfig("nerdtree")
@@ -36,8 +36,6 @@ augroup vimrcEx
   call PluginConfig("vim-mustache-handlebars")
   call PluginConfig("vim-pencil")
   call PluginConfig("vim-rails")
-  call PluginConfig("vim-wiki")
-  call PluginConfig("YouCompleteMe")
 
   " Language Configuration
   call LanguageConfig("css")
