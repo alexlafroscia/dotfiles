@@ -26,6 +26,7 @@ augroup vimrcEx
   " Plugin Configuration
   call PluginConfig("ctrlp")
   call PluginConfig("emmet-vim")
+  call PluginConfig("incsearch")
   call PluginConfig("nerdtree")
   call PluginConfig("supertab")
   call PluginConfig("syntastic")
