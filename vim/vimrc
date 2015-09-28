@@ -26,6 +26,7 @@ augroup vimrcEx
   " Plugin Configuration
   call PluginConfig("ctrlp")
   call PluginConfig("emmet-vim")
+  call PluginConfig("goyo")
   call PluginConfig("incsearch")
   call PluginConfig("nerdtree")
   call PluginConfig("python-mode")
@@ -35,6 +36,7 @@ augroup vimrcEx
   call PluginConfig("ultisnips")
   call PluginConfig("vim-airline")
   call PluginConfig("vim-go")
+  call PluginConfig("vim-markdown")
   call PluginConfig("vim-mustache-handlebars")
   call PluginConfig("vim-pencil")
   call PluginConfig("vim-rails")

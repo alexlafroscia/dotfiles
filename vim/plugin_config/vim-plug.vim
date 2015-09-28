@@ -37,6 +37,7 @@ Plug 'jeffkreeftmeijer/vim-numbertoggle'  " Smarter line numbers
 Plug 'reedes/vim-pencil'                  " Markdown, Writing
 Plug 'beloglazov/vim-online-thesaurus'
 Plug 'davidoc/taskpaper.vim'
+Plug 'junegunn/goyo.vim'
 
 " Language-Specific Plugins
 Plug 'pangloss/vim-javascript',           { 'for': 'javascript' }
@@ -54,7 +55,8 @@ Plug 'mustache/vim-mustache-handlebars'
 Plug 'groenewege/vim-less',               { 'for': 'less' }
 Plug 'cakebaker/scss-syntax.vim',         { 'for': 'scss' }
 Plug 'fatih/vim-go',                      { 'for': 'go' }
-Plug 'nelstrom/vim-markdown-folding',     { 'for': 'markdown' }
+Plug 'godlygeek/tabular',                 { 'for': 'markdown' } " Needed for vim-markdown
+Plug 'plasticboy/vim-markdown',           { 'for': 'markdown' }
 Plug 'bpdp/vim-java',                     { 'for': 'java' }
 Plug 'adragomir/javacomplete',            { 'for': 'java' }
 Plug 'klen/python-mode',                  { 'for': 'python' }
