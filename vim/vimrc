@@ -28,6 +28,7 @@ augroup vimrcEx
   call PluginConfig("emmet-vim")
   call PluginConfig("incsearch")
   call PluginConfig("nerdtree")
+  call PluginConfig("python-mode")
   call PluginConfig("supertab")
   call PluginConfig("syntastic")
   call PluginConfig("tagbar")

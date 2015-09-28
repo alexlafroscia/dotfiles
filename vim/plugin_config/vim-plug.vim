@@ -57,5 +57,6 @@ Plug 'fatih/vim-go',                      { 'for': 'go' }
 Plug 'nelstrom/vim-markdown-folding',     { 'for': 'markdown' }
 Plug 'bpdp/vim-java',                     { 'for': 'java' }
 Plug 'adragomir/javacomplete',            { 'for': 'java' }
+Plug 'klen/python-mode',                  { 'for': 'python' }
 
 call plug#end()
