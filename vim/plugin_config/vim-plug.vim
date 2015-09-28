@@ -25,8 +25,6 @@ Plug 'edkolev/tmuxline.vim'               " Make the Tmux bar match Vim
 Plug 'wincent/terminus'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'ervandew/supertab'                  " Autocomplete
-Plug 'SirVer/ultisnips'                   " Snippets
-Plug 'honza/vim-snippets'
 Plug 'rking/ag.vim'                       " Search
 Plug 'haya14busa/incsearch.vim'           " Better search highlighting
 Plug 'romainl/vim-qlist'
