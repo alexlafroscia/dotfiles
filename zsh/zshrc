@@ -12,7 +12,9 @@ EDITOR="vim"
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
 DEFAULT_USER='alex'
-ZSH_THEME="agnoster-custom"
+ZSH_THEME="powerlevel9k"
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir vcs)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(longstatus rbenv virtualenv node_version time)
 
 # -- Plugins -------------------------------------------------------------------
 # Plugins can be found in /Users/alex/.dotfiles/.oh-my-zsh/plugins/
@@ -75,7 +77,7 @@ eval "$(rbenv init -)"
 if [[ -f "/usr/local/bin/virtualenvwrapper.sh" ]]; then
   source /usr/local/bin/virtualenvwrapper.sh
 fi
-#VIRTUAL_ENV_DISABLE_PROMPT=true
+VIRTUAL_ENV_DISABLE_PROMPT=true
 
 # -- Solarized 256 Color Hack --------------------------------------------------
 export TERM="screen-256color"
