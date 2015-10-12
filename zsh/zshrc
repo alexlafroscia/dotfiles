@@ -14,7 +14,7 @@ EDITOR="vim"
 DEFAULT_USER='alex'
 ZSH_THEME="powerlevel9k"
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir vcs)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(longstatus rbenv virtualenv node_version time)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(longstatus rbenv nvm time)
 
 # -- Plugins -------------------------------------------------------------------
 # Plugins can be found in /Users/alex/.dotfiles/.oh-my-zsh/plugins/

@@ -530,6 +530,17 @@ prompt_node_version() {
   $1_prompt_segment "$0" "green" "011" "$NODE_ICON ${nvm_prompt:1}"
 }
 
+# Print the node version
+# Only prints the segment if different than the default value
+prompt_nvm() {
+  local nvm_default=$(cat $NVM_DIR/alias/default)
+  local node_version=$(nvm current)
+  [[ -z "${node_version}" ]] && return
+  [[ "$node_version" =~ "$nvm_default" ]] && return
+  NODE_ICON=$'\u2B22' # ⬢
+  $1_prompt_segment "$0" "green" "011" "$NODE_ICON ${node_version:1}"
+}
+
 # rbenv information
 # Only prints the ruby version if it's different than the default version
 # Note: currently does not work if the default is "system"
