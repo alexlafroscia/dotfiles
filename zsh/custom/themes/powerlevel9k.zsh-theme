@@ -531,10 +531,20 @@ prompt_node_version() {
 }
 
 # rbenv information
+# Only prints the ruby version if it's different than the default version
+# Note: currently does not work if the default is "system"
 prompt_rbenv() {
-  if [[ -n "$RBENV_VERSION" ]]; then
-    $1_prompt_segment "$0" "red" "$DEFAULT_COLOR" "$RBENV_VERSION"
-  fi
+  local rbenv_default=$(cat $RBENV_ROOT/version | xargs)
+  local ruby_version=$(ruby -e 'print RUBY_VERSION' | xargs)
+  [[ "$ruby_version" =~ "$rbenv_default" ]] && return
+  $1_prompt_segment "$0" "red" "$DEFAULT_COLOR" "${ruby_version}"
+}
+
+# Print out the ruby version, no matter what it is
+prompt_ruby_version() {
+  local ruby_prompt=$(ruby -e 'print RUBY_VERSION')
+  [[ -z "${ruby_prompt}" ]] && return
+  $1_prompt_segment "$0" "red" "$DEFAULT_COLOR" "${ruby_prompt}"
 }
 
 # RSpec test ratio
