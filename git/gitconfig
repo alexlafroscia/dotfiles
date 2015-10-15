@@ -78,4 +78,8 @@
     excludesfile = ~/.gitignore_global
     editor = vim
 [rerere]
-  enabled = 1
+    enabled = 1
+[filter "lfs"]
+    clean = git-lfs clean %f
+    smudge = git-lfs smudge %f
+    required = true
