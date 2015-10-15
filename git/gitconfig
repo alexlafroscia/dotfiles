@@ -77,3 +77,5 @@
 [core]
     excludesfile = ~/.gitignore_global
     editor = vim
+[rerere]
+  enabled = 1
