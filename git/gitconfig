@@ -1,5 +1,5 @@
 [user]
-    editor = vim
+    editor = /usr/local/bin/nvim
     email = alex@lafroscia.com
     name = Alex LaFroscia
 [alias]
@@ -76,7 +76,7 @@
     default = tracking
 [core]
     excludesfile = ~/.gitignore_global
-    editor = vim
+    editor = nvim
 [rerere]
     enabled = 1
 [filter "lfs"]
