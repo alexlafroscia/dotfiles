@@ -9,7 +9,7 @@ set shell=/usr/local/bin/zsh
 " Theme
 syntax enable
 set background=dark
-colorscheme base16-tomorrow
+colorscheme gruvbox
 
 set backspace=2   " Backspace deletes like most programs in insert mode
 set nobackup
@@ -98,7 +98,25 @@ noremap <leader>tb :TagbarToggle<cr>
 " Smarter pasting
 nnoremap <Leader>p :set invpaste paste?<CR>
 
-" Smart indent when entering insert mode with i on empty lines
+" -- Visual Mode Seach ---------------------------------------------------------
+" function! RangeSearch(direction)
+"   call inputsave()
+"   let g:srchstr = input(a:direction)
+"   call inputrestore()
+"   if strlen(g:srchstr) > 0
+"     let g:srchstr = g:srchstr.
+"           \ '\%>'.(line("'<")-1).'l'.
+"           \ '\%<'.(line("'>")+1).'l'
+"   else
+"     let g:srchstr = ''
+"   endif
+" endfunction
+" vnoremap <silent> / :<C-U>call RangeSearch('/')<CR>:if strlen(g:srchstr) > 0\|exec '/'.g:srchstr\|endif<CR>
+" vnoremap <silent> ? :<C-U>call RangeSearch('?')<CR>:if strlen(g:srchstr) > 0\|exec '?'.g:srchstr\|endif<CR>
+vnoremap / <Esc>/\%><C-R>=line("'<")-1<CR>l\%<<C-R>=line("'>")+1<CR>l
+vnoremap ? <Esc>?\%><C-R>=line("'<")-1<CR>l\%<<C-R>=line("'>")+1<CR>l
+
+" -- Smart indent when entering insert mode with i on empty lines --------------
 function! IndentWithI()
   if len(getline('.')) == 0
     return "\"_ddO"
@@ -108,13 +126,13 @@ function! IndentWithI()
 endfunction
 nnoremap <expr> i IndentWithI()
 
-" Open folder in finder
+" -- Open folder in finder -----------------------------------------------------
 function! OpenInFinder()
   call system('open ' . getcwd())
 endfunction
 nnoremap <leader>f :call OpenInFinder()<CR>
 
-" Open current file in Marked
+" -- Open current file in Marked -----------------------------------------------
 function! MarkedPreview()
   :w
   exec ':silent !open -a "Marked 2.app" ' . shellescape('%:p')
@@ -122,13 +140,13 @@ function! MarkedPreview()
 endfunction
 nnoremap <leader>md :call MarkedPreview()<CR>
 
-" Open current repo in Tower
+" -- Open current repo in Tower ------------------------------------------------
 function! OpenInGitTower()
   call system('gittower ' . getcwd())
 endfunction
 nnoremap <leader>gt :call OpenInGitTower()<CR>
 
-" Open current directory in Atom
+" -- Open current directory in Atom --------------------------------------------
 function! OpenInAtom()
   :w
   exec ':silent !atom ' . shellescape('%:p')

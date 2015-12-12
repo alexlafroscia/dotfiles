@@ -1,7 +1,3 @@
-" Use Vim settings, rather then Vi settings. This setting must be as early as
-" possible, as it has side effects.
-set nocompatible
-
 " Functions used for loading additional config
 function! LanguageConfig(filename)
   let l:filename = "lang_config/" . a:filename . ".vim"
@@ -13,8 +9,8 @@ function! PluginConfig(filename)
   exec "runtime " . l:filename
 endfunction
 
-" Config file paths to make '.dotfiles/vim' visible to runtime
-let &runtimepath .= ",$HOME/.dotfiles/vim"
+" Config file paths to make '.dotfiles/nvim' visible to runtime
+let &runtimepath .= ",$HOME/.dotfiles/nvim"
 
 augroup vimrcEx
   autocmd!
@@ -28,25 +24,28 @@ augroup vimrcEx
   call PluginConfig("emmet-vim")
   call PluginConfig("goyo")
   call PluginConfig("incsearch")
+  call PluginConfig("neomake")
   call PluginConfig("nerdtree")
   call PluginConfig("python-mode")
   call PluginConfig("supertab")
-  call PluginConfig("syntastic")
   call PluginConfig("tagbar")
   call PluginConfig("ultisnips")
   call PluginConfig("vim-airline")
   call PluginConfig("vim-go")
+  call PluginConfig("vim-jsx")
   call PluginConfig("vim-markdown")
   call PluginConfig("vim-mustache-handlebars")
   call PluginConfig("vim-pencil")
   call PluginConfig("vim-rails")
 
   " Language Configuration
+  call LanguageConfig("c")
   call LanguageConfig("css")
   call LanguageConfig("go")
   call LanguageConfig("java")
   call LanguageConfig("markdown")
   call LanguageConfig("ruby")
+  call LanguageConfig("python")
   call LanguageConfig("vim")
   call LanguageConfig("wiki")
 augroup END

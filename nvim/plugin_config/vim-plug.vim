@@ -8,16 +8,17 @@ endif
 call plug#begin('~/.vim/plugged')
 
 " Editor Extensions
-Plug 'altercation/vim-colors-solarized'   " So pretty!
-Plug 'NLKNguyen/papercolor-theme'         " Great, light theme
+Plug 'morhetz/gruvbox'
 Plug 'ctrlpvim/ctrlp.vim'                 " Gotta go fast!
 Plug 'bling/vim-airline'                  " Handy info
-Plug 'scrooloose/syntastic'               " Linting in Vim
+" Plug 'scrooloose/syntastic'               " Linting in Vim
 Plug 'scrooloose/nerdtree',               { 'on': 'NERDTreeToggle' }
 Plug 'tpope/vim-surround'                 " Change word surroundings
 Plug 'tpope/vim-commentary'               " Comments stuff
 Plug 'tpope/vim-fugitive'                 " Git stuff in Vim
-Plug 'tpope/vim-dispatch'                 " Run tasks asychronously from Vim
+Plug 'jaxbot/github-issues.vim'
+Plug 'tpope/vim-dispatch'                 " Run tasks asychronously in Tmux
+Plug 'benekastah/neomake'                 " Run tasks asychronously in NeoVim
 Plug 'tpope/vim-projectionist'
 Plug 'airblade/vim-gitgutter'
 Plug 'vim-scripts/matchit.zip'            " More powerful % matching
@@ -29,24 +30,30 @@ Plug 'rking/ag.vim'                       " Search
 Plug 'haya14busa/incsearch.vim'           " Better search highlighting
 Plug 'romainl/vim-qlist'
 Plug 'Lokaltog/vim-easymotion'            " Move like the wind!
+Plug 'wellle/targets.vim'
 Plug 'vim-scripts/ctags.vim'              " ctags related stuff
 Plug 'majutsushi/tagbar'
-Plug 'editorconfig/editorconfig-vim'      " .editorconfig support
+" Plug 'editorconfig/editorconfig-vim'      " .editorconfig support
 Plug 'ryanoasis/vim-webdevicons'
 Plug 'jeffkreeftmeijer/vim-numbertoggle'  " Smarter line numbers
 Plug 'reedes/vim-pencil'                  " Markdown, Writing
 Plug 'beloglazov/vim-online-thesaurus'
 Plug 'davidoc/taskpaper.vim'
+Plug 'rizzatti/dash.vim'
 Plug 'junegunn/goyo.vim'
+Plug 'kshenoy/vim-signature'
 
 " Language-Specific Plugins
 Plug 'pangloss/vim-javascript',           { 'for': 'javascript' }
-" Plug 'marijnh/tern_for_vim',              { 'for': 'javascript', 'do': 'npm install' }
 Plug 'mxw/vim-jsx',                       { 'for': 'javascript' }
 Plug '~/projects/vim-plugins/vim-ember-cli'
-Plug 'kchmck/vim-coffee-script',          { 'for': 'coffeescript' }
+Plug '~/projects/vim-plugins/vim-babel-repl'
+Plug 'kchmck/vim-coffee-script',          { 'for': 'coffee' }
 Plug 'vim-ruby/vim-ruby',                 { 'for': 'ruby' }
 Plug 'tpope/vim-endwise',                 { 'for': 'ruby' }
+Plug 'wellbredgrapefruit/tomdoc.vim',     { 'for': 'ruby' }
+Plug 'tpope/vim-rails'
+Plug 'tpope/vim-bundler'
 Plug 'mattn/emmet-vim'
 Plug 'othree/html5.vim',                  { 'for': 'html' }
 Plug 'wting/rust.vim',                    { 'for': 'rust' }
@@ -60,5 +67,6 @@ Plug 'plasticboy/vim-markdown',           { 'for': 'markdown' }
 Plug 'bpdp/vim-java',                     { 'for': 'java' }
 Plug 'adragomir/javacomplete',            { 'for': 'java' }
 Plug 'klen/python-mode',                  { 'for': 'python' }
+Plug 'alfredodeza/pytest.vim',            { 'for': 'python' }
 
 call plug#end()
