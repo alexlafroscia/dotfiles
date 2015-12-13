@@ -1,7 +1,11 @@
+# -- Dotfiles Directory --------------------------------------------------------
+export XDG_CONFIG_HOME="$HOME/.config"
+export DOTFILES="$HOME/.dotfiles"
+
 # -- Zsh -----------------------------------------------------------------------
 # Path to your oh-my-zsh configuration.
 ZSH="$HOME/.oh-my-zsh"
-ZSH_CUSTOM="$HOME/.dotfiles/zsh/custom"
+ZSH_CUSTOM="$DOTFILES/zsh/custom"
 
 # -- Editor --------------------------------------------------------------------
 EDITOR="vim"
@@ -136,16 +140,15 @@ alias mux=tmuxinator
 
 alias fuck='$(thefuck $(fc -ln -1))'
 
-# -- Local Configuration -------------------------------------------------------
-if [[ -f "$HOME/.zshrc.local" ]]; then
-  source $HOME/.zshrc.local
-fi
-
-
-export PATH="$PATH:$HOME/.dotfiles/bin"
+# -- Add DOTFILES bin to PATH --------------------------------------------------
+export PATH="$PATH:$DOTFILES/bin"
 
 # -- Xiki ----------------------------------------------------------------------
 if [[ -f "$HOME/.xsh" ]]; then
   source $HOME/.xsh
 fi
 
+# -- Local Configuration -------------------------------------------------------
+if [[ -f "$DOTFILES/zsh/zshrc.local" ]]; then
+  source $DOTFILES/zsh/zshrc.local
+fi

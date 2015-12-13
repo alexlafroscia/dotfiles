@@ -9,8 +9,8 @@ function! PluginConfig(filename)
   exec "runtime " . l:filename
 endfunction
 
-" Config file paths to make '.dotfiles/nvim' visible to runtime
-let &runtimepath .= ",$HOME/.dotfiles/nvim"
+" Config file paths to make '$DOTFILES/nvim' visible to runtime
+let &runtimepath .= "," . $DOTFILES . "/nvim"
 
 augroup vimrcEx
   autocmd!
@@ -52,15 +52,14 @@ augroup END
 
 " -- Local config --------------------------------------------------------------
 "    If there are settings that are needed on this machine but that don't need
-"    to be synced to the Git repository, they can be put in .vimrc.local.  Those
-"    settings will be read anytime this file is read and will override any
+"    to be synced to the Git repository, they can be put in init.local.vim.
+"    Those settings will be read anytime this file is read and will override any
 "    settings in here.
-
-if filereadable($HOME . "/.vimrc.local")
-  source ~/.vimrc.local
+if filereadable($DOTFILES . "/nvim/init.local.vim")
+  source $DOTFILES/nvim/init.local.vim
 endif
 
 " Per-project local config
-if filereadable(glob('./.vimrc.local'))
-  source ./.vimrc.local
+if filereadable(glob('./init.vim'))
+  source ./init.vim
 endif
