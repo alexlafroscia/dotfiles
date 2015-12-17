@@ -20,6 +20,7 @@ augroup vimrcEx
   call LanguageConfig("all")
 
   " Plugin Configuration
+  call PluginConfig("ag")
   call PluginConfig("ctrlp")
   call PluginConfig("emmet-vim")
   call PluginConfig("goyo")
