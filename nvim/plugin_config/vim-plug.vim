@@ -21,6 +21,7 @@ Plug 'jaxbot/github-issues.vim'
 Plug 'tpope/vim-dispatch'                 " Run tasks asychronously in Tmux
 Plug 'benekastah/neomake'                 " Run tasks asychronously in NeoVim
 Plug 'tpope/vim-projectionist'
+Plug 'Shougo/deoplete.nvim',              { 'do': function('hooks#remote') }
 Plug 'airblade/vim-gitgutter'
 Plug 'vim-scripts/matchit.zip'            " More powerful % matching
 Plug 'edkolev/tmuxline.vim'               " Make the Tmux bar match Vim
