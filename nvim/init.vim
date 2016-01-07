@@ -59,8 +59,3 @@ augroup END
 if filereadable($DOTFILES . "/nvim/init.local.vim")
   source $DOTFILES/nvim/init.local.vim
 endif
-
-" Per-project local config
-if filereadable(glob('./init.vim'))
-  source ./init.vim
-endif
