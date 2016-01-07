@@ -9,7 +9,8 @@ call plug#begin('~/.vim/plugged')
 
 " Editor Extensions
 Plug 'morhetz/gruvbox'
-Plug 'ctrlpvim/ctrlp.vim'                 " Gotta go fast!
+Plug 'junegunn/fzf',                      { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 Plug 'bling/vim-airline'                  " Handy info
 " Plug 'scrooloose/syntastic'               " Linting in Vim
 Plug 'scrooloose/nerdtree',               { 'on': 'NERDTreeToggle' }
@@ -26,7 +27,6 @@ Plug 'edkolev/tmuxline.vim'               " Make the Tmux bar match Vim
 Plug 'wincent/terminus'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'ervandew/supertab'                  " Autocomplete
-Plug 'rking/ag.vim'                       " Search
 Plug 'haya14busa/incsearch.vim'           " Better search highlighting
 Plug 'romainl/vim-qlist'
 Plug 'Lokaltog/vim-easymotion'            " Move like the wind!

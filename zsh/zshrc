@@ -148,6 +148,11 @@ if [[ -f "$HOME/.xsh" ]]; then
   source $HOME/.xsh
 fi
 
+# -- fzf -----------------------------------------------------------------------
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export FZF_DEFAULT_COMMAND='ag -g ""' # silver searcher respects .gitignore
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+
 # -- Local Configuration -------------------------------------------------------
 if [[ -f "$DOTFILES/zsh/zshrc.local" ]]; then
   source $DOTFILES/zsh/zshrc.local
