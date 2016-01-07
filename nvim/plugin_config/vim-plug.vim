@@ -1,6 +1,7 @@
 " Auto-Install vim-plug
-if empty(glob('~/.vim/autoload/plug.vim'))
-  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+let nvim_config_dir = '~/.config/nvim'
+if empty(glob(nvim_config_dir . '/autoload/plug.vim'))
+  silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs
     \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
   autocmd VimEnter * PlugInstall
 endif
@@ -12,7 +13,6 @@ Plug 'morhetz/gruvbox'
 Plug 'junegunn/fzf',                      { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'bling/vim-airline'                  " Handy info
-" Plug 'scrooloose/syntastic'               " Linting in Vim
 Plug 'scrooloose/nerdtree',               { 'on': 'NERDTreeToggle' }
 Plug 'tpope/vim-surround'                 " Change word surroundings
 Plug 'tpope/vim-commentary'               " Comments stuff
