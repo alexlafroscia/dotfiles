@@ -20,7 +20,6 @@ set ruler         " show the cursor position all the time
 set showcmd       " display incomplete commands
 set laststatus=2  " Always display the status line
 set autowrite     " Automatically :write before running commands
-set t_Co=256      " force vim to use 256 colors
 set noshowmode
 set timeoutlen=1000 ttimeoutlen=0
 set tabstop=2

@@ -33,22 +33,21 @@ Plug 'Lokaltog/vim-easymotion'            " Move like the wind!
 Plug 'wellle/targets.vim'
 Plug 'vim-scripts/ctags.vim'              " ctags related stuff
 Plug 'majutsushi/tagbar'
-" Plug 'editorconfig/editorconfig-vim'      " .editorconfig support
+Plug 'editorconfig/editorconfig-vim'      " .editorconfig support
 Plug 'ryanoasis/vim-webdevicons'
 Plug 'jeffkreeftmeijer/vim-numbertoggle'  " Smarter line numbers
 Plug 'reedes/vim-pencil'                  " Markdown, Writing
-Plug 'beloglazov/vim-online-thesaurus'
-Plug 'davidoc/taskpaper.vim'
 Plug 'rizzatti/dash.vim'
 Plug 'junegunn/goyo.vim'
 Plug 'kshenoy/vim-signature'
+Plug 'junegunn/vim-peekaboo'
 
 " Language-Specific Plugins
 Plug 'pangloss/vim-javascript',           { 'for': 'javascript' }
 Plug 'mxw/vim-jsx',                       { 'for': 'javascript' }
+Plug 'rhysd/npm-debug-log.vim'
 Plug '~/projects/vim-plugins/vim-ember-cli'
 Plug '~/projects/vim-plugins/vim-babel-repl'
-Plug 'kchmck/vim-coffee-script',          { 'for': 'coffee' }
 Plug 'vim-ruby/vim-ruby',                 { 'for': 'ruby' }
 Plug 'tpope/vim-endwise',                 { 'for': 'ruby' }
 Plug 'wellbredgrapefruit/tomdoc.vim',     { 'for': 'ruby' }
