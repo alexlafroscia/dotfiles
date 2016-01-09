@@ -1,7 +1,8 @@
 " Run checker when a file is openned, saved
 autocmd! BufRead,BufWritePost * Neomake
 
-let g:neomake_javascript_enabled_makers = ['eslint']
+let g:neomake_javascript_enabled_makers = ['jshint', 'jscs']
+let g:neomake_jsx_enabled_makers = ['jshint', 'jscs']
 let g:neomake_java_enabled_makers = ['javac']
 let g:neomake_ruby_enabled_makers = ['rubocop']
 let g:neomake_python_enabled_makers = ['flake8']
