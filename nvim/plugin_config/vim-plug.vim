@@ -28,6 +28,8 @@ Plug 'jeffkreeftmeijer/vim-numbertoggle'  " Smarter line numbers
 Plug 'wellle/targets.vim'
 Plug 'kshenoy/vim-signature'
 Plug 'haya14busa/incsearch.vim'           " Better search highlighting
+Plug 'haya14busa/incsearch-easymotion.vim'
+Plug 'haya14busa/incsearch-fuzzy.vim'
 
 " Editing
 Plug 'tpope/vim-surround'                 " Change word surroundings
