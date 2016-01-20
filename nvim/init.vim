@@ -38,17 +38,6 @@ augroup vimrcEx
   call PluginConfig("vim-mustache-handlebars")
   call PluginConfig("vim-pencil")
   call PluginConfig("vim-rails")
-
-  " Language Configuration
-  call LanguageConfig("c")
-  call LanguageConfig("css")
-  call LanguageConfig("go")
-  call LanguageConfig("java")
-  call LanguageConfig("markdown")
-  call LanguageConfig("ruby")
-  call LanguageConfig("python")
-  call LanguageConfig("vim")
-  call LanguageConfig("wiki")
 augroup END
 
 " -- Local config --------------------------------------------------------------
