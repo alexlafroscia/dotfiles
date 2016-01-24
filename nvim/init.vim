@@ -27,6 +27,7 @@ augroup vimrcEx
   call PluginConfig("incsearch")
   call PluginConfig("neomake")
   call PluginConfig("nerdtree")
+  call PluginConfig("pytest.vim")
   call PluginConfig("python-mode")
   call PluginConfig("supertab")
   call PluginConfig("tagbar")
