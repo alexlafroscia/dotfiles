@@ -39,6 +39,7 @@ augroup vimrcEx
   call PluginConfig("vim-mustache-handlebars")
   call PluginConfig("vim-pencil")
   call PluginConfig("vim-rails")
+  call PluginConfig("vim-table-mode")
 augroup END
 
 " -- Local config --------------------------------------------------------------
