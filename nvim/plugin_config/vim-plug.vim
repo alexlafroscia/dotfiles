@@ -35,7 +35,6 @@ Plug 'haya14busa/incsearch-fuzzy.vim'
 " Editing
 Plug 'tpope/vim-surround'                 " Change word surroundings
 Plug 'tpope/vim-commentary'               " Comments stuff
-Plug 'junegunn/vim-peekaboo'
 Plug 'dhruvasagar/vim-table-mode'
 
 " Git
