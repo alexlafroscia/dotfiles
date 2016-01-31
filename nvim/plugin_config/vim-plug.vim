@@ -9,7 +9,7 @@ call plug#begin('~/.vim/plugged')
 
 " UI
 Plug 'morhetz/gruvbox'
-Plug 'bling/vim-airline'                  " Handy info
+Plug 'vim-airline/vim-airline'            " Handy info
 Plug 'retorillo/airline-tablemode.vim'
 Plug 'edkolev/tmuxline.vim'               " Make the Tmux bar match Vim
 Plug 'ryanoasis/vim-webdevicons'
