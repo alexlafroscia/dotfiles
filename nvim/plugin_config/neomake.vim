@@ -1,8 +1,37 @@
 " Run checker when a file is openned, saved
 autocmd! BufRead,BufWritePost * Neomake
 
-let g:neomake_javascript_enabled_makers = ['jshint', 'jscs']
-let g:neomake_jsx_enabled_makers = ['jshint', 'jscs']
+function! s:BreakOffLastPath(string)
+  let array = split(a:string, '/')
+  if len(array) == 1
+    return '/'
+  endif
+  return '/' . join(array[0:len(array) - 2], '/')
+endfunction
+
+function! s:SearchForFile(name)
+  let path = getcwd()
+  while path != '/' && !filereadable(path . '/' . a:name)
+    let path = s:BreakOffLastPath(path)
+  endwhile
+  return len(path) > 1
+endfunction
+
+" Dynamically set javascript makers
+let js_makers = []
+if s:SearchForFile('.jshintrc')
+  call add(js_makers, 'jshint')
+endif
+if s:SearchForFile('.jscsrc')
+  call add(js_makers, 'jscs')
+endif
+if s:SearchForFile('.eslintrc')
+  call add(js_makers, 'eslint')
+endif
+let g:neomake_javascript_enabled_makers = js_makers
+let g:neomake_jsx_enabled_makers = []
+
+" Other makers
 let g:neomake_java_enabled_makers = ['javac']
 let g:neomake_ruby_enabled_makers = ['rubocop']
 let g:neomake_python_enabled_makers = ['flake8']
