@@ -25,6 +25,7 @@ augroup vimrcEx
   call PluginConfig("fzf")
   call PluginConfig("goyo")
   call PluginConfig("incsearch")
+  call PluginConfig("jedi-vim")
   call PluginConfig("neomake")
   call PluginConfig("nerdtree")
   call PluginConfig("pytest.vim")
