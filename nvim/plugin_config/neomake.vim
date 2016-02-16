@@ -25,11 +25,11 @@ endif
 if s:SearchForFile('.jscsrc')
   call add(js_makers, 'jscs')
 endif
-if s:SearchForFile('.eslintrc')
+if s:SearchForFile('.eslintrc') || s:SearchForFile('.eslintrc.js')
   call add(js_makers, 'eslint')
 endif
 let g:neomake_javascript_enabled_makers = js_makers
-let g:neomake_jsx_enabled_makers = []
+let g:neomake_jsx_enabled_makers = js_makers
 
 " Other makers
 let g:neomake_java_enabled_makers = ['javac']
