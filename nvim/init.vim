@@ -1,51 +1,3 @@
-" Load vim-plug plugins {{{
-
-" Helper functions {{{
-" Functions used for loading additional config
-function! LanguageConfig(filename)
-  let l:filename = "lang_config/" . a:filename . ".vim"
-  exec "runtime " . l:filename
-endfunction
-
-function! PluginConfig(filename)
-  let l:filename = "plugin_config/" . a:filename . ".vim"
-  exec "runtime " . l:filename
-endfunction
-" }}}
-
-" Config file paths to make '$DOTFILES/nvim' visible to runtime
-let &runtimepath .= "," . $DOTFILES . "/nvim"
-
-augroup vimrcEx
-  autocmd!
-
-  " Load configuration common across all filetypes
-  call PluginConfig("vim-plug")
-
-  " Plugin Configuration
-  call PluginConfig("deoplete")
-  call PluginConfig("emmet-vim")
-  call PluginConfig("fzf")
-  call PluginConfig("goyo")
-  call PluginConfig("incsearch")
-  call PluginConfig("jedi-vim")
-  call PluginConfig("neomake")
-  call PluginConfig("nerdtree")
-  call PluginConfig("pytest.vim")
-  call PluginConfig("python-mode")
-  call PluginConfig("supertab")
-  call PluginConfig("tagbar")
-  call PluginConfig("ultisnips")
-  call PluginConfig("vim-airline")
-  call PluginConfig("vim-go")
-  call PluginConfig("vim-jsx")
-  call PluginConfig("vim-markdown")
-  call PluginConfig("vim-mustache-handlebars")
-  call PluginConfig("vim-pencil")
-  call PluginConfig("vim-rails")
-  call PluginConfig("vim-table-mode")
-augroup END
-" }}}1
 " General Config {{{
 
 " Leader
@@ -89,10 +41,10 @@ set hlsearch
 " Lifted from StackOverflow user Jeremy W. Sherman
 " http://stackoverflow.com/a/3765575/2250435
 if exists('+colorcolumn')
-    set textwidth=80
-    set colorcolumn=+1
+  set textwidth=80
+  set colorcolumn=+1
 else
-    au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
+  au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
 endif
 
 " When editing a file, always jump to the last known cursor position.
@@ -115,26 +67,7 @@ set splitright
 
 " Normal Mode Remaps {{{
 
-" Force you to get used to the Vim keybindings
-nnoremap <Left> :echoe "Use h"<CR>
-nnoremap <Right> :echoe "Use l"<CR>
-nnoremap <Up> :echoe "Use k"<CR>
-nnoremap <Down> :echoe "Use j"<CR>
-
-" Quicker window movement
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-h> <C-w>h
-nnoremap <C-l> <C-w>l
-
 nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
-
-" Easier use of tabs
-nnoremap tn :tabnew<CR>
-nnoremap tx :tabclose<CR>
-
-" Custom Keybindings
-noremap <leader>tb :TagbarToggle<cr>
 
 " Smarter pasting
 nnoremap <Leader>p :set invpaste paste?<CR>
@@ -197,15 +130,56 @@ inoremap <Tab> <c-r>=InsertTabWrapper()<cr>
 inoremap <S-Tab> <c-n>
 " }}}
 " }}}
+" Load vim-plug plugins {{{
+
+" Helper functions {{{
+" Functions used for loading additional config
+function! LanguageConfig(filename)
+  let l:filename = "lang_config/" . a:filename . ".vim"
+  exec "runtime " . l:filename
+endfunction
+
+function! PluginConfig(filename)
+  let l:filename = "plugin_config/" . a:filename . ".vim"
+  exec "runtime " . l:filename
+endfunction
+" }}}
+
+" Config file paths to make '$DOTFILES/nvim' visible to runtime
+let &runtimepath .= "," . $DOTFILES . "/nvim"
+
+augroup vimrcEx
+  autocmd!
+  call PluginConfig("vim-plug")
+  call PluginConfig("deoplete")
+  call PluginConfig("gruvbox")
+  call PluginConfig("emmet-vim")
+  call PluginConfig("fzf")
+  call PluginConfig("goyo")
+  call PluginConfig("incsearch")
+  call PluginConfig("jedi-vim")
+  call PluginConfig("neomake")
+  call PluginConfig("nerdtree")
+  call PluginConfig("pytest.vim")
+  call PluginConfig("python-mode")
+  call PluginConfig("supertab")
+  call PluginConfig("tagbar")
+  call PluginConfig("ultisnips")
+  call PluginConfig("vim-airline")
+  call PluginConfig("vim-go")
+  call PluginConfig("vim-jsx")
+  call PluginConfig("vim-markdown")
+  call PluginConfig("vim-mustache-handlebars")
+  call PluginConfig("vim-pencil")
+  call PluginConfig("vim-rails")
+  call PluginConfig("vim-table-mode")
+augroup END
+" }}}1
 " Theme {{{
 syntax enable
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
 set background=dark
-
-" Gruvbox
-let g:gruvbox_contrast_dark = 'medium'
-let g:gruvbox_contrast_light = 'medium'
 colorscheme gruvbox
 
 " Setup Terminal Colors For Neovim: {{{

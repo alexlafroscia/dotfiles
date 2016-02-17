@@ -1,3 +1,6 @@
+" Shortcut to open TagBar
+noremap <leader>tb :TagbarToggle<cr>
+
 " Add support for markdown files in tagbar.
 let g:tagbar_type_markdown = {
     \ 'ctagstype': 'markdown',
