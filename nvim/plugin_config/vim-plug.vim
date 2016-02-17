@@ -80,7 +80,9 @@ Plug 'godlygeek/tabular',                 { 'for': 'markdown' } " Needed for vim
 Plug 'plasticboy/vim-markdown',           { 'for': 'markdown' }
 Plug 'bpdp/vim-java',                     { 'for': 'java' }
 Plug 'adragomir/javacomplete',            { 'for': 'java' }
-" Plug 'klen/python-mode',                  { 'for': 'python' }
+Plug 'klen/python-mode',                  { 'for': 'python' }
+Plug 'zchee/deoplete-jedi',               { 'for': 'python' }
+Plug 'davidhalter/jedi-vim',              { 'for': 'python' }
 Plug 'alfredodeza/pytest.vim',            { 'for': 'python' }
 
 Plug 'neovim/node-host',                  { 'do': 'npm install' }
