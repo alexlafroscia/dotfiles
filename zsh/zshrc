@@ -153,6 +153,14 @@ fi
 export FZF_DEFAULT_COMMAND='ag -g ""' # silver searcher respects .gitignore
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
+# -- OS-Specific Config --------------------------------------------------------
+if [[ $(uname) == 'Darwin' ]]; then
+  # Load OSX config
+  source $DOTFILES/zsh/zshrc.osx
+elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
+  # Load Linux config
+fi
+
 # -- Local Configuration -------------------------------------------------------
 if [[ -f "$DOTFILES/zsh/zshrc.local" ]]; then
   source $DOTFILES/zsh/zshrc.local
