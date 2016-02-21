@@ -40,6 +40,7 @@ Plug 'dhruvasagar/vim-table-mode'
 " Git
 Plug 'tpope/vim-fugitive'                 " Git stuff in Vim
 Plug 'airblade/vim-gitgutter'
+Plug 'junegunn/gv.vim',                   { 'on': 'GV' }
 
 " Task Running
 Plug 'tpope/vim-dispatch'                 " Run tasks asychronously in Tmux
@@ -59,9 +60,9 @@ Plug 'rizzatti/dash.vim'
 " Language-Specific Plugins
 Plug 'pangloss/vim-javascript',           { 'for': 'javascript' }
 Plug 'mxw/vim-jsx',                       { 'for': 'javascript' }
+Plug 'jelera/vim-javascript-syntax',      { 'for': 'javascript' }
 Plug 'rhysd/npm-debug-log.vim'
 Plug '~/projects/vim-plugins/vim-ember-cli'
-Plug '~/projects/vim-plugins/vim-babel-repl'
 Plug 'reedes/vim-pencil'                  " Markdown, Writing
 Plug 'vim-ruby/vim-ruby',                 { 'for': 'ruby' }
 Plug 'tpope/vim-endwise',                 { 'for': 'ruby' }
@@ -69,7 +70,6 @@ Plug 'wellbredgrapefruit/tomdoc.vim',     { 'for': 'ruby' }
 Plug 'tpope/vim-rails'
 Plug 'tpope/vim-bundler'
 Plug 'mattn/emmet-vim'
-" Plug 'othree/html5.vim',                  { 'for': 'html' }
 Plug 'wting/rust.vim',                    { 'for': 'rust' }
 Plug 'cespare/vim-toml',                  { 'for': 'rust' }
 Plug 'mustache/vim-mustache-handlebars'
