@@ -1,7 +1,5 @@
-" Enable spellchecking for Markdown
-" Also, indent 4 spaces
-autocmd FileType markdown setlocal spell shiftwidth=4 tabstop=4
-
-autocmd BufRead,BufNewFile *.md set filetype=markdown
+setlocal spell
+setlocal shiftwidth=4
+setlocal tabstop=4
 
 let g:markdown_fenced_languages = ['html', 'python', 'bash=sh']
