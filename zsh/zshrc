@@ -148,6 +148,10 @@ if [[ -f "$HOME/.xsh" ]]; then
   source $HOME/.xsh
 fi
 
+# -- NVM -----------------------------------------------------------------------
+export NVM_DIR=$HOME/.nvm
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+
 # -- fzf -----------------------------------------------------------------------
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_COMMAND='ag -g ""' # silver searcher respects .gitignore
