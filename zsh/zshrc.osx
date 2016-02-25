@@ -1,2 +1,6 @@
 # -- ant -----------------------------------------------------------------------
-export ANT_ROOT="$(brew --prefix ant)"
+export ANT_ROOT="$(brew --prefix ant)/bin"
+
+# -- Android Development -------------------------------------------------------
+export ANDROID_SDK_ROOT=$HOME/Library/Android/sdk
+export NDK_ROOT=/opt/android-ndk-r10e
