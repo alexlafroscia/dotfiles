@@ -40,7 +40,8 @@ POWERLEVEL9K_SHORTEN_DIR_LENGTH=true
 POWERLEVEL9K_SHORTEN_STRATEGY="truncate_with_package_name"
 
 # -- ZSH Plugins ---------------------------------------------------------------
-plugins=(git brew tmux rbenv bower bundle git-flow virtualenvwrapper)
+plugins=(git brew tmux rbenv bower bundle git-flow)
+if exists "virtualenvwrapper"; then plugins+=virtualenvwrapper; fi
 
 fpath=($DOTFILES/zsh/custom/completion $fpath)
 
