@@ -58,3 +58,16 @@ else
 fi
 
 echo ""
+
+# -- Neovim --------------------------------------------------------------------
+
+if exists "nvim"; then
+  echo_item "Neovim is already installed" green
+else
+  if get_boolean_response "Do you want to install Neovim?"; then
+    brew install --HEAD neovim
+    curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  else
+    echo_item "Skipping Neovim install" red
+  fi
+fi

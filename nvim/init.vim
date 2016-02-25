@@ -150,14 +150,6 @@ nnoremap <leader>a :call OpenInAtom()<CR>
 " }}}
 " Section: Load vim-plug plugins {{{
 
-" Install vim-plug automatically {{{2
-if empty(glob('~/.config/nvim/autoload/plug.vim'))
-  echom 'test'
-  silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs
-    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  autocmd VimEnter * PlugInstall
-endif
-" }}}2
 " Load plugins {{{2
 call plug#begin()
 

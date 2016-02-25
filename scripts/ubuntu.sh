@@ -58,14 +58,15 @@ echo ""
 # -- Neovim --------------------------------------------------------------------
 
 if exists "nvim"; then
-  echo_item "neovim is already installed" green
+  echo_item "Neovim is already installed" green
 else
-  if get_boolean_response "Do you want to install neovim?"; then
+  if get_boolean_response "Do you want to install Neovim?"; then
     sudo apt-get --yes --force-yes install software-properties-common
     sudo add-apt-repository ppa:neovim-ppa/unstable
     sudo apt-get update
     sudo apt-get --yes --force-yes install neovim python-dev python-pip python3-dev python3-pip
+    curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
   else
-    echo_item "Skipping neovim install" red
+    echo_item "Skipping Neovim install" red
   fi
 fi
