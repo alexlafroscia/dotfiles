@@ -3,7 +3,7 @@
 let mapleader = " "
 let &runtimepath .= "," . $DOTFILES . "/nvim"  " Add DOTFILES to runtimepath
 
-set shell=/usr/local/bin/zsh " Set bash as the prompt for Vim
+set shell=zsh " Set bash as the prompt for Vim
 set backspace=2   " Backspace deletes like most programs in insert mode
 set nobackup
 set nowritebackup
@@ -149,6 +149,7 @@ nnoremap <leader>a :call OpenInAtom()<CR>
 
 " Install vim-plug automatically {{{2
 if empty(glob('~/.config/nvim/autoload/plug.vim'))
+  echom 'test'
   silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs
     \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
   autocmd VimEnter * PlugInstall
