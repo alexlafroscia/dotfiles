@@ -68,6 +68,9 @@ if has("autocmd")
                                         \ | set textwidth=0
 
   autocmd BufRead,BufNewFile *.md set filetype=markdown
+
+  autocmd BufRead,BufNewFile .eslintrc,.jscsrc,.jshintrc set ft=json
+
 endif
 " }}}1
 " Section: Remaps {{{1
