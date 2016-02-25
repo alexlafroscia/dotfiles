@@ -27,22 +27,6 @@ fi
 
 echo ""
 
-# -- npm -----------------------------------------------------------------------
-
-if exists "npm"; then
-  echo_item "npm is already installed" green
-else
-  if get_boolean_response "Do you want to install npm?"; then
-    curl -sL https://deb.nodesource.com/setup | sudo bash -
-    sudo apt-get install -y nodejs
-    source ./node.sh
-  else
-    echo_item "Skipping npm install" red
-  fi
-fi
-
-echo ""
-
 # -- zsh -----------------------------------------------------------------------
 
 if exists "zsh"; then
@@ -70,3 +54,18 @@ else
 fi
 
 echo ""
+
+# -- Neovim --------------------------------------------------------------------
+
+if exists "nvim"; then
+  echo_item "neovim is already installed" green
+else
+  if get_boolean_response "Do you want to install neovim?"; then
+    sudo apt-get --yes --force-yes install software-properties-common
+    sudo add-apt-repository ppa:neovim-ppa/unstable
+    sudo apt-get update
+    sudo apt-get --yes --force-yes install neovim python-dev python-pip python3-dev python3-pip
+  else
+    echo_item "Skipping neovim install" red
+  fi
+fi
