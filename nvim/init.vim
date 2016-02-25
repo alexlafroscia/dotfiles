@@ -88,6 +88,13 @@ function! IndentWithI()
   endif
 endfunction
 nnoremap <expr> i IndentWithI()
+
+" Tab Shortcuts {{{3
+nnoremap <C-t>n  :tabnew<CR>
+nnoremap <C-t>l  :tabnext<CR>
+nnoremap <C-t>h  :tabprevious<CR>
+nnoremap <C-t>c  :tabclose<CR>
+" }}3
 " }}}2
 " Insert Mode Remaps {{{2
 
@@ -308,8 +315,7 @@ if has('nvim')
   " light4 + light1
   let g:terminal_color_7 = "#a89984"
   let g:terminal_color_15 = "#ebdbb2"
-endif
-" }}}
+endif " }}}
 " }}}
 " Section: Local-Machine Config {{{
 
