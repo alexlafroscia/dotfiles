@@ -25,8 +25,8 @@ endif
 if s:SearchForFile('.jscsrc')
   call add(js_makers, 'jscs')
 endif
-if s:SearchForFile('.eslintrc') || s:SearchForFile('.eslintrc.js')
-  call add(js_makers, 'eslint')
+if s:SearchForFile('.eslintrc') || s:SearchForFile('.eslintrc.js') || s:SearchForFile('.eslintrc.json')
+  call add(js_makers, 'eslint_d')
 endif
 let g:neomake_javascript_enabled_makers = js_makers
 let g:neomake_jsx_enabled_makers = js_makers
@@ -35,6 +35,9 @@ let g:neomake_jsx_enabled_makers = js_makers
 let g:neomake_java_enabled_makers = ['javac']
 let g:neomake_ruby_enabled_makers = ['rubocop']
 let g:neomake_python_enabled_makers = ['flake8']
+let g:neomake_scss_enabled_checkers = ['scsslint']
+
+" Custom makers
 let g:neomake_python_flake8_maker = {
   \ 'exe': $PYENV_ROOT . '/versions/3.5.0/bin/flake8',
   \ 'errorformat':
@@ -43,4 +46,3 @@ let g:neomake_python_flake8_maker = {
       \ '%A%f:%l: %t%n %m,' .
       \ '%-G%.%#'
   \ }
-let g:neomake_scss_enabled_checkers = ['scsslint']
