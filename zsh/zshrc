@@ -20,12 +20,9 @@ export NVM_DIR=$HOME/.nvm
 # Loaded at the end of the file to give other plugins a change to initialzie
 # before looking for them, such as NVM and RBENV
 
-ZSH_THEME="powerlevel9k-dev-package-name"
+ZSH_THEME="powerlevel9k/powerlevel9k"
 
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status)
-if exists "rbenv"; then
-  POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS+=ruby_version
-fi
 if exists "nvm"; then
   POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS+=nvm
 fi
