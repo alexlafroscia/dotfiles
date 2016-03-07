@@ -73,50 +73,6 @@ if has("autocmd")
 
 endif
 " }}}1
-" Section: Remaps {{{1
-
-" Normal Mode Remaps {{{2
-
-nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
-
-" Smarter pasting
-nnoremap <Leader>p :set invpaste paste?<CR>
-
-" -- Smart indent when entering insert mode with i on empty lines --------------
-function! IndentWithI()
-  if len(getline('.')) == 0
-    return "\"_ddO"
-  else
-    return "i"
-  endif
-endfunction
-nnoremap <expr> i IndentWithI()
-
-" Tab Shortcuts {{{3
-nnoremap <C-t>n  :tabnew<CR>
-nnoremap <C-t>l  :tabnext<CR>
-nnoremap <C-t>h  :tabprevious<CR>
-nnoremap <C-t>c  :tabclose<CR>
-" }}3
-" }}}2
-" Insert Mode Remaps {{{2
-
-" Tab completion
-" will insert tab at beginning of line,
-" will use completion if not at beginning
-set wildmode=list:longest,list:full
-function! InsertTabWrapper()
-    let col = col('.') - 1
-    if !col || getline('.')[col - 1] !~ '\k'
-        return "\<tab>"
-    else
-        return "\<c-p>"
-    endif
-endfunction
-inoremap <Tab> <c-r>=InsertTabWrapper()<cr>
-inoremap <S-Tab> <c-n>
-" }}}2
-" }}}1
 " Section: External Functions {{{
 
 " Open folder in finder {{{
@@ -199,8 +155,9 @@ Plug 'christoomey/vim-tmux-navigator'
 
 " Autocomplete
 Plug 'Shougo/deoplete.nvim',              { 'do': function('hooks#remote') }
+Plug 'zchee/deoplete-jedi'
+Plug 'carlitux/deoplete-ternjs'
 Plug 'SirVer/ultisnips',                  { 'do': function('hooks#remote') }
-Plug 'ervandew/supertab'
 
 " Misc.
 Plug 'editorconfig/editorconfig-vim'
@@ -210,6 +167,7 @@ Plug 'rizzatti/dash.vim'
 Plug 'pangloss/vim-javascript',           { 'for': 'javascript' }
 Plug 'mxw/vim-jsx',                       { 'for': 'javascript' }
 Plug 'jelera/vim-javascript-syntax',      { 'for': 'javascript' }
+Plug 'ternjs/tern_for_vim',               { 'do': 'npm install' }
 Plug 'rhysd/npm-debug-log.vim'
 Plug '~/projects/vim-plugins/vim-ember-cli'
 Plug 'reedes/vim-pencil'                  " Markdown, Writing
@@ -230,7 +188,6 @@ Plug 'plasticboy/vim-markdown',           { 'for': 'markdown' }
 Plug 'bpdp/vim-java',                     { 'for': 'java' }
 Plug 'adragomir/javacomplete',            { 'for': 'java' }
 Plug 'klen/python-mode',                  { 'for': 'python' }
-Plug 'zchee/deoplete-jedi',               { 'for': 'python' }
 Plug 'davidhalter/jedi-vim',              { 'for': 'python' }
 Plug 'alfredodeza/pytest.vim',            { 'for': 'python' }
 
@@ -257,8 +214,8 @@ augroup vimrcEx
   call PluginConfig("nerdtree")
   call PluginConfig("pytest.vim")
   call PluginConfig("python-mode")
-  call PluginConfig("supertab")
   call PluginConfig("tagbar")
+  call PluginConfig("tern")
   call PluginConfig("ultisnips")
   call PluginConfig("vim-airline")
   call PluginConfig("vim-go")
@@ -269,6 +226,51 @@ augroup vimrcEx
   call PluginConfig("vim-rails")
   call PluginConfig("vim-table-mode")
 augroup END " }}}2
+" }}}1
+" Section: Remaps {{{1
+
+" Normal Mode Remaps {{{2
+
+nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
+
+" Smarter pasting
+nnoremap <Leader>p :set invpaste paste?<CR>
+
+" -- Smart indent when entering insert mode with i on empty lines --------------
+function! IndentWithI()
+  if len(getline('.')) == 0
+    return "\"_ddO"
+  else
+    return "i"
+  endif
+endfunction
+nnoremap <expr> i IndentWithI()
+
+" Tab Shortcuts {{{3
+nnoremap <C-t>n  :tabnew<CR>
+nnoremap <C-t>l  :tabnext<CR>
+nnoremap <C-t>h  :tabprevious<CR>
+nnoremap <C-t>c  :tabclose<CR>
+" }}3
+" }}}2
+" Insert Mode Remaps {{{2
+
+set completeopt-=preview
+function! InsertTabWrapper()
+  let col = col('.') - 1
+  if pumvisible()
+    return "\<C-n>"
+  elseif !col || getline('.')[col - 1] !~ '\k'
+    return "\<tab>"
+  else
+    return deoplete#mappings#manual_complete()
+  endif
+endfunction
+inoremap <silent> <Tab> <c-r>=InsertTabWrapper()<cr>
+inoremap <silent><expr> <S-Tab>
+  \ pumvisible() ? '<C-p>' : ''
+
+" }}}2
 " }}}1
 " Section: Theme {{{
 
