@@ -69,7 +69,7 @@ if has("autocmd")
 
   autocmd BufRead,BufNewFile *.md set filetype=markdown
 
-  autocmd BufRead,BufNewFile .eslintrc,.jscsrc,.jshintrc set ft=json
+  autocmd BufRead,BufNewFile .eslintrc,.jscsrc,.jshintrc,.babelrc set ft=json
 
 endif
 " }}}1
