@@ -4,8 +4,7 @@
     name = Alex LaFroscia
 [alias]
     # Add
-    ad = add
-    aa = add .
+    aa = add --all
 
     # Commit
     cm = commit -m
@@ -48,8 +47,13 @@
     psug = push upstream gh-pages
 
     # Logs
-    l  = log --pretty=oneline --decorate --abbrev-commit --max-count=15
-    ll = log --graph --pretty=format:'%Cred%h%Creset %an: %s %Creset%Cgreen(%cr)%Creset' --abbrev-commit --date=relative
+    head = !git r -1
+    h = !git head
+    r = !GIT_NO_PAGER=1 git l -30
+    ra = !git r --all
+    la = !git l --all
+    hp = "!. $DOTFILES/git/githelpers && show_git_head"
+    l = "!. $DOTFILES/git/githelpers && pretty_git_log"
 
     # Sync
     sync = plu && pso
@@ -83,3 +87,7 @@
     clean = git-lfs clean %f
     smudge = git-lfs smudge %f
     required = true
+[github]
+    user = alexlafroscia
+[credential]
+    helper = osxkeychain
