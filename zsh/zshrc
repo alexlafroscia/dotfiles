@@ -109,33 +109,6 @@ eval "$(rbenv init -)"
 
 # -- Functions -----------------------------------------------------------------
 
-tmuxx() {
-  tmux a || tmux new
-}
-
-function marked {
-  open -a "Marked 2.app" $@
-}
-
-pyserve() {
-  python -m SimpleHTTPServer
-}
-
-# Ctrl-z to bg/fg Vim
-# http://sheerun.net/2014/03/21/how-to-boost-your-vim-productivity/
-fancy-ctrl-z () {
-  if [[ $#BUFFER -eq 0 ]]; then
-    BUFFER="fg"
-    zle accept-line
-  else
-    zle push-input
-    zle clear-screen
-  fi
-}
-zle -N fancy-ctrl-z
-bindkey '^Z' fancy-ctrl-z
-
-# Extract
 # Extract archive based on file type
 # Taken from http://justinlilly.com/dotfiles/zsh.html
 extract () {
