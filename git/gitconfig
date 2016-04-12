@@ -9,6 +9,7 @@
     # Commit
     cm = commit -m
     ca = commit --amend -m
+    amend = commit --amend
 
     # Checkout
     co = checkout
@@ -32,19 +33,11 @@
     pl   = pull
     plo  = pull --rebase origin
     plom = pull --rebase origin master
-    plog = pull --rebase origin gh-pages
     plu  = pull --rebase upstream
     plum = pull --rebase upstream master
-    plug = pull --rebase upstream gh-pages
 
     # Push
-    ps   = push
-    pso  = push origin
-    psom = push origin master
-    psog = push origin gh-pages
-    psu  = push upstream
-    psum = push upstream master
-    psug = push upstream gh-pages
+    pf   = push --force-with-lease
 
     # Logs
     head = !git r -1
