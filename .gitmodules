@@ -1,3 +1,3 @@
 [submodule "zsh/custom/themes/powerlevel9k"]
 	path = zsh/custom/themes/powerlevel9k
-	url = https://github.com/alexlafroscia/powerlevel9k.git
+	url = https://github.com/bhilburn/powerlevel9k.git
