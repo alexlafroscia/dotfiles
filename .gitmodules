@@ -3,4 +3,4 @@
 	url = https://github.com/bhilburn/powerlevel9k.git
 [submodule "zsh/custom/themes/pure"]
 	path = zsh/custom/themes/pure
-	url = https://github.com/sindresorhus/pure.git
+	url = https://github.com/alexlafroscia/pure.git
