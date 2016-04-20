@@ -178,7 +178,7 @@ Plug 'tpope/vim-rails'
 Plug 'tpope/vim-bundler'
 Plug 'mattn/emmet-vim'
 Plug 'wting/rust.vim',                    { 'for': 'rust' }
-Plug 'cespare/vim-toml',                  { 'for': 'rust' }
+Plug 'cespare/vim-toml'
 Plug 'mustache/vim-mustache-handlebars'
 Plug 'groenewege/vim-less',               { 'for': 'less' }
 Plug 'cakebaker/scss-syntax.vim',         { 'for': 'scss' }
