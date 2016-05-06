@@ -18,7 +18,7 @@
 
 HASH="%C(yellow)%h%Creset"
 RELATIVE_TIME="%Cgreen(%ar)%Creset"
-AUTHOR="%C(bold blue)<%an>%Creset"
+AUTHOR="%C(bold blue)<%an><%G?>%Creset"
 REFS="%C(bold red)%d%Creset"
 SUBJECT="%s"
 
@@ -54,6 +54,9 @@ pretty_git_log() {
         sed -Ee 's/(^[^<]*) ago\)/\1)/' |
         # Replace (2 years, 5 months) with (2 years)
         sed -Ee 's/(^[^<]*), [[:digit:]]+ .*months?\)/\1)/' |
+        # Replace "Signed" and "Unsigned" marker
+        sed -Ee 's/<G>/🔒/' |
+        sed -Ee 's/<N>//' |
         # Line columns up based on } delimiter
         column -s '}' -t |
         # Color merge commits specially
@@ -63,6 +66,6 @@ pretty_git_log() {
             cat
         else
             # Page only if needed.
-            less --quit-if-one-screen --no-init --RAW-CONTROL-CHARS --chop-long-lines
+            less --quit-if-one-screen --no-init --RAW-CONTROL-CHARS --chop-long-lines --raw-control-chars
         fi
 }
