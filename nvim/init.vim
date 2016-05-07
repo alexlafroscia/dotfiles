@@ -191,6 +191,8 @@ Plug 'klen/python-mode',                  { 'for': 'python' }
 Plug 'davidhalter/jedi-vim',              { 'for': 'python' }
 Plug 'alfredodeza/pytest.vim',            { 'for': 'python' }
 Plug 'elixir-lang/vim-elixir'
+Plug 'thinca/vim-ref'  " Optional dependency fo elixir.nvim
+Plug 'awetzel/elixir.nvim',               { 'do': 'yes \| ./install.sh' }
 
 Plug 'neovim/node-host',                  { 'do': 'npm install' }
 
