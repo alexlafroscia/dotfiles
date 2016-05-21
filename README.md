@@ -46,6 +46,12 @@ this repo to manage your own.  If that's the case, make sure to edit the files
 within the `~/.dotfiles` repository, since the files in your home directory are
 actually just symlinks anyway.
 
+# Make `CAPSLOCK` Useful
+
+I hate `CAPSLOCK` and don't find it useful at all. However, is _does_ occupy a really useful place on the keyboard.  I've found the best use for it to be mapping it such that tapping it sends `ESC` and holding it works as `CONTROL`.  This way, you can hold it down using your pinky finger as a modifier, or give it a quick tap to pop out of `insert` mode in Vim.
+
+The instructions for doing this using Karabiner and Seil can be found [here](http://www.economyofeffort.com/2014/08/11/beyond-ctrl-remap-make-that-caps-lock-key-useful/).
+
 # Resetting Vim Plugins
 Under some circumstances, like with limited disk space (I've encountered this
 trying to use these dotfiles in a server that my school set up) you don't want
