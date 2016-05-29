@@ -11,5 +11,5 @@ function! JavaScriptBreakpoint(lnum)
   endif
 endfunction
 
-nnoremap <LEADER>b :call JavaScriptBreakpoint(line('.'))<CR>
+nnoremap <LocalLeader>b :call JavaScriptBreakpoint(line('.'))<CR>
 

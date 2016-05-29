@@ -1,1 +1,1 @@
-nmap <silent><Leader>t <Esc>:Pytest project<CR>
+nmap <silent><LocalLeader>t <Esc>:Pytest project<CR>
