@@ -9,7 +9,7 @@
     # Commit
     cm = commit -m
     ca = commit --amend -m
-    amend = commit --amend
+    amend = commit --amend --no-edit
 
     # Checkout
     co = checkout
