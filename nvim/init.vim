@@ -151,7 +151,7 @@ Plug 'junegunn/gv.vim',                   { 'on': 'GV' }
 Plug 'tpope/vim-dispatch'                 " Run tasks asychronously in Tmux
 Plug 'benekastah/neomake'                 " Run tasks asychronously in NeoVim
 Plug 'wincent/terminus'
-Plug 'christoomey/vim-tmux-navigator'
+Plug 'christoomey/vim-tmux-navigator',    { 'commit': 'c33a8a97028cac38040f1b8d9292337104026ad6' }
 
 " Autocomplete
 Plug 'Shougo/deoplete.nvim',              { 'do': function('hooks#remote') }
