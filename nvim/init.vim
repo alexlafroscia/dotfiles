@@ -249,12 +249,13 @@ function! IndentWithI()
 endfunction
 nnoremap <expr> i IndentWithI()
 
-" Tab Shortcuts {{{3
-nnoremap <C-t>n  :tabnew<CR>
-nnoremap <C-t>l  :tabnext<CR>
-nnoremap <C-t>h  :tabprevious<CR>
-nnoremap <C-t>c  :tabclose<CR>
-" }}3
+" Tab Shortcuts
+nnoremap th :tabfirst<CR>
+nnoremap tj :tabnext<CR>
+nnoremap tk :tabprev<CR>
+nnoremap tl :tablast<CR>
+nnoremap tn :tabnew<CR>
+nnoremap td :tabclose<CR>
 " }}}2
 " Insert Mode Remaps {{{2
 
