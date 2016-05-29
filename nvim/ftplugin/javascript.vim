@@ -1,4 +1,4 @@
-let g:js_breakpoint_cmd = 'debugger;'
+let b:js_breakpoint_cmd = 'debugger;'
 
 function! JavaScriptBreakpoint(lnum)
   let line = getline(a:lnum)
@@ -6,10 +6,9 @@ function! JavaScriptBreakpoint(lnum)
     normal dd
   else
     let plnum = prevnonblank(a:lnum)
-    call append(line('.')-1, repeat(' ', indent(plnum)).g:js_breakpoint_cmd)
+    call append(line('.')-1, repeat(' ', indent(plnum)).b:js_breakpoint_cmd)
     normal k
   endif
 endfunction
 
 nnoremap <LocalLeader>b :call JavaScriptBreakpoint(line('.'))<CR>
-
