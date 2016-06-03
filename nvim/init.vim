@@ -43,10 +43,14 @@ if exists('+colorcolumn')
 else
   au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
 endif " }}}2
-
-" Open new split panes to right and bottom, which feels more natural
+" Open new split panes to right and bottom, which feels more natural {{{2
 set splitbelow
 set splitright
+" }}}2
+" Point to the Python executables in `pyenv` {{{2
+let g:python_host_prog = $PYENV_ROOT . '/versions/2.7.10/bin/python'
+let g:python3_host_prog = $PYENV_ROOT . '/versions/3.5.0/bin/python'
+" }}}2
 " }}}1
 " Section: Autocommands {{{1
 " --------------------------
@@ -106,7 +110,7 @@ nnoremap <leader>a :call OpenInAtom()<CR>
 " }}}
 " Section: Load vim-plug plugins {{{
 
-" Load plugins {{{2
+" Specify plugins {{{2
 call plug#begin()
 
 " UI
@@ -199,36 +203,13 @@ Plug 'neovim/node-host',                  { 'do': 'npm install' }
 call plug#end()
 " }}}2
 " Load plugin configurations {{{2
-function! PluginConfig(filename)
-  let l:filename = "plugin_config/" . a:filename . ".vim"
-  exec "runtime " . l:filename
-endfunction
+" For some reason, a few plugins seem to have config options that cannot be
+" placed in the `plugins` directory. Those settings can be found here instead.
 
-augroup vimrcEx
-  autocmd!
-  call PluginConfig("deoplete")
-  call PluginConfig("gruvbox")
-  call PluginConfig("emmet-vim")
-  call PluginConfig("fzf")
-  call PluginConfig("goyo")
-  call PluginConfig("incsearch")
-  call PluginConfig("jedi-vim")
-  call PluginConfig("neomake")
-  call PluginConfig("nerdtree")
-  call PluginConfig("pytest.vim")
-  call PluginConfig("python-mode")
-  call PluginConfig("tagbar")
-  call PluginConfig("tern")
-  call PluginConfig("ultisnips")
-  call PluginConfig("vim-airline")
-  call PluginConfig("vim-go")
-  call PluginConfig("vim-jsx")
-  call PluginConfig("vim-markdown")
-  call PluginConfig("vim-mustache-handlebars")
-  call PluginConfig("vim-pencil")
-  call PluginConfig("vim-rails")
-  call PluginConfig("vim-table-mode")
-augroup END " }}}2
+" vim-airline {{{3
+let g:airline_powerline_fonts = 1 " Enable the patched Powerline fonts
+" }}}3
+" }}}2
 " }}}1
 " Section: Remaps {{{1
 
