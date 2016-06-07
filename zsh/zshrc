@@ -5,6 +5,12 @@ export DOTFILES="$HOME/.dotfiles"
 # Helper scripts
 source "$DOTFILES/scripts/helpers/functions.sh"
 
+# -- Local Configuration (Before Default) --------------------------------------
+if [[ -f "$DOTFILES/zsh/zshrc.local.pre" ]]; then
+  source $DOTFILES/zsh/zshrc.local.pre
+fi
+
+
 # -- Zsh -----------------------------------------------------------------------
 DEFAULT_USER='alex'
 
@@ -141,7 +147,7 @@ elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
   # Load Linux config
 fi
 
-# -- Local Configuration -------------------------------------------------------
+# -- Local Configuration (After Default) ---------------------------------------
 if [[ -f "$DOTFILES/zsh/zshrc.local" ]]; then
   source $DOTFILES/zsh/zshrc.local
 fi
