@@ -145,6 +145,7 @@ Plug 'dhruvasagar/vim-table-mode',        { 'on': 'TableModeEnable' }
 Plug 'kana/vim-textobj-user'
 Plug 'sgur/vim-textobj-parameter'
 Plug 'jasonlong/vim-textobj-css'
+Plug 'Konfekt/FastFold'
 
 " Git
 Plug 'tpope/vim-fugitive'                 " Git stuff in Vim
@@ -161,14 +162,13 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'Shougo/deoplete.nvim',              { 'do': function('hooks#remote') }
 Plug 'zchee/deoplete-jedi'
 Plug 'carlitux/deoplete-ternjs'
-Plug 'SirVer/ultisnips',                  { 'do': function('hooks#remote') }
 
 " Misc.
 Plug 'editorconfig/editorconfig-vim'
 Plug 'rizzatti/dash.vim'
 
 " Language-Specific Plugins
-Plug 'pangloss/vim-javascript',           { 'for': 'javascript' }
+Plug 'pangloss/vim-javascript',           { 'for': 'javascript', 'branch': 'develop' }
 Plug 'mxw/vim-jsx',                       { 'for': 'javascript' }
 Plug 'jelera/vim-javascript-syntax',      { 'for': 'javascript' }
 Plug 'ternjs/tern_for_vim',               { 'do': 'npm install' }
@@ -230,13 +230,17 @@ function! IndentWithI()
 endfunction
 nnoremap <expr> i IndentWithI()
 
+" Remap the increment and decrement features of Vim
+nnoremap <A-a> <C-a>
+nnoremap <A-x> <C-x>
+
 " Tab Shortcuts
 nnoremap th :tabfirst<CR>
 nnoremap tj :tabnext<CR>
 nnoremap tk :tabprev<CR>
 nnoremap tl :tablast<CR>
 nnoremap tn :tabnew<CR>
-nnoremap td :tabclose<CR>
+nnoremap tc :tabclose<CR>
 " }}}2
 " Insert Mode Remaps {{{2
 
