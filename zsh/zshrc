@@ -11,8 +11,6 @@ if [[ -f "$DOTFILES/zsh/zshrc.local.pre" ]]; then
 fi
 
 # -- Zsh -----------------------------------------------------------------------
-DEFAULT_USER='alex'
-
 ZSH="$HOME/.oh-my-zsh"
 ZSH_CUSTOM="$DOTFILES/zsh/custom"
 fpath=( "$DOTFILES/zsh/custom" $fpath)
