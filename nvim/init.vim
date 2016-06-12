@@ -242,6 +242,7 @@ nnoremap tk :tabprev<CR>
 nnoremap tl :tablast<CR>
 nnoremap tn :tabnew<CR>
 nnoremap tc :tabclose<CR>
+nnoremap td :tabclose<CR>
 " }}}2
 " Insert Mode Remaps {{{2
 
