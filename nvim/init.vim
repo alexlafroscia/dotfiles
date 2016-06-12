@@ -151,6 +151,7 @@ Plug 'Konfekt/FastFold'
 Plug 'tpope/vim-fugitive'                 " Git stuff in Vim
 Plug 'airblade/vim-gitgutter'
 Plug 'junegunn/gv.vim',                   { 'on': 'GV' }
+Plug 'jez/vim-github-hub'
 
 " Task Running
 Plug 'tpope/vim-dispatch'                 " Run tasks asychronously in Tmux
