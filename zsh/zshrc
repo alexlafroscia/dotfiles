@@ -23,10 +23,17 @@ export NVM_DIR=$HOME/.nvm
 ZSH_THEME="pure"
 
 # -- ZSH Plugins ---------------------------------------------------------------
-plugins=(git brew tmux rbenv npm bower vi-mode)
+plugins=(git tmux npm bower vi-mode)
+if exists "rbenv"; then plugins+=rbenv; fi
 if exists "virtualenvwrapper"; then plugins+=virtualenvwrapper; fi
 
 fpath=($DOTFILES/zsh/custom/completion $fpath)
+
+# Add Homebrew completions to config if they can be found
+local brew_completions="$(brew --prefix)/share/zsh/site-functions"
+if [[ -d $brew_completions ]]; then
+  fpath=($fpath $brew_completions)
+fi
 
 # -- Oh My Zsh -----------------------------------------------------------------
 source $ZSH/oh-my-zsh.sh
