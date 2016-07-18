@@ -34,14 +34,14 @@ set spellfile=$HOME/.vim-spell-en.utf-8.add
 " Highlight search matches
 set hlsearch
 
-" Make it obvious where 80 characters is {{{2
+" Make it obvious where 120 characters is {{{2
 " Lifted from StackOverflow user Jeremy W. Sherman
 " http://stackoverflow.com/a/3765575/2250435
 if exists('+colorcolumn')
-  set textwidth=80
+  set textwidth=120
   set colorcolumn=+1
 else
-  au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
+  au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>120v.\+', -1)
 endif " }}}2
 " Open new split panes to right and bottom, which feels more natural {{{2
 set splitbelow
