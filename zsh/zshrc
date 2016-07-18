@@ -53,7 +53,7 @@ unsetopt correct_all
 unsetopt correct
 
 # -- Variables -----------------------------------------------------------------
-export EDITOR=/usr/local/bin/nvim
+export EDITOR="$(brew --prefix)/bin/nvim"
 alias vim=nvim
 alias vi=nvim
 alias dm=docker-machine
