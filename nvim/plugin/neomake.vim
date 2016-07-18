@@ -70,4 +70,11 @@ let g:neomake_elixir_mix_maker = {
     \ '%f:%l: warning: %m'
   \ }
 
-let g:neomake_elixir_enabled_makers = ['mix']
+" Customize Credo maker
+let g:neomake_elixir_credo_maker = {
+  \ 'exe' : 'mix',
+  \ 'args': ['credo', 'list', '%:p', '--one-line', '--strict'],
+  \ 'errorformat': '[%t] %. %f:%l:%c %m'
+  \ }
+
+let g:neomake_elixir_enabled_makers = ['mix', 'credo']
