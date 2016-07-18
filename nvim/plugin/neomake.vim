@@ -17,6 +17,10 @@ function! s:SearchForFile(name)
   return len(path) > 1
 endfunction
 
+function! s:ChompedSystem( ... )
+  return substitute(call('system', a:000), '\n\+$', '', '')
+endfunction
+
 " Dynamically set javascript makers
 let js_makers = []
 if s:SearchForFile('.jshintrc')
@@ -26,10 +30,19 @@ if s:SearchForFile('.jscsrc')
   call add(js_makers, 'jscs')
 endif
 if s:SearchForFile('.eslintrc') || s:SearchForFile('.eslintrc.js') || s:SearchForFile('.eslintrc.json')
-  call add(js_makers, 'eslint_d')
+  " call add(js_makers, 'eslint_d')
+  call add(js_makers, 'eslint')
 endif
 let g:neomake_javascript_enabled_makers = js_makers
 let g:neomake_jsx_enabled_makers = js_makers
+
+" Check for a locally-installed ESLint before using the global one
+if executable("npm")
+  let local_eslint_bin = s:ChompedSystem("npm bin") . "/eslint"
+  if executable(local_eslint_bin)
+    let g:neomake_javascript_eslint_exe = local_eslint_bin
+  endif
+endif
 
 " Other makers
 let g:neomake_java_enabled_makers = ['javac']
