@@ -1,86 +1,112 @@
 [user]
-    editor = /usr/local/bin/nvim
-    email = alex@lafroscia.com
-    name = Alex LaFroscia
+  editor = /usr/local/bin/nvim
+  email = alex@lafroscia.com
+  name = Alex LaFroscia
+
 [alias]
-    # Add
-    aa = add --all
+  # Add
+  aa = add --all
 
-    # Commit
-    cm = commit -m
-    ca = commit --amend -m
-    amend = commit --amend --no-edit
+  # Commit
+  cm = commit -m
+  ca = commit --amend -m
+  amend = commit --amend --no-edit
 
-    # Checkout
-    co = checkout
-    cb = checkout -b
+  # Checkout
+  co = checkout
+  cb = checkout -b
 
-    # Cherry-pick
-    cp = cherry-pick
+  # Cherry-pick
+  cp = cherry-pick
 
-    # Diff
-    df = diff
+  # Diff
+  df = diff
+  dc = diff --cached
 
-    # List
-    tl = tag -l
-    bl = branch -a
-    rl = remote -v
+  # List
+  tl = tag -l
+  bl = branch -a
+  rl = remote -v
 
-    # Status
-    st = status -s
+  # Status
+  st = status -s
 
-    # Pull
-    pl   = pull
-    plo  = pull --rebase origin
-    plom = pull --rebase origin master
-    plu  = pull --rebase upstream
-    plum = pull --rebase upstream master
+  # Pull
+  pl   = pull
+  plo  = pull --rebase origin
+  plom = pull --rebase origin master
+  plu  = pull --rebase upstream
+  plum = pull --rebase upstream master
 
-    # Push
-    pf   = push --force-with-lease
+  # Push
+  pf   = push --force-with-lease
 
-    # Logs
-    head = !git r -1
-    h = !git head
-    r = !GIT_NO_PAGER=1 git l -30
-    ra = !git r --all
-    la = !git l --all
-    hp = "!. $DOTFILES/git/githelpers && show_git_head"
-    l = "!. $DOTFILES/git/githelpers && pretty_git_log"
+  # Logs
+  head = !git r -1
+  h = !git head
+  r = !GIT_NO_PAGER=1 git l -30
+  ra = !git r --all
+  la = !git l --all
+  hp = "!. $DOTFILES/git/githelpers && show_git_head"
+  l = "!. $DOTFILES/git/githelpers && pretty_git_log"
 
-    # Sync
-    sync = plu && pso
+  # Sync
+  sync = plu && pso
 
-    # REKT
-    rekt = reset --hard HEAD
+  # REKT
+  rekt = reset --hard HEAD
+
 [color]
   diff = auto
   status = auto
+
 [color "diff"]
-    meta = yellow bold
-    frag = magenta bold
-    old = red bold
-    new = green bold
+  meta = yellow bold
+  frag = magenta bold
+  old = red bold
+  new = green bold
+
 [color "status"]
-    added     = cyan bold
-    branch    = cyan bold
-    changed   = magenta bold
-    deleted   = red bold
-    untracked = yellow bold
+  added     = cyan bold
+  branch    = cyan bold
+  changed   = magenta bold
+  deleted   = red bold
+  untracked = yellow bold
+
+[pull]
+  ff = only
+  rebase = true
+
 [push]
-    # 'git push' will push the current branch to its tracking branch
-    # the usual default is to push all branches
-    default = tracking
+  # 'git push' will push the current branch to its tracking branch
+  # the usual default is to push all branches
+  default = tracking
+
+[merge]
+  tool = Kaleidoscope
+  algorithm = patience
+  strategy = recursive
+
+[mergetool "Kaleidoscope"]
+  cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
+  trustExitCode = true
+
 [core]
-    excludesfile = ~/.gitignore_global
-    editor = nvim
+  excludesfile = ~/.gitignore_global
+
 [rerere]
-    enabled = 1
+  enabled = 1
+
 [filter "lfs"]
-    clean = git-lfs clean %f
-    smudge = git-lfs smudge %f
-    required = true
+  clean = git-lfs clean %f
+  smudge = git-lfs smudge %f
+  required = true
+
 [github]
-    user = alexlafroscia
+  user = alexlafroscia
+
 [credential]
-    helper = osxkeychain
+  helper = osxkeychain
+
+[diff]
+  compactionHeuristic = true
