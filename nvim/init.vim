@@ -51,6 +51,14 @@ set splitright
 let g:python_host_prog = $PYENV_ROOT . '/versions/2.7.10/bin/python'
 let g:python3_host_prog = $PYENV_ROOT . '/versions/3.5.0/bin/python'
 " }}}2
+" Configure grep to use The Silver Searcher {{{2
+if executable('ag')
+  " Use ag over grep
+  set grepprg=ag\ --nogroup\ --nocolor
+
+  command -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
+endif
+" }}}2
 " }}}1
 " Section: Autocommands {{{1
 " --------------------------
@@ -75,6 +83,7 @@ if has("autocmd")
 
   autocmd BufRead,BufNewFile .eslintrc,.jscsrc,.jshintrc,.babelrc set ft=json
 
+  autocmd BufRead,BufNewFile gitconfig set ft=.gitconfig
 endif
 " }}}1
 " Section: External Functions {{{
@@ -124,6 +133,7 @@ Plug 'junegunn/goyo.vim'
 " Project Navigation
 Plug 'junegunn/fzf',                      { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
+Plug 'mileszs/ack.vim'
 Plug 'scrooloose/nerdtree',               { 'on': 'NERDTreeToggle' }
 Plug 'vim-scripts/ctags.vim'              " ctags related stuff
 Plug 'majutsushi/tagbar'
@@ -158,6 +168,7 @@ Plug 'tpope/vim-dispatch'                 " Run tasks asychronously in Tmux
 Plug 'benekastah/neomake'                 " Run tasks asychronously in NeoVim
 Plug 'wincent/terminus'
 Plug 'christoomey/vim-tmux-navigator'
+Plug 'Olical/vim-enmasse'                 " Edit all files in a Quickfix list
 
 " Autocomplete
 Plug 'Shougo/deoplete.nvim',              { 'do': function('hooks#remote') }
@@ -169,24 +180,26 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'rizzatti/dash.vim'
 
 " Language-Specific Plugins
-Plug 'pangloss/vim-javascript',           { 'for': 'javascript', 'branch': 'develop' }
-Plug 'mxw/vim-jsx',                       { 'for': 'javascript' }
-Plug 'jelera/vim-javascript-syntax',      { 'for': 'javascript' }
+Plug 'pangloss/vim-javascript',           { 'branch': 'develop' }
+Plug 'mxw/vim-jsx'
+Plug 'jelera/vim-javascript-syntax'
 Plug 'ternjs/tern_for_vim',               { 'do': 'npm install' }
 Plug 'rhysd/npm-debug-log.vim'
 Plug '~/projects/vim-plugins/vim-ember-cli'
+Plug 'AndrewRadev/ember_tools.vim'
 Plug 'reedes/vim-pencil'                  " Markdown, Writing
 Plug 'vim-ruby/vim-ruby',                 { 'for': 'ruby' }
-Plug 'tpope/vim-endwise',                 { 'for': 'ruby' }
+Plug 'tpope/vim-endwise'
 Plug 'wellbredgrapefruit/tomdoc.vim',     { 'for': 'ruby' }
 Plug 'tpope/vim-rails'
 Plug 'tpope/vim-bundler'
 Plug 'mattn/emmet-vim'
-Plug 'wting/rust.vim',                    { 'for': 'rust' }
+Plug 'wting/rust.vim'
 Plug 'cespare/vim-toml'
 Plug 'mustache/vim-mustache-handlebars'
-Plug 'groenewege/vim-less',               { 'for': 'less' }
-Plug 'cakebaker/scss-syntax.vim',         { 'for': 'scss' }
+Plug 'groenewege/vim-less'
+Plug 'cakebaker/scss-syntax.vim'
+Plug '~/Code/vim/postcss-syntax.vim'
 Plug 'fatih/vim-go',                      { 'for': 'go' }
 Plug 'godlygeek/tabular',                 { 'for': 'markdown' } " Needed for vim-markdown
 Plug 'plasticboy/vim-markdown',           { 'for': 'markdown' }
@@ -208,6 +221,16 @@ call plug#end()
 
 " vim-airline {{{3
 let g:airline_powerline_fonts = 1 " Enable the patched Powerline fonts
+" }}}3
+
+" emmet-vim {{{3
+let g:user_emmet_leader_key='<C-E>'
+
+let g:user_emmet_settings = {
+  \    'html' : {
+  \        'quote_char': "'"
+  \    }
+  \}
 " }}}3
 " }}}2
 " }}}1
@@ -242,6 +265,9 @@ nnoremap tl :tablast<CR>
 nnoremap tn :tabnew<CR>
 nnoremap tc :tabclose<CR>
 nnoremap td :tabclose<CR>
+
+nnoremap <silent> <c-j> :TmuxNavigateDown<cr>
+
 " }}}2
 " Insert Mode Remaps {{{2
 
