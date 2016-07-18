@@ -57,6 +57,7 @@ export EDITOR="$(brew --prefix)/bin/nvim"
 alias vim=nvim
 alias vi=nvim
 alias dm=docker-machine
+alias dc=docker-compose
 
 # -- Aliases -------------------------------------------------------------------
 if [[ -f "$DOTFILES/aliases" ]]; then
@@ -170,3 +171,6 @@ fi
 if [[ -f "$DOTFILES/zsh/zshrc.local" ]]; then
   source $DOTFILES/zsh/zshrc.local
 fi
+
+# added by travis gem
+[ -f /Users/alexlafroscia/.travis/travis.sh ] && source /Users/alexlafroscia/.travis/travis.sh
