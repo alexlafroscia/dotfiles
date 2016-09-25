@@ -7,10 +7,15 @@
   # Add
   aa = add --all
 
+  # Remove
+  unstage = reset HEAD
+  apply-gitignore = !git ls-files -ci --exclude-standard -z | xargs -0 git rm --cached
+
   # Commit
   cm = commit -m
   ca = commit --amend -m
   amend = commit --amend --no-edit
+  fix = amend
 
   # Checkout
   co = checkout
@@ -22,6 +27,10 @@
   # Diff
   df = diff
   dc = diff --cached
+
+  # History
+  # See the history for a particular file
+  history = log --follow
 
   # List
   tl = tag -l
