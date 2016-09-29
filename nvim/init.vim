@@ -133,7 +133,7 @@ Plug 'junegunn/goyo.vim'
 " Project Navigation
 Plug 'junegunn/fzf',                      { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-Plug 'mileszs/ack.vim'
+Plug 'mhinz/vim-grepper'
 Plug 'scrooloose/nerdtree',               { 'on': 'NERDTreeToggle' }
 Plug 'vim-scripts/ctags.vim'              " ctags related stuff
 Plug 'majutsushi/tagbar'
