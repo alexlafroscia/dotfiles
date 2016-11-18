@@ -24,14 +24,7 @@ I hate `CAPSLOCK` and don't find it useful at all. However, is _does_ occupy a r
 
 ## Sierra
 
-Karabiner no longer works on Sierra, so we need to devise another approach.
-
-1. Download an install [Karabiner Elements][karabiner-elements]
-2. Map `caps_lock` to `left_control`
-3. Download [Hammerspoon][hammerspoon]
-4. Add the contents of [this gist][hammerspoon-config] as your Hammerspoon config
-
-The feel is a little different from the El Capitan one, but it works well enough until Karabiner works correctly entirely on it's own again.
+Karabiner no longer works on Sierra, so we need to devise another approach.  Thankfully, other people have had the same issue. I've tried a few different approaches, but the easiest to set up can be found [here][karabiner-elements-sierra].
 
 ## El Capitan
 
@@ -39,5 +32,4 @@ The instructions for doing this using Karabiner and Seil can be found [here][el-
 
 [el-capitan-capslock-config]: https://gist.github.com/arbelt/b91e1f38a0880afb316dd5b5732759f1
 [karabiner-elements]: https://github.com/tekezo/Karabiner-Elements
-[hammerspoon]: https://github.com/Hammerspoon/hammerspoon
-[hammerspoon-config]: https://gist.github.com/arbelt/b91e1f38a0880afb316dd5b5732759f1
+[karabiner-elements-sierra]: https://gist.github.com/chrismccord/2ea8d08a6f9347321f40e01205130987
