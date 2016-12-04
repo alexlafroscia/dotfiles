@@ -15,10 +15,6 @@ ZSH="$HOME/.oh-my-zsh"
 ZSH_CUSTOM="$DOTFILES/zsh/custom"
 fpath=( "$DOTFILES/zsh/custom" $fpath)
 
-# -- NVM -----------------------------------------------------------------------
-export NVM_DIR=$HOME/.nvm
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
-
 # -- Theme ---------------------------------------------------------------------
 ZSH_THEME="pure"
 

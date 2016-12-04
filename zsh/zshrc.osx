@@ -10,3 +10,7 @@ function chpwd() {
   eval "`ondir \"$OLDPWD\" \"$PWD\"`"
 }
 eval "`ondir /`"
+
+# -- asdf ---------------------------------------------------------------------
+source $HOME/.asdf/asdf.sh
+source $HOME/.asdf/completions/asdf.bash
