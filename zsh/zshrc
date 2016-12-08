@@ -19,7 +19,7 @@ fpath=( "$DOTFILES/zsh/custom" $fpath)
 ZSH_THEME="pure"
 
 # -- ZSH Plugins ---------------------------------------------------------------
-plugins=(git tmux npm bower vi-mode)
+plugins=(git tmux npm bower vi-mode zsh-syntax-highlighting)
 if exists "rbenv"; then plugins+=rbenv; fi
 if exists "virtualenvwrapper"; then plugins+=virtualenvwrapper; fi
 
