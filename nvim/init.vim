@@ -84,6 +84,9 @@ if has("autocmd")
   autocmd BufRead,BufNewFile .eslintrc,.jscsrc,.jshintrc,.babelrc set ft=json
 
   autocmd BufRead,BufNewFile gitconfig set ft=.gitconfig
+
+  " Load inline HTMLBars Highlighting
+  autocmd BufRead,BufNewFile *.js HighlightInlineHbs
 endif
 " }}}1
 " Section: External Functions {{{
@@ -187,6 +190,7 @@ Plug 'ternjs/tern_for_vim',               { 'do': 'npm install' }
 Plug 'rhysd/npm-debug-log.vim'
 Plug '~/projects/vim-plugins/vim-ember-cli'
 Plug 'AndrewRadev/ember_tools.vim'
+Plug 'dustinfarris/vim-htmlbars-inline-syntax'
 Plug 'reedes/vim-pencil'                  " Markdown, Writing
 Plug 'vim-ruby/vim-ruby',                 { 'for': 'ruby' }
 Plug 'tpope/vim-endwise'
