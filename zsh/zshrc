@@ -16,6 +16,7 @@ ZSH_CUSTOM="$DOTFILES/zsh/custom"
 fpath=( "$DOTFILES/zsh/custom" $fpath)
 
 # -- Theme ---------------------------------------------------------------------
+export NVIM_TUI_ENABLE_TRUE_COLOR=1
 ZSH_THEME="pure"
 
 # -- ZSH Plugins ---------------------------------------------------------------

@@ -123,7 +123,7 @@ nnoremap <leader>a :call OpenInAtom()<CR>
 call plug#begin()
 
 " UI
-Plug 'morhetz/gruvbox'
+Plug 'trevordmiller/nova-vim'
 Plug 'vim-airline/vim-airline'            " Handy info
 Plug 'retorillo/airline-tablemode.vim'
 Plug 'edkolev/tmuxline.vim'               " Make the Tmux bar match Vim
@@ -292,9 +292,10 @@ inoremap <silent><expr> <S-Tab>
 
 syntax enable
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+set termguicolors
 let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
 set background=dark
-colorscheme gruvbox
+colorscheme nova
 
 " Setup Terminal Colors For Neovim {{{
 if has('nvim')
