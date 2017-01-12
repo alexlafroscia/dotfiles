@@ -21,7 +21,6 @@ ZSH_THEME="pure"
 
 # -- ZSH Plugins ---------------------------------------------------------------
 plugins=(git tmux npm bower vi-mode zsh-syntax-highlighting)
-if exists "rbenv"; then plugins+=rbenv; fi
 if exists "virtualenvwrapper"; then plugins+=virtualenvwrapper; fi
 
 fpath=($DOTFILES/zsh/custom/completion $fpath)
@@ -81,16 +80,6 @@ export PATH="/usr/local/sbin:$PATH"
 # export CLASSPATH="$CLASSPATH:$JUNIT_HOME/junit-4.12.jar:$JUNIT_HOME/hamcrest-core-1.3.jar"
 # alias jtest=java\ org.junit.runner.JUnitCore
 
-# -- Rbenv ---------------------------------------------------------------------
-if exists "pyenv" && [[ -z "$RBENV_ROOT" ]]; then
-  export RBENV_ROOT='/usr/local/var/rbenv'
-fi
-
-# If the root is set, add it to the PATH and initialize `pyenv`
-if [[ -n "$RBENV_ROOT" ]]; then
-  export PATH="$RBENV_ROOT/bin:$PATH"
-  eval "$(rbenv init -)"
-fi
 
 # -- Functions -----------------------------------------------------------------
 
@@ -163,6 +152,10 @@ if [[ $(uname) == 'Darwin' ]]; then
 elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
   # Load Linux config
 fi
+
+# -- asdf ---------------------------------------------------------------------
+source $HOME/.asdf/asdf.sh
+source $HOME/.asdf/completions/asdf.bash
 
 # -- Local Configuration (After Default) ---------------------------------------
 if [[ -f "$DOTFILES/zsh/zshrc.local" ]]; then
