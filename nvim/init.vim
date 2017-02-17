@@ -212,8 +212,6 @@ Plug 'adragomir/javacomplete',            { 'for': 'java' }
 Plug 'klen/python-mode',                  { 'for': 'python' }
 Plug 'davidhalter/jedi-vim',              { 'for': 'python' }
 Plug 'alfredodeza/pytest.vim',            { 'for': 'python' }
-Plug 'elixir-lang/vim-elixir'
-Plug 'archSeer/elixir.nvim',              { 'do': function('hooks#remote') }
 
 Plug 'neovim/node-host',                  { 'do': 'npm install' }
 
