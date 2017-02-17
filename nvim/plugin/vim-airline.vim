@@ -1,4 +1,3 @@
-let g:airline_theme='gruvbox'
 let g:airline_section_x = '%{PencilMode()}'
 
 " Configure tabline extension
