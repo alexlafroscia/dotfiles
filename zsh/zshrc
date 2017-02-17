@@ -20,7 +20,7 @@ export NVIM_TUI_ENABLE_TRUE_COLOR=1
 ZSH_THEME="pure"
 
 # -- ZSH Plugins ---------------------------------------------------------------
-plugins=(git tmux npm bower vi-mode zsh-syntax-highlighting)
+plugins=(git tmux npm bower vi-mode pj zsh-syntax-highlighting)
 if exists "virtualenvwrapper"; then plugins+=virtualenvwrapper; fi
 
 fpath=($DOTFILES/zsh/custom/completion $fpath)
@@ -54,6 +54,7 @@ alias vim=nvim
 alias vi=nvim
 alias dm=docker-machine
 alias dc=docker-compose
+alias docker-cleanup=docker ps -a | grep Exit | cut -d ' ' -f 1 | xargs docker rm
 
 # -- Aliases -------------------------------------------------------------------
 if [[ -f "$DOTFILES/aliases" ]]; then
@@ -71,7 +72,7 @@ codeclimate() {
 }
 
 export PATH="$PATH:/opt/vagrant/bin"
-export PATH="/usr/local/sbin:$PATH"
+export PATH="/usr/local/sbin:$HOME/bin:$PATH"
 
 # -- Functions -----------------------------------------------------------------
 
@@ -96,6 +97,10 @@ extract () {
         echo "'$1' is not a valid file"
     fi
 }
+
+# -- Git -----------------------------------------------------------------------
+zstyle ':completion:*:*:hub:*' user-commands ${${(M)${(k)commands}:#git-*}/git-/}
+_git-delete-tag() { compadd "$@" $(git tag) }
 
 # -- Tmux ----------------------------------------------------------------------
 export DISABLE_AUTO_TITLE="true"
@@ -149,10 +154,17 @@ fi
 source $HOME/.asdf/asdf.sh
 source $HOME/.asdf/completions/asdf.bash
 
+# -- Yarn ---------------------------------------------------------------------
+# Make the shell aware of global packages installed by Yarn
+local yarn_global_modules="$XDG_CONFIG_HOME/yarn/global/node_modules"
+if [[ -d "$yarn_global_modules/.bin" ]]; then
+  export PATH="$PATH:$yarn_global_modules/.bin"
+fi
+if [[ -f "$yarn_global_modules/tabtab/.completions/yarn.zsh" ]]; then
+  source "$yarn_global_modules/tabtab/.completions/yarn.zsh"
+fi
+
 # -- Local Configuration (After Default) ---------------------------------------
 if [[ -f "$DOTFILES/zsh/zshrc.local" ]]; then
   source $DOTFILES/zsh/zshrc.local
 fi
-
-# added by travis gem
-[ -f /Users/alexlafroscia/.travis/travis.sh ] && source /Users/alexlafroscia/.travis/travis.sh
