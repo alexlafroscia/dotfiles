@@ -73,14 +73,6 @@ codeclimate() {
 export PATH="$PATH:/opt/vagrant/bin"
 export PATH="/usr/local/sbin:$PATH"
 
-# -- Java ----------------------------------------------------------------------
-# export JAVA_HOME="/Library/Java/Home"
-# export JUNIT_HOME="/Library/junit"
-# export PATH="$PATH:$JUNIT_HOME"
-# export CLASSPATH="$CLASSPATH:$JUNIT_HOME/junit-4.12.jar:$JUNIT_HOME/hamcrest-core-1.3.jar"
-# alias jtest=java\ org.junit.runner.JUnitCore
-
-
 # -- Functions -----------------------------------------------------------------
 
 # Extract archive based on file type

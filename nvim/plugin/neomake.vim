@@ -46,7 +46,6 @@ if executable("npm")
 endif
 
 " Other makers
-let g:neomake_java_enabled_makers = ['javac']
 let g:neomake_ruby_enabled_makers = ['rubocop']
 let g:neomake_python_enabled_makers = ['flake8']
 let g:neomake_scss_enabled_checkers = ['scsslint']
