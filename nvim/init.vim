@@ -22,6 +22,8 @@ set shiftround
 set expandtab
 set scrolloff=3
 set list listchars=tab:»·,trail:·  " Display extra whitespace characters
+set hidden
+set inccommand=nosplit
 
 " Line numbers
 set number
@@ -84,9 +86,6 @@ if has("autocmd")
   autocmd BufRead,BufNewFile .eslintrc,.jscsrc,.jshintrc,.babelrc set ft=json
 
   autocmd BufRead,BufNewFile gitconfig set ft=.gitconfig
-
-  " Load inline HTMLBars Highlighting
-  autocmd BufRead,BufNewFile *.js HighlightInlineHbs
 endif
 " }}}1
 " Section: External Functions {{{
@@ -148,12 +147,11 @@ Plug 'jeffkreeftmeijer/vim-numbertoggle'  " Smarter line numbers
 Plug 'wellle/targets.vim'
 Plug 'kshenoy/vim-signature'
 Plug 'haya14busa/incsearch.vim'           " Better search highlighting
-Plug 'haya14busa/incsearch-easymotion.vim'
-Plug 'haya14busa/incsearch-fuzzy.vim'
 
 " Editing
 Plug 'tpope/vim-surround'                 " Change word surroundings
 Plug 'tpope/vim-commentary'               " Comments stuff
+Plug 'tpope/vim-repeat'
 Plug 'dhruvasagar/vim-table-mode',        { 'on': 'TableModeEnable' }
 Plug 'kana/vim-textobj-user'
 Plug 'sgur/vim-textobj-parameter'
@@ -185,12 +183,10 @@ Plug 'rizzatti/dash.vim'
 " Language-Specific Plugins
 Plug 'pangloss/vim-javascript',           { 'branch': 'develop' }
 Plug 'mxw/vim-jsx'
-Plug 'jelera/vim-javascript-syntax'
 Plug 'ternjs/tern_for_vim',               { 'do': 'npm install' }
 Plug 'rhysd/npm-debug-log.vim'
 Plug '~/projects/vim-plugins/vim-ember-cli'
 Plug 'AndrewRadev/ember_tools.vim'
-Plug 'dustinfarris/vim-htmlbars-inline-syntax'
 Plug 'reedes/vim-pencil'                  " Markdown, Writing
 Plug 'vim-ruby/vim-ruby',                 { 'for': 'ruby' }
 Plug 'tpope/vim-endwise'
@@ -203,7 +199,6 @@ Plug 'cespare/vim-toml'
 Plug 'mustache/vim-mustache-handlebars'
 Plug 'groenewege/vim-less'
 Plug 'cakebaker/scss-syntax.vim'
-Plug '~/Code/vim/postcss-syntax.vim'
 Plug 'fatih/vim-go',                      { 'for': 'go' }
 Plug 'godlygeek/tabular',                 { 'for': 'markdown' } " Needed for vim-markdown
 Plug 'plasticboy/vim-markdown',           { 'for': 'markdown' }
@@ -255,15 +250,18 @@ nnoremap <expr> i IndentWithI()
 
 " Remap the increment and decrement features of Vim
 nnoremap <A-a> <C-a>
+nnoremap å <C-a>
+
 nnoremap <A-x> <C-x>
+nnoremap ≈ <C-x>
 
 " Tab Shortcuts
-nnoremap th :tabfirst<CR>
-nnoremap tj :tabnext<CR>
-nnoremap tk :tabprev<CR>
-nnoremap tl :tablast<CR>
+nnoremap tk :tabfirst<CR>
+nnoremap tl :tabnext<CR>
+nnoremap th :tabprev<CR>
+nnoremap tj :tablast<CR>
 nnoremap tn :tabnew<CR>
-nnoremap tc :tabclose<CR>
+nnoremap tc :CtrlSpaceTabLabel<CR>
 nnoremap td :tabclose<CR>
 
 nnoremap <silent> <c-j> :TmuxNavigateDown<cr>
