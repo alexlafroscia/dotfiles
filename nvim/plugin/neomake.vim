@@ -23,9 +23,6 @@ endfunction
 
 " Dynamically set javascript makers
 let js_makers = []
-if s:SearchForFile('.jshintrc')
-  call add(js_makers, 'jshint')
-endif
 if s:SearchForFile('.jscsrc')
   call add(js_makers, 'jscs')
 endif
