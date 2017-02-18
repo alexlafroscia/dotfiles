@@ -49,9 +49,9 @@ endif " }}}2
 set splitbelow
 set splitright
 " }}}2
-" Point to the Python executables in `pyenv` {{{2
-let g:python_host_prog = $PYENV_ROOT . '/versions/2.7.10/bin/python'
-let g:python3_host_prog = $PYENV_ROOT . '/versions/3.5.0/bin/python'
+" Point to the Python executables in `asdf` {{{2
+let g:python_host_prog = $HOME . '/.asdf/installs/python/2.7.10/bin/python'
+let g:python3_host_prog = $HOME . '/.asdf/installs/python/3.5.0/bin/python'
 " }}}2
 " Configure grep to use The Silver Searcher {{{2
 if executable('ag')

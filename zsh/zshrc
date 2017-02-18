@@ -118,23 +118,6 @@ if [[ -f "$HOME/.xsh" ]]; then
   source $HOME/.xsh
 fi
 
-# -- Pyenv ---------------------------------------------------------------------
-# Set the `pyenv` root if the executable exists, but the root is not set
-if exists "pyenv" && [[ -z "$PYENV_ROOT" ]]; then
-  export PYENV_ROOT=/usr/local/var/pyenv
-fi
-
-# If the root is set, add it to the PATH and initialize `pyenv`
-if [[ -n "$PYENV_ROOT" ]]; then
-  export PATH="$PYENV_ROOT/bin:$PATH"
-  eval "$(pyenv init -)"
-fi
-
-# If the `pyenv-virtualenv` plugin is installed, initialize it
-if [[ -d "$PYENV_ROOT/plugins/pyenv-virtualenv" ]]; then
-  eval "$(pyenv virtualenv-init -)"
-fi
-
 # -- fzf -----------------------------------------------------------------------
 if [ -f ~/.fzf.zsh ]; then
   source ~/.fzf.zsh
