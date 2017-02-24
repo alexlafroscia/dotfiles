@@ -122,7 +122,7 @@ fi
 if [ -f ~/.fzf.zsh ]; then
   source ~/.fzf.zsh
   export FZF_DEFAULT_COMMAND="rg --files-with-matches --no-messages -F ''"
-  export FZF_CTRL_T_COMMAND="rg --files-with-matches --no-messages --hidden -F ''"
+  export FZF_CTRL_T_COMMAND="rg --files-with-matches --no-messages --hidden -F '' | grep -v .git/"
 fi
 
 # -- OS-Specific Config --------------------------------------------------------
