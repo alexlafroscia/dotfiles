@@ -11,16 +11,13 @@ imap <c-x><c-j> <plug>(fzf-complete-file-ag)
 nnoremap <C-t> :Files<cr>
 
 " Custom colors to match theme
-let g:fzf_colors =
-\ { 'fg':      ['fg', 'Normal'],
-  \ 'bg':      ['bg', 'Normal'],
-  \ 'hl':      ['fg', 'Comment'],
-  \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
-  \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
-  \ 'hl+':     ['fg', 'Statement'],
-  \ 'info':    ['fg', 'PreProc'],
-  \ 'prompt':  ['fg', 'Conditional'],
-  \ 'pointer': ['fg', 'Exception'],
-  \ 'marker':  ['fg', 'Keyword'],
-  \ 'spinner': ['fg', 'Label'],
-  \ 'header':  ['fg', 'Comment'] }
+let g:fzf_colors = {
+\   'bg+':     ['bg', 'Normal'],
+\   'fg+':     ['fg', 'Statement'],
+\   'hl':      ['fg', 'Underlined'],
+\   'hl+':     ['fg', 'Underlined'],
+\   'info':    ['fg', 'MatchParen'],
+\   'pointer': ['fg', 'Special'],
+\   'prompt':  ['fg', 'Normal'],
+\   'marker':  ['fg', 'MatchParen']
+\ }
