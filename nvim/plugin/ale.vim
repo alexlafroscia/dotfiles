@@ -6,6 +6,6 @@ let g:ale_linters = {
 " Use a slightly slimmer error pointer
 let g:ale_sign_error = '✖'
 
-" Use C-k and C-j to navigate errors
-nmap <silent> <C-k> <Plug>(ale_previous_wrap)
-nmap <silent> <C-j> <Plug>(ale_next_wrap)
+" Use ALT-k and ALT-j to navigate errors
+nmap <silent> ˚ <Plug>(ale_previous_wrap)
+nmap <silent> ∆ <Plug>(ale_next_wrap)
