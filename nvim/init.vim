@@ -166,7 +166,7 @@ Plug 'jez/vim-github-hub'
 
 " Task Running
 Plug 'tpope/vim-dispatch'                 " Run tasks asychronously in Tmux
-Plug 'benekastah/neomake'                 " Run tasks asychronously in NeoVim
+Plug 'w0rp/ale'                           " Linter
 Plug 'wincent/terminus'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'Olical/vim-enmasse'                 " Edit all files in a Quickfix list
