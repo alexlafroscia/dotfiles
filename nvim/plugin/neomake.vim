@@ -23,25 +23,21 @@ endfunction
 
 " Dynamically set javascript makers
 let js_makers = []
-if s:SearchForFile('.jscsrc')
-  call add(js_makers, 'jscs')
-endif
 if s:SearchForFile('.eslintrc') || s:SearchForFile('.eslintrc.js') || s:SearchForFile('.eslintrc.json')
-  call add(js_makers, 'eslint_d')
+  call add(js_makers, 'eslint')
 endif
 let g:neomake_javascript_enabled_makers = js_makers
 let g:neomake_jsx_enabled_makers = js_makers
 
 " Check for a locally-installed ESLint before using the global one
 if executable("npm")
-  let local_eslint_bin = s:ChompedSystem("npm bin") . "/eslint"
-  if executable(local_eslint_bin)
-    let g:neomake_javascript_eslint_exe = local_eslint_bin
-  endif
-
   let local_eslint_d_bin = s:ChompedSystem("npm bin") . "/eslint_d"
+  let local_eslint_bin = s:ChompedSystem("npm bin") . "/eslint"
+
   if executable(local_eslint_d_bin)
-    let g:neomake_javascript_eslint_d_exe = local_eslint_d_bin
+    let g:neomake_javascript_eslint_exe = local_eslint_d_bin
+  elseif executable(local_eslint_bin)
+    let g:neomake_javascript_eslint_exe = local_eslint_bin
   endif
 endif
 
