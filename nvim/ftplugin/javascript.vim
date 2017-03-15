@@ -6,7 +6,7 @@ setlocal concealcursor=nc
 
 " Use Prettier as the source formatter
 " https://github.com/jlongster/prettier#vim
-setlocal formatprg=prettier\ --stdin
+setlocal formatprg=prettier\ --stdin\ --single-quote
 
 function! JavaScriptBreakpoint(lnum)
   let line = getline(a:lnum)

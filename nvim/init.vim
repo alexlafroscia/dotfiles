@@ -181,7 +181,7 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'rizzatti/dash.vim'
 
 " Language-Specific Plugins
-Plug 'pangloss/vim-javascript',           { 'branch': 'develop' }
+Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
 Plug 'ternjs/tern_for_vim',               { 'do': 'npm install' }
 Plug 'rhysd/npm-debug-log.vim'
