@@ -170,6 +170,7 @@ Plug 'w0rp/ale'                           " Linter
 Plug 'wincent/terminus'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'Olical/vim-enmasse'                 " Edit all files in a Quickfix list
+Plug 'janko-m/vim-test'
 
 " Autocomplete
 Plug 'Shougo/deoplete.nvim',              { 'do': function('hooks#remote') }
@@ -205,6 +206,7 @@ Plug 'plasticboy/vim-markdown',           { 'for': 'markdown' }
 Plug 'klen/python-mode',                  { 'for': 'python' }
 Plug 'davidhalter/jedi-vim',              { 'for': 'python' }
 Plug 'alfredodeza/pytest.vim',            { 'for': 'python' }
+Plug 'elixir-lang/vim-elixir',            { 'for': 'elixir' }
 
 Plug 'neovim/node-host',                  { 'do': 'npm install' }
 
