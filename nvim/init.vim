@@ -94,7 +94,7 @@ endif
 function! OpenInFinder()
   call system('open ' . getcwd())
 endfunction
-nnoremap <leader>f :call OpenInFinder()<CR>
+nnoremap <leader>f :NERDTreeFind<CR>
 " }}}
 " Open current file in Marked {{{
 function! MarkedPreview()
@@ -136,7 +136,7 @@ Plug 'junegunn/goyo.vim'
 Plug 'junegunn/fzf',                      { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'mhinz/vim-grepper'
-Plug 'scrooloose/nerdtree',               { 'on': 'NERDTreeToggle' }
+Plug 'scrooloose/nerdtree'
 Plug 'vim-scripts/ctags.vim'              " ctags related stuff
 Plug 'majutsushi/tagbar'
 
