@@ -126,7 +126,7 @@ nnoremap <leader>a :call OpenInAtom()<CR>
 " Specify plugins {{{2
 call plug#begin()
 
-" UI
+" UI {{{3
 Plug 'trevordmiller/nova-vim'
 Plug 'vim-airline/vim-airline'            " Handy info
 Plug 'retorillo/airline-tablemode.vim'
@@ -134,7 +134,7 @@ Plug 'edkolev/tmuxline.vim'               " Make the Tmux bar match Vim
 Plug 'ryanoasis/vim-webdevicons'
 Plug 'junegunn/goyo.vim'
 
-" Project Navigation
+" Project Navigation {{{3
 Plug 'junegunn/fzf',                      { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'mhinz/vim-grepper'
@@ -142,7 +142,7 @@ Plug 'scrooloose/nerdtree'
 Plug 'vim-scripts/ctags.vim'              " ctags related stuff
 Plug 'majutsushi/tagbar'
 
-" File Navigation
+" File Navigation {{{3
 Plug 'vim-scripts/matchit.zip'            " More powerful % matching
 Plug 'Lokaltog/vim-easymotion'            " Move like the wind!
 Plug 'jeffkreeftmeijer/vim-numbertoggle'  " Smarter line numbers
@@ -150,7 +150,7 @@ Plug 'wellle/targets.vim'
 Plug 'kshenoy/vim-signature'
 Plug 'haya14busa/incsearch.vim'           " Better search highlighting
 
-" Editing
+" Editing {{{3
 Plug 'tpope/vim-surround'                 " Change word surroundings
 Plug 'tpope/vim-commentary'               " Comments stuff
 Plug 'tpope/vim-repeat'
@@ -159,6 +159,7 @@ Plug 'kana/vim-textobj-user'
 Plug 'sgur/vim-textobj-parameter'
 Plug 'jasonlong/vim-textobj-css'
 Plug 'Konfekt/FastFold'
+Plug 'editorconfig/editorconfig-vim'
 
 " Git
 Plug 'tpope/vim-fugitive'                 " Git stuff in Vim
@@ -174,54 +175,67 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'Olical/vim-enmasse'                 " Edit all files in a Quickfix list
 Plug 'janko-m/vim-test'
 
-" Autocomplete
+" Autocomplete {{{3
 Plug 'Shougo/deoplete.nvim',              { 'do': function('hooks#remote') }
 Plug 'zchee/deoplete-jedi'
 Plug 'carlitux/deoplete-ternjs'
 Plug 'steelsojka/deoplete-flow'
 
-" Misc.
-Plug 'editorconfig/editorconfig-vim'
-Plug 'rizzatti/dash.vim'
-
-" Language-Specific Plugins
+" Language Support {{{3
+" JavaScript {{{4
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
 Plug 'ternjs/tern_for_vim',               { 'do': 'npm install' }
 Plug 'rhysd/npm-debug-log.vim'
 Plug '~/projects/vim-plugins/vim-ember-cli'
 Plug 'AndrewRadev/ember_tools.vim'
-Plug 'reedes/vim-pencil'                  " Markdown, Writing
+Plug 'neovim/node-host',                  { 'do': 'npm install' }
+
+" HTML {{{4
+Plug 'othree/html5.vim',                  { 'for': 'html' }
+Plug 'mustache/vim-mustache-handlebars'
+Plug 'mattn/emmet-vim'
+
+" CSS {{{4
+Plug 'hail2u/vim-css3-syntax',            { 'for': 'css' }
+
+" Sass {{{4
+Plug 'cakebaker/scss-syntax.vim'
+
+" Ruby {{{4
 Plug 'vim-ruby/vim-ruby',                 { 'for': 'ruby' }
-Plug 'tpope/vim-endwise'
-Plug 'wellbredgrapefruit/tomdoc.vim',     { 'for': 'ruby' }
 Plug 'tpope/vim-rails'
 Plug 'tpope/vim-bundler'
-Plug 'mattn/emmet-vim'
-Plug 'wting/rust.vim'
-Plug 'cespare/vim-toml'
-Plug 'mustache/vim-mustache-handlebars'
-Plug 'groenewege/vim-less'
-Plug 'cakebaker/scss-syntax.vim'
-Plug 'fatih/vim-go',                      { 'for': 'go' }
-Plug 'godlygeek/tabular',                 { 'for': 'markdown' } " Needed for vim-markdown
-Plug 'plasticboy/vim-markdown',           { 'for': 'markdown' }
+Plug 'tpope/vim-endwise'
+
+" Python {{{4
 Plug 'klen/python-mode',                  { 'for': 'python' }
 Plug 'davidhalter/jedi-vim',              { 'for': 'python' }
 Plug 'alfredodeza/pytest.vim',            { 'for': 'python' }
+
+" Rust {{{4
+Plug 'wellbredgrapefruit/tomdoc.vim',     { 'for': 'ruby' }
+Plug 'wting/rust.vim'
+Plug 'cespare/vim-toml'
+
+" Go {{{4
+Plug 'fatih/vim-go',                      { 'for': 'go' }
+
+" Markdown {{{4
+Plug 'reedes/vim-pencil'                  " Markdown, Writing
+Plug 'godlygeek/tabular',                 { 'for': 'markdown' } " Needed for vim-markdown
+Plug 'plasticboy/vim-markdown',           { 'for': 'markdown' }
+
+" Elixir {{{4
 Plug 'elixir-lang/vim-elixir',            { 'for': 'elixir' }
 
-Plug 'neovim/node-host',                  { 'do': 'npm install' }
-
 call plug#end()
-" }}}2
 " Load plugin configurations {{{2
 " For some reason, a few plugins seem to have config options that cannot be
 " placed in the `plugins` directory. Those settings can be found here instead.
 
 " vim-airline {{{3
 let g:airline_powerline_fonts = 1 " Enable the patched Powerline fonts
-" }}}3
 
 " emmet-vim {{{3
 let g:user_emmet_leader_key='<C-E>'
@@ -232,8 +246,7 @@ let g:user_emmet_settings = {
   \    }
   \}
 " }}}3
-" }}}2
-" }}}1
+
 " Section: Remaps {{{1
 
 " Normal Mode Remaps {{{2
