@@ -178,6 +178,7 @@ Plug 'janko-m/vim-test'
 Plug 'Shougo/deoplete.nvim',              { 'do': function('hooks#remote') }
 Plug 'zchee/deoplete-jedi'
 Plug 'carlitux/deoplete-ternjs'
+Plug 'steelsojka/deoplete-flow'
 
 " Misc.
 Plug 'editorconfig/editorconfig-vim'
