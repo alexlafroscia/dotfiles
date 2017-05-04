@@ -303,7 +303,6 @@ inoremap <silent><expr> <S-Tab>
 syntax enable
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 set termguicolors
-let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
 set background=dark
 colorscheme nova
 
