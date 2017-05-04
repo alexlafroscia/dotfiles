@@ -92,12 +92,6 @@ endif
 " }}}1
 " Section: External Functions {{{
 
-" Open folder in finder {{{
-function! OpenInFinder()
-  call system('open ' . getcwd())
-endfunction
-nnoremap <leader>f :NERDTreeFind<CR>
-" }}}
 " Open current file in Marked {{{
 function! MarkedPreview()
   :w
@@ -111,14 +105,6 @@ function! OpenInGitTower()
   call system('gittower ' . getcwd())
 endfunction
 nnoremap <leader>gt :call OpenInGitTower()<CR>
-" }}}
-" Open current directory in Atom {{{
-function! OpenInAtom()
-  :w
-  exec ':silent !atom ' . shellescape('%:p')
-  redraw!
-endfunction
-nnoremap <leader>a :call OpenInAtom()<CR>
 " }}}
 " }}}
 " Section: Load vim-plug plugins {{{
@@ -255,6 +241,9 @@ let g:user_emmet_settings = {
 " Section: Remaps {{{1
 
 " Normal Mode Remaps {{{2
+
+" Quickly find file in NERDTree
+nnoremap <leader>f :NERDTreeFind<CR>
 
 nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
 
