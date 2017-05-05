@@ -85,8 +85,6 @@ if has("autocmd")
 
   autocmd BufRead,BufNewFile .eslintrc,.jscsrc,.jshintrc,.babelrc set ft=json
 
-  autocmd FileType javascript let b:dispatch = 'yarn eslint -- --fix % > /dev/null 2> /dev/null'
-
   autocmd BufRead,BufNewFile gitconfig set ft=.gitconfig
 endif
 " }}}1
