@@ -160,7 +160,7 @@ Plug 'Olical/vim-enmasse'                 " Edit all files in a Quickfix list
 Plug 'janko-m/vim-test'
 
 " Autocomplete {{{3
-Plug 'Shougo/deoplete.nvim',              { 'do': function('hooks#remote') }
+Plug 'Shougo/deoplete.nvim',              { 'do': ':UpdateRemotePlugins' }
 Plug 'zchee/deoplete-jedi'
 Plug 'carlitux/deoplete-ternjs'
 Plug 'steelsojka/deoplete-flow'
@@ -169,7 +169,6 @@ Plug 'steelsojka/deoplete-flow'
 " JavaScript {{{4
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
-Plug 'ternjs/tern_for_vim',               { 'do': 'npm install' }
 Plug 'rhysd/npm-debug-log.vim'
 Plug '~/projects/vim-plugins/vim-ember-cli'
 Plug 'AndrewRadev/ember_tools.vim'
@@ -280,19 +279,6 @@ nnoremap <silent> <c-j> :TmuxNavigateDown<cr>
 " Insert Mode Remaps {{{2
 
 set completeopt-=preview
-function! InsertTabWrapper()
-  let col = col('.') - 1
-  if pumvisible()
-    return "\<C-n>"
-  elseif !col || getline('.')[col - 1] !~ '\k'
-    return "\<tab>"
-  else
-    return deoplete#mappings#manual_complete()
-  endif
-endfunction
-inoremap <silent> <Tab> <c-r>=InsertTabWrapper()<cr>
-inoremap <silent><expr> <S-Tab>
-  \ pumvisible() ? '<C-p>' : ''
 
 " }}}2
 " }}}1
