@@ -163,7 +163,7 @@ Plug 'janko-m/vim-test'
 Plug 'Shougo/deoplete.nvim',              { 'do': ':UpdateRemotePlugins' }
 Plug 'zchee/deoplete-jedi'
 Plug 'carlitux/deoplete-ternjs'
-Plug 'steelsojka/deoplete-flow'
+Plug 'alexlafroscia/deoplete-flow',       { 'branch': 'pass-filename-to-autocomplete' }
 
 " Language Support {{{3
 " JavaScript {{{4
