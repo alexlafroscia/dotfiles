@@ -176,8 +176,7 @@ Plug 'neovim/node-host',                  { 'do': 'npm install' }
 
 " TypeScript {{{4
 Plug 'HerringtonDarkholme/yats.vim'
-Plug 'Shougo/vimproc.vim',                { 'do': 'make' }
-Plug 'Quramy/tsuquyomi'
+Plug 'mhartington/nvim-typescript',       { 'do': ':UpdateRemotePlugins' }
 
 " HTML {{{4
 Plug 'othree/html5.vim',                  { 'for': 'html' }
