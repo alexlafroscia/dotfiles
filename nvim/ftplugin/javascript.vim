@@ -16,6 +16,3 @@ function! JavaScriptBreakpoint(lnum)
 endfunction
 
 nnoremap <LocalLeader>b :call JavaScriptBreakpoint(line('.'))<CR>
-
-" Set the default compiler program based on filetype
-compiler eslint

@@ -1,7 +1,13 @@
-" Only run ESLint for JS files
 let g:ale_linters = {
 \   'javascript': ['eslint', 'flow'],
+\   'html': []
 \}
+
+let g:ale_fixers = {
+\   'javascript': ['eslint']
+\}
+
+nnoremap <leader>d :ALEFix<CR>
 
 " Use a slightly slimmer error pointer
 let g:ale_sign_error = '✖'
