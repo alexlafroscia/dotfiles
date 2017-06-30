@@ -24,7 +24,7 @@ I hate `CAPSLOCK` and don't find it useful at all. However, is _does_ occupy a r
 
 ## Sierra
 
-Karabiner no longer works on Sierra, so we need to devise another approach.  Thankfully, other people have had the same issue. I've tried a few different approaches, but the easiest to set up can be found [here][karabiner-elements-sierra].
+Karabiner and Seil are no longer supported on Sierra and later. Instead, there is [Karabiner Elements][karabiner-elements] which achieves the same task, but is a bit easier to use.  Download the latest version, and check out my configuration within `karabiner/karabiner.json` for an example of how to set this up.
 
 ## El Capitan
 
