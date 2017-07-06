@@ -206,7 +206,9 @@ Plug 'wting/rust.vim'
 Plug 'cespare/vim-toml'
 
 " Go {{{4
-Plug 'fatih/vim-go',                      { 'for': 'go' }
+Plug 'fatih/vim-go'
+Plug 'nsf/gocode',                        { 'rtp': 'nvim', 'do': './nvim/symlink.sh' }
+Plug 'zchee/deoplete-go'
 
 " Markdown {{{4
 Plug 'reedes/vim-pencil'                  " Markdown, Writing

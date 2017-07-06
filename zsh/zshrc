@@ -148,6 +148,11 @@ if [[ -f "$yarn_global_modules/tabtab/.completions/yarn.zsh" ]]; then
   source "$yarn_global_modules/tabtab/.completions/yarn.zsh"
 fi
 
+# -- Go ------------------------------------------------------------------------
+# Add $GOTPATH/bin to the $PATH
+export GOPATH=$HOME/Code/go
+export PATH="$PATH:$GOPATH/bin"
+
 # -- Local Configuration (After Default) ---------------------------------------
 if [[ -f "$DOTFILES/zsh/zshrc.local" ]]; then
   source $DOTFILES/zsh/zshrc.local
