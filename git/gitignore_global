@@ -28,3 +28,6 @@ npm-debug.log
 
 # VS Code Files
 ember.d.ts
+
+# ASDF Tool Versions
+.tool-versions
