@@ -1,6 +1,7 @@
 call deoplete#enable()
 
 let g:deoplete#ignore_sources = {}
+let g:deoplete#ignore_sources.go = ['around', 'buffer', 'member']
 let g:deoplete#ignore_sources.javascript = ['member']
 let g:deoplete#ignore_sources.python = ['member']
 
