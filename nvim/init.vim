@@ -111,14 +111,6 @@ nnoremap <leader>gt :call OpenInGitTower()<CR>
 " Specify plugins {{{2
 call plug#begin()
 
-" UI {{{3
-Plug 'trevordmiller/nova-vim'
-Plug 'vim-airline/vim-airline'            " Handy info
-Plug 'retorillo/airline-tablemode.vim'
-Plug 'edkolev/tmuxline.vim'               " Make the Tmux bar match Vim
-Plug 'ryanoasis/vim-webdevicons'
-Plug 'junegunn/goyo.vim'
-
 " Project Navigation {{{3
 Plug 'junegunn/fzf',                      { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
