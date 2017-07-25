@@ -2,6 +2,7 @@
 " ----------------------------
 let mapleader = " "
 let &runtimepath .= "," . $DOTFILES . "/nvim"  " Add DOTFILES to runtimepath
+let &packpath .= "," . $DOTFILES . "/nvim"
 
 set shell=zsh " Set bash as the prompt for Vim
 set backspace=2   " Backspace deletes like most programs in insert mode
