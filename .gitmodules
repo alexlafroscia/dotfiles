@@ -22,3 +22,21 @@
 [submodule "nvim/pack/ui/start/nova-vim"]
 	path = nvim/pack/ui/start/nova-vim
 	url = https://github.com/trevordmiller/nova-vim.git
+[submodule "nvim/pack/navigation/start/matchit"]
+	path = nvim/pack/file-navigation/start/matchit
+	url = https://github.com/vim-scripts/matchit.zip.git
+[submodule "nvim/pack/navigation/start/easymotion"]
+	path = nvim/pack/file-navigation/start/easymotion
+	url = https://github.com/Lokaltog/vim-easymotion
+[submodule "nvim/pack/navigation/start/numbertoggle"]
+	path = nvim/pack/file-navigation/start/numbertoggle
+	url = https://github.com/jeffkreeftmeijer/vim-numbertoggle
+[submodule "nvim/pack/navigation/start/targets.vim"]
+	path = nvim/pack/file-navigation/start/targets.vim
+	url = https://github.com/wellle/targets.vim
+[submodule "nvim/pack/navigation/start/vim-signature"]
+	path = nvim/pack/file-navigation/start/vim-signature
+	url = git://github.com/kshenoy/vim-signature.git
+[submodule "nvim/pack/navigation/start/incsearch.vim"]
+	path = nvim/pack/file-navigation/start/incsearch.vim
+	url = git://github.com/haya14busa/incsearch.vim.git
