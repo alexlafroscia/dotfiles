@@ -136,8 +136,10 @@ elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
 fi
 
 # -- asdf ---------------------------------------------------------------------
-source $HOME/.asdf/asdf.sh
-source $HOME/.asdf/completions/asdf.bash
+if [[ -d "$HOME/.asdf" ]]; then
+  source $HOME/.asdf/asdf.sh
+  source $HOME/.asdf/completions/asdf.bash
+fi
 
 # -- Yarn ---------------------------------------------------------------------
 # Make the shell aware of global packages installed by Yarn
