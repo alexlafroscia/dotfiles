@@ -1,7 +1,7 @@
 .dotfiles
 =========
 
-My dotfile configuration. Covers Neovim, TMUX, Git, ZSH, Ubersicht and some other things, too.
+My dotfile configuration. Covers Neovim, TMUX, Git, ZSH and some other things, too.
 
 # Installing the doftiles
 
