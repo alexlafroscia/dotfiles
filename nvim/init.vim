@@ -119,6 +119,14 @@ Plug 'scrooloose/nerdtree'
 Plug 'vim-scripts/ctags.vim'              " ctags related stuff
 Plug 'majutsushi/tagbar'
 
+" File Navigation {{{3
+Plug 'vim-scripts/matchit.zip'            " More powerful % matching
+Plug 'Lokaltog/vim-easymotion'            " Move like the wind!
+Plug 'jeffkreeftmeijer/vim-numbertoggle'  " Smarter line numbers
+Plug 'wellle/targets.vim'
+Plug 'kshenoy/vim-signature'
+Plug 'haya14busa/incsearch.vim'           " Better search highlighting
+
 " Editing {{{3
 Plug 'tpope/vim-surround'                 " Change word surroundings
 Plug 'tpope/vim-commentary'               " Comments stuff
