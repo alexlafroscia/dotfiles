@@ -4,21 +4,3 @@
 [submodule "zsh/custom/plugins/zsh-syntax-highlighting"]
 	path = zsh/custom/plugins/zsh-syntax-highlighting
 	url = https://github.com/zsh-users/zsh-syntax-highlighting.git
-[submodule "nvim/pack/ui/vim-airline"]
-	path = nvim/pack/ui/start/vim-airline
-	url = https://github.com/vim-airline/vim-airline.git
-[submodule "nvim/pack/ui/airline-tablemode.vim"]
-	path = nvim/pack/ui/start/airline-tablemode.vim
-	url = https://github.com/retorillo/airline-tablemode.vim.git
-[submodule "nvim/pack/ui/tmuxline.vim"]
-	path = nvim/pack/ui/start/tmuxline.vim
-	url = https://github.com/edkolev/tmuxline.vim.git
-[submodule "nvim/pack/ui/vim-devicons"]
-	path = nvim/pack/ui/start/vim-devicons
-	url = https://github.com/ryanoasis/vim-devicons.git
-[submodule "nvim/pack/ui/goyo.vim"]
-	path = nvim/pack/ui/start/goyo.vim
-	url = https://github.com/junegunn/goyo.vim.git
-[submodule "nvim/pack/ui/start/nova-vim"]
-	path = nvim/pack/ui/start/nova-vim
-	url = https://github.com/trevordmiller/nova-vim.git
