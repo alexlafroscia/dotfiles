@@ -220,7 +220,8 @@ Plug 'godlygeek/tabular',                 { 'for': 'markdown' } " Needed for vim
 Plug 'plasticboy/vim-markdown',           { 'for': 'markdown' }
 
 " Elixir {{{4
-Plug 'elixir-lang/vim-elixir',            { 'for': 'elixir' }
+Plug 'elixir-editors/vim-elixir'
+Plug 'slashmili/alchemist.vim'
 
 call plug#end()
 " Load plugin configurations {{{2
