@@ -153,6 +153,11 @@ fi
 export GOPATH=$HOME/Code/go
 export PATH="$PATH:$GOPATH/bin"
 
+# -- Kubectl
+if exists "kubectl"; then
+  source <(kubectl completion zsh)
+fi
+
 # -- Local Configuration (After Default) ---------------------------------------
 if [[ -f "$DOTFILES/zsh/zshrc.local" ]]; then
   source $DOTFILES/zsh/zshrc.local
