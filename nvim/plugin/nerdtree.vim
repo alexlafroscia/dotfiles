@@ -10,5 +10,6 @@ let NERDTreeIgnore = [
       \'__pycache__[[dir]]',
       \'^bower_components[[dir]]',
       \'^node_modules[[dir]]',
-      \'^tmp[[dir]]'
+      \'^tmp[[dir]]',
+      \'^deps[[dir]]'
       \]
