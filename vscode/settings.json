@@ -1,0 +1,31 @@
+{
+    // Editor Style
+    "editor.fontFamily": "Hasklig",
+    "editor.tabSize": 2,
+
+    // Fuzzy Finder
+    "files.exclude": {
+        // Default
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true,
+
+        // Dependencies
+        "**/deps": true,
+        "**/node_modules": true,
+
+        // Build Output
+        "**/_build": true,
+        "**/dist": true,
+        "**/tmp": true
+    },
+
+    // (Neo)Vim Config
+    "vim.leader": " ",
+    "vim.disableAnnoyingNeovimMessage": true,
+    "vim.enableNeovim": true,
+    "vim.neovimPath": "/usr/local/bin/nvim",
+    "vim.easymotion": true
+}
