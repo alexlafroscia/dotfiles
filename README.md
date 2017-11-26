@@ -22,7 +22,7 @@ My dotfile configuration. Covers Neovim, TMUX, Git, ZSH and some other things, t
 
 I hate `CAPSLOCK` and don't find it useful at all. However, is _does_ occupy a really useful place on the keyboard.  I've found the best use for it to be mapping it such that tapping it sends `ESC` and holding it works as `CONTROL`.  This way, you can hold it down using your pinky finger as a modifier, or give it a quick tap to pop out of `insert` mode in Vim.
 
-## Sierra
+## (High) Sierra
 
 Karabiner and Seil are no longer supported on Sierra and later. Instead, there is [Karabiner Elements][karabiner-elements] which achieves the same task, but is a bit easier to use.  Download the latest version, and check out my configuration within `karabiner/karabiner.json` for an example of how to set this up.
 
