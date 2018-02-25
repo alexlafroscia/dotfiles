@@ -1,0 +1,1 @@
+setlocal ft=typescript

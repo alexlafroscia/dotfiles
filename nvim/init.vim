@@ -87,6 +87,8 @@ if has("autocmd")
   autocmd BufRead,BufNewFile .eslintrc,.jscsrc,.jshintrc,.babelrc set ft=json
 
   autocmd BufRead,BufNewFile gitconfig set ft=.gitconfig
+
+  au! BufRead,BufNewFile *.tsx       setfiletype typescript
 endif
 " }}}1
 " Section: External Functions {{{
