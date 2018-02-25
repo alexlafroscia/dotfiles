@@ -125,9 +125,10 @@ Plug 'junegunn/goyo.vim'
 Plug 'junegunn/fzf',                      { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'mhinz/vim-grepper'
-Plug 'scrooloose/nerdtree'
 Plug 'vim-scripts/ctags.vim'              " ctags related stuff
 Plug 'majutsushi/tagbar'
+Plug 'rbgrouleff/bclose.vim'              " Required by ranger.vim
+Plug 'francoiscabrol/ranger.vim'
 
 " File Navigation {{{3
 Plug 'vim-scripts/matchit.zip'            " More powerful % matching
@@ -243,12 +244,12 @@ let g:user_emmet_settings = {
   \}
 " }}}3
 
+" ranger.vim {{{3
+let g:ranger_replace_netrw = 1 " open ranger when vim open a directory
+
 " Section: Remaps {{{1
 
 " Normal Mode Remaps {{{2
-
-" Quickly find file in NERDTree
-nnoremap <leader>f :NERDTreeFind<CR>
 
 nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
 
