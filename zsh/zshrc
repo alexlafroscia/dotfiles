@@ -71,9 +71,6 @@ codeclimate() {
   docker run --interactive --tty --rm --env CODE_PATH="$PWD" --volume "$PWD":/code --volume /var/run/docker.sock:/var/run/docker.sock --volume /tmp/cc:/tmp/cc codeclimate/codeclimate "$@"
 }
 
-export PATH="$PATH:/opt/vagrant/bin"
-export PATH="/usr/local/sbin:$HOME/bin:$PATH"
-
 # -- Functions -----------------------------------------------------------------
 
 # Extract archive based on file type
@@ -110,8 +107,11 @@ alias tmux="tmux -2"
 #    https://github.com/nvbn/thefuck
 alias fuck='$(thefuck $(fc -ln -1))'
 
+# -- Add HOME bin to $PATH -----------------------------------------------------
+[[ ":$PATH:" == *":$HOME/bin:"* ]] || PATH="$HOME/bin:$PATH"
+
 # -- Add DOTFILES bin to PATH --------------------------------------------------
-export PATH="$PATH:$DOTFILES/bin"
+[[ ":$PATH:" == *":$DOTFILES/bin:"* ]] || PATH="$DOTFILES/bin:$PATH"
 
 # -- Xiki ----------------------------------------------------------------------
 if [[ -f "$HOME/.xsh" ]]; then
@@ -144,14 +144,14 @@ fi
 # -- Yarn ---------------------------------------------------------------------
 # Make the shell aware of global packages installed by Yarn
 local yarn_global_modules="$XDG_CONFIG_HOME/yarn/global/node_modules"
-if [[ -d "$yarn_global_modules/.bin" ]]; then
+if [[ -d "$yarn_global_modules/.bin" && ":$PATH:" != *":$yarn_global_modules/.bin:"* ]]; then
   export PATH="$PATH:$yarn_global_modules/.bin"
 fi
 
 # -- Go ------------------------------------------------------------------------
 # Add $GOTPATH/bin to the $PATH
 export GOPATH=$HOME/Code/go
-export PATH="$PATH:$GOPATH/bin"
+[[ ":$PATH:" == *":$GOPATH/bin:"* ]] || PATH="$PATH:$GOPATH/bin"
 
 # -- Kubectl
 if exists "kubectl"; then
