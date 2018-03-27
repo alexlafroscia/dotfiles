@@ -186,8 +186,8 @@ Plug 'mhartington/nvim-typescript',       { 'do': ':UpdateRemotePlugins' }
 Plug 'ElmCast/elm-vim'
 
 " HTML {{{4
-Plug 'othree/html5.vim',                  { 'for': 'html' }
-Plug 'mustache/vim-mustache-handlebars'
+Plug 'othree/html5.vim'
+Plug 'joukevandermaas/vim-ember-hbs'
 Plug 'mattn/emmet-vim'
 
 " CSS {{{4
