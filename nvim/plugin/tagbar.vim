@@ -1,7 +1,7 @@
 " Shortcut to open TagBar
 noremap <leader>tb :TagbarToggle<cr>
 
-let g:tagbar_ctags_bin = "$HOME/.homebrew/bin/ctags"
+let g:tagbar_ctags_bin = systemlist('brew --prefix')[0] . '/bin/ctags'
 
 " Add support for markdown files in tagbar.
 let g:tagbar_type_markdown = {
