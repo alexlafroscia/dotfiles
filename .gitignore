@@ -4,3 +4,9 @@
 # Ignore the "local" versions of files
 *.local
 *.local.*
+
+# VScode Temp Spage
+vscode/workspaceStorage
+
+# Rope Temp Files
+.ropeproject
