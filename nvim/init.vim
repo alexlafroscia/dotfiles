@@ -103,7 +103,7 @@ nnoremap <leader>md :call MarkedPreview()<CR>
 " }}}
 " Open current repo in Tower {{{
 function! OpenInGitTower()
-  call system('gittower ' . getcwd())
+  call system('gittower `git rev-parse --show-toplevel`')
 endfunction
 nnoremap <leader>gt :call OpenInGitTower()<CR>
 " }}}
