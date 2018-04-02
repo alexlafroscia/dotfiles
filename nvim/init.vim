@@ -51,8 +51,8 @@ set splitbelow
 set splitright
 " }}}2
 " Point to the Python executables in `asdf` {{{2
-let g:python_host_prog = $HOME . '/.asdf/installs/python/2.7.10/bin/python'
-let g:python3_host_prog = $HOME . '/.asdf/installs/python/3.5.0/bin/python'
+let g:python_host_prog = $ASDF_DIR . '/installs/python/2.7.10/bin/python'
+let g:python3_host_prog = $ASDF_DIR . '/installs/python/3.5.0/bin/python'
 " }}}2
 " Configure grep to use The Silver Searcher {{{2
 if executable('ag')
@@ -127,6 +127,10 @@ Plug 'junegunn/fzf.vim'
 Plug 'mhinz/vim-grepper'
 Plug 'vim-scripts/ctags.vim'              " ctags related stuff
 Plug 'majutsushi/tagbar'
+Plug 'autozimu/LanguageClient-neovim', {
+    \ 'branch': 'next',
+    \ 'do': 'bash install.sh',
+    \ }
 Plug 'rbgrouleff/bclose.vim'              " Required by ranger.vim
 Plug 'francoiscabrol/ranger.vim'
 
@@ -164,10 +168,7 @@ Plug 'Olical/vim-enmasse'                 " Edit all files in a Quickfix list
 Plug 'janko-m/vim-test'
 
 " Autocomplete {{{3
-Plug 'Shougo/deoplete.nvim',              { 'do': ':UpdateRemotePlugins' }
-Plug 'zchee/deoplete-jedi'
-Plug 'carlitux/deoplete-ternjs'
-Plug 'alexlafroscia/deoplete-flow',       { 'branch': 'pass-filename-to-autocomplete' }
+Plug 'roxma/nvim-completion-manager'
 
 " Language Support {{{3
 " JavaScript {{{4
@@ -177,6 +178,7 @@ Plug 'rhysd/npm-debug-log.vim'
 Plug '~/projects/vim-plugins/vim-ember-cli'
 Plug 'AndrewRadev/ember_tools.vim'
 Plug 'neovim/node-host',                  { 'do': 'npm install' }
+Plug 'Quramy/vim-js-pretty-template'
 
 " TypeScript {{{4
 Plug 'HerringtonDarkholme/yats.vim'
@@ -215,7 +217,6 @@ Plug 'cespare/vim-toml'
 " Go {{{4
 Plug 'fatih/vim-go'
 Plug 'nsf/gocode',                        { 'rtp': 'nvim', 'do': './nvim/symlink.sh' }
-Plug 'zchee/deoplete-go'
 
 " Markdown {{{4
 Plug 'reedes/vim-pencil'                  " Markdown, Writing
