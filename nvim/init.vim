@@ -206,7 +206,6 @@ Plug 'tpope/vim-endwise'
 
 " Python {{{4
 Plug 'klen/python-mode',                  { 'for': 'python' }
-Plug 'davidhalter/jedi-vim',              { 'for': 'python' }
 Plug 'alfredodeza/pytest.vim',            { 'for': 'python' }
 
 " Rust {{{4
