@@ -5,6 +5,9 @@ export DOTFILES="$HOME/.dotfiles"
 # Helper scripts
 source "$DOTFILES/scripts/helpers/functions.sh"
 
+# -- Set up $PATH --------------------------------------------------------------
+[[ ":$PATH:" == *":$/usr/local/bin:"* ]] || PATH="/usr/local/bin:$PATH"
+
 # -- Local Configuration (Before Default) --------------------------------------
 if [[ -f "$DOTFILES/zsh/zshrc.local.pre" ]]; then
   source $DOTFILES/zsh/zshrc.local.pre
