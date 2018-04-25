@@ -86,6 +86,8 @@ if has("autocmd")
 
   autocmd BufRead,BufNewFile .eslintrc,.jscsrc,.jshintrc,.babelrc set ft=json
 
+  au BufRead,BufNewFile *.scss set filetype=scss.css
+
   autocmd BufRead,BufNewFile gitconfig set ft=.gitconfig
 
   au! BufRead,BufNewFile *.tsx       setfiletype typescript
@@ -117,7 +119,6 @@ call plug#begin()
 Plug 'trevordmiller/nova-vim'
 Plug 'vim-airline/vim-airline'            " Handy info
 Plug 'retorillo/airline-tablemode.vim'
-Plug 'edkolev/tmuxline.vim'               " Make the Tmux bar match Vim
 Plug 'ryanoasis/vim-webdevicons'
 Plug 'junegunn/goyo.vim'
 
@@ -134,34 +135,29 @@ Plug 'francoiscabrol/ranger.vim'
 Plug 'vim-scripts/matchit.zip'            " More powerful % matching
 Plug 'Lokaltog/vim-easymotion'            " Move like the wind!
 Plug 'jeffkreeftmeijer/vim-numbertoggle'  " Smarter line numbers
-Plug 'wellle/targets.vim'
-Plug 'kshenoy/vim-signature'
+Plug 'kshenoy/vim-signature'              " Show marks in the gutter
 Plug 'haya14busa/incsearch.vim'           " Better search highlighting
 
 " Editing {{{3
 Plug 'tpope/vim-surround'                 " Change word surroundings
 Plug 'tpope/vim-commentary'               " Comments stuff
 Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-endwise'
 Plug 'dhruvasagar/vim-table-mode',        { 'on': 'TableModeEnable' }
 Plug 'kana/vim-textobj-user'
-Plug 'sgur/vim-textobj-parameter'
 Plug 'jasonlong/vim-textobj-css'
-Plug 'Konfekt/FastFold'
 Plug 'editorconfig/editorconfig-vim'
 
 " Git
 Plug 'tpope/vim-fugitive'                 " Git stuff in Vim
 Plug 'airblade/vim-gitgutter'
 Plug 'junegunn/gv.vim',                   { 'on': 'GV' }
-Plug 'jez/vim-github-hub'
+Plug 'jez/vim-github-hub'                 " Filetype for hub pull requests
 
 " Task Running
 Plug 'tpope/vim-dispatch'                 " Run tasks asychronously in Tmux
 Plug 'w0rp/ale'                           " Linter
-Plug 'wincent/terminus'
 Plug 'christoomey/vim-tmux-navigator'
-Plug 'Olical/vim-enmasse'                 " Edit all files in a Quickfix list
-Plug 'janko-m/vim-test'
 
 " Autocomplete {{{3
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -175,8 +171,6 @@ Plug 'autozimu/LanguageClient-neovim', {
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
 Plug 'rhysd/npm-debug-log.vim'
-Plug '~/projects/vim-plugins/vim-ember-cli'
-Plug 'AndrewRadev/ember_tools.vim'
 Plug 'neovim/node-host',                  { 'do': 'npm install' }
 Plug 'Quramy/vim-js-pretty-template'
 
@@ -187,9 +181,11 @@ Plug 'mhartington/nvim-typescript',       { 'do': ':UpdateRemotePlugins' }
 " Elm {{{4
 Plug 'ElmCast/elm-vim'
 
+" Handlebars
+Plug 'joukevandermaas/vim-ember-hbs'
+
 " HTML {{{4
 Plug 'othree/html5.vim'
-Plug 'joukevandermaas/vim-ember-hbs'
 Plug 'mattn/emmet-vim'
 
 " CSS {{{4
@@ -201,21 +197,14 @@ Plug 'cakebaker/scss-syntax.vim'
 " Ruby {{{4
 Plug 'vim-ruby/vim-ruby',                 { 'for': 'ruby' }
 Plug 'tpope/vim-rails'
-Plug 'tpope/vim-bundler'
-Plug 'tpope/vim-endwise'
 
 " Python {{{4
 Plug 'klen/python-mode',                  { 'for': 'python' }
-Plug 'alfredodeza/pytest.vim',            { 'for': 'python' }
 
 " Rust {{{4
 Plug 'wellbredgrapefruit/tomdoc.vim',     { 'for': 'ruby' }
 Plug 'wting/rust.vim'
 Plug 'cespare/vim-toml'
-
-" Go {{{4
-Plug 'fatih/vim-go'
-Plug 'nsf/gocode',                        { 'rtp': 'nvim', 'do': './nvim/symlink.sh' }
 
 " Markdown {{{4
 Plug 'reedes/vim-pencil'                  " Markdown, Writing
