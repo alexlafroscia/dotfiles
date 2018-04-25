@@ -127,10 +127,6 @@ Plug 'junegunn/fzf.vim'
 Plug 'mhinz/vim-grepper'
 Plug 'vim-scripts/ctags.vim'              " ctags related stuff
 Plug 'majutsushi/tagbar'
-Plug 'autozimu/LanguageClient-neovim', {
-    \ 'branch': 'next',
-    \ 'do': 'bash install.sh',
-    \ }
 Plug 'rbgrouleff/bclose.vim'              " Required by ranger.vim
 Plug 'francoiscabrol/ranger.vim'
 
@@ -168,7 +164,11 @@ Plug 'Olical/vim-enmasse'                 " Edit all files in a Quickfix list
 Plug 'janko-m/vim-test'
 
 " Autocomplete {{{3
-Plug 'roxma/nvim-completion-manager'
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'autozimu/LanguageClient-neovim', {
+    \ 'branch': 'next',
+    \ 'do': 'bash install.sh',
+    \ }
 
 " Language Support {{{3
 " JavaScript {{{4
