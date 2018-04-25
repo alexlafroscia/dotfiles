@@ -27,5 +27,8 @@
     "vim.disableAnnoyingNeovimMessage": true,
     "vim.enableNeovim": true,
     "vim.neovimPath": "/usr/local/bin/nvim",
-    "vim.easymotion": true
+    "vim.easymotion": true,
+
+    // Git
+    "git.path": "/usr/local/bin/hub"
 }
