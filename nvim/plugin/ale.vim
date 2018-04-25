@@ -4,7 +4,8 @@ let g:ale_linters = {
 \}
 
 let g:ale_fixers = {
-\   'javascript': ['eslint']
+\   'javascript': ['eslint'],
+\   'typescript': ['eslint']
 \}
 
 nmap <leader>d <Plug>(ale_fix)
