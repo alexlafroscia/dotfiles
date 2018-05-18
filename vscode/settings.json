@@ -1,6 +1,7 @@
 {
     // Editor Style
-    "editor.fontFamily": "Hasklig",
+    "editor.fontFamily": "Dank Mono",
+    "editor.fontSize": 14,
     "editor.tabSize": 2,
 
     // Fuzzy Finder
