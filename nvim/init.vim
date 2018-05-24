@@ -89,8 +89,6 @@ if has("autocmd")
   au BufRead,BufNewFile *.scss set filetype=scss.css
 
   autocmd BufRead,BufNewFile gitconfig set ft=.gitconfig
-
-  au! BufRead,BufNewFile *.tsx       setfiletype typescript
 endif
 " }}}1
 " Section: External Functions {{{
