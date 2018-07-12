@@ -287,7 +287,7 @@ if has("termguicolors")  " set true colors
     set termguicolors
   endif
 set background=dark
-colorscheme custom-nova
+colorscheme nova-with-italics
 
 " }}}
 " Section: Local-Machine Config {{{
