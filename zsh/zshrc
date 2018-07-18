@@ -52,12 +52,17 @@ unsetopt correct_all
 unsetopt correct
 
 # -- Variables -----------------------------------------------------------------
-export EDITOR="$(brew --prefix)/bin/nvim"
-alias vim=nvim
-alias vi=nvim
-alias dm=docker-machine
-alias dc=docker-compose
-alias docker-cleanup=docker ps -a | grep Exit | cut -d ' ' -f 1 | xargs docker rm
+if [ "$TERM_PROGRAM" = "vscode" ]; then
+  IS_VSCODE=1
+else
+  IS_VSCODE=
+fi
+
+if [ "$IS_VSCODE" ]; then
+  export EDITOR="$(which code)"
+else
+  export EDITOR="$(brew --prefix)/bin/nvim"
+fi
 
 # -- Aliases -------------------------------------------------------------------
 if [[ -f "$DOTFILES/aliases" ]]; then
@@ -71,6 +76,13 @@ fi
 if exists "hub"; then alias git=hub; fi
 
 if exists "gittower"; then alias tower='gittower `git rev-parse --show-toplevel`'; fi
+
+alias vim=nvim
+alias vi=nvim
+alias dm=docker-machine
+alias dc=docker-compose
+alias docker-cleanup=docker ps -a | grep Exit | cut -d ' ' -f 1 | xargs docker rm
+alias edit="$EDITOR"
 
 codeclimate() {
   docker run --interactive --tty --rm --env CODE_PATH="$PWD" --volume "$PWD":/code --volume /var/run/docker.sock:/var/run/docker.sock --volume /tmp/cc:/tmp/cc codeclimate/codeclimate "$@"
@@ -103,6 +115,10 @@ extract () {
 # -- Git -----------------------------------------------------------------------
 zstyle ':completion:*:*:hub:*' user-commands ${${(M)${(k)commands}:#git-*}/git-/}
 _git-delete-tag() { compadd "$@" $(git tag) }
+
+if [ "$IS_VSCODE" ]; then
+  git config core.editor "$EDITOR --wait"
+fi
 
 # -- Tmux ----------------------------------------------------------------------
 export DISABLE_AUTO_TITLE="true"
