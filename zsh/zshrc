@@ -153,10 +153,20 @@ elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
 fi
 
 # -- asdf ---------------------------------------------------------------------
+
+# ASDF is installed manually into home directory
 if [[ -d "$HOME/.asdf" ]]; then
-  source $HOME/.asdf/asdf.sh
-  source $HOME/.asdf/completions/asdf.bash
+  export ASDF_DIR="$HOME/.asdf" 
 fi
+
+# ASDF is installed through Homebrew
+if [[ -d "/usr/local/opt/asdf" ]]; then
+  export ASDF_DIR="/usr/local/opt/asdf"
+fi
+
+export ASDF_DATA_DIR="$ASDF_DIR"
+
+source $ASDF_DIR/asdf.sh
 
 # -- Yarn ---------------------------------------------------------------------
 # Make the shell aware of global packages installed by Yarn
