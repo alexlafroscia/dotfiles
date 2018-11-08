@@ -1,35 +1,88 @@
 {
-    // Editor Style
-    "editor.fontFamily": "Dank Mono",
-    "editor.fontSize": 14,
-    "editor.tabSize": 2,
+  // Editor Style
+  "workbench.colorTheme": "Night Owl",
+  "editor.fontFamily": "Dank Mono",
+  "editor.fontSize": 14,
+  "editor.tabSize": 2,
+  "editor.minimap.enabled": false,
+  "editor.formatOnSave": true,
+  "breadcrumbs.enabled": true,
+  "workbench.startupEditor": "newUntitledFile",
 
-    // Fuzzy Finder
-    "files.exclude": {
-        // Default
-        "**/.git": true,
-        "**/.svn": true,
-        "**/.hg": true,
-        "**/CVS": true,
-        "**/.DS_Store": true,
+  // Relative line numbers
+  // TODO: Look into relative line numbers only in `insert` mode
+  "editor.lineNumbers": "relative",
 
-        // Dependencies
-        "**/deps": true,
-        "**/node_modules": true,
+  // Fuzzy Finder
+  "files.exclude": {
+    // Default
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/CVS": true,
+    "**/.DS_Store": true,
+    // Dependencies
+    "**/deps": true,
+    "**/node_modules": true,
+    // Build Output
+    "**/_build": true,
+    "**/dist": true,
+    "**/tmp": true
+  },
+  
+  // Ignore build files in search
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/bower_components": true,
+    "**/tmp": true
+  },
 
-        // Build Output
-        "**/_build": true,
-        "**/dist": true,
-        "**/tmp": true
+  // (Neo)Vim Config
+  "vim.leader": " ",
+  "vim.enableNeovim": true,
+  "vim.neovimPath": "/usr/local/bin/nvim",
+  "vim.easymotion": true,
+
+  // Git
+  "git.path": "/usr/local/bin/hub",
+  "git.autofetch": true,
+
+  // ESLint
+  "eslint.packageManager": "yarn",
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    {
+      "language": "typescript",
+      "autoFix": true
     },
+    {
+      "language": "typescriptreact",
+      "autoFix": true
+    }
+  ],
 
-    // (Neo)Vim Config
-    "vim.leader": " ",
-    "vim.disableAnnoyingNeovimMessage": true,
-    "vim.enableNeovim": true,
-    "vim.neovimPath": "/usr/local/bin/nvim",
-    "vim.easymotion": true,
+  // JavaScript
+  "javascript.updateImportsOnFileMove.enabled": "always",
 
-    // Git
-    "git.path": "/usr/local/bin/hub"
+  // TypeScript
+  "typescript.updateImportsOnFileMove.enabled": "always",
+
+  // HandleBras
+  "[handlebars]": {
+    "editor.formatOnSave": false
+  },
+
+  // Emmet
+  "emmet.showExpandedAbbreviation": "never",
+  "window.zoomLevel": 0,
+  "terminal.integrated.confirmOnExit": true,
+  "explorer.confirmDragAndDrop": false,
+  "githubPullRequests.hosts": [
+    {
+      "host": "https://github.com",
+      "username": "oauth",
+      "token": "system"
+    }
+  ],
 }
