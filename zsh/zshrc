@@ -84,10 +84,6 @@ alias dc=docker-compose
 alias docker-cleanup=docker ps -a | grep Exit | cut -d ' ' -f 1 | xargs docker rm
 alias edit="$EDITOR"
 
-codeclimate() {
-  docker run --interactive --tty --rm --env CODE_PATH="$PWD" --volume "$PWD":/code --volume /var/run/docker.sock:/var/run/docker.sock --volume /tmp/cc:/tmp/cc codeclimate/codeclimate "$@"
-}
-
 # -- Functions -----------------------------------------------------------------
 
 # Extract archive based on file type
