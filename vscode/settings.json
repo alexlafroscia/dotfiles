@@ -2,6 +2,7 @@
   // Editor Style
   "workbench.colorTheme": "Night Owl",
   "editor.fontFamily": "Dank Mono",
+  "editor.fontLigatures": true,
   "editor.fontSize": 14,
   "editor.tabSize": 2,
   "editor.minimap.enabled": false,
