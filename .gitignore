@@ -5,7 +5,8 @@
 *.local
 *.local.*
 
-# VScode Temp Spage
+# VScode Storage
+vscode/globalStorage
 vscode/workspaceStorage
 
 # Rope Temp Files
