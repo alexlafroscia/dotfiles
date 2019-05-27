@@ -112,8 +112,9 @@ nnoremap <leader>gt :call OpenInGitTower()<CR>
 call plug#begin()
 
 " UI {{{3
-Plug 'trevordmiller/nova-vim'
+Plug 'haishanh/night-owl.vim'
 Plug 'vim-airline/vim-airline'            " Handy info
+Plug 'vim-airline/vim-airline-themes'
 Plug 'retorillo/airline-tablemode.vim'
 Plug 'ryanoasis/vim-webdevicons'
 Plug 'junegunn/goyo.vim'
@@ -287,7 +288,7 @@ if has("termguicolors")  " set true colors
     set termguicolors
   endif
 set background=dark
-colorscheme nova-with-italics
+colorscheme night-owl
 
 " }}}
 " Section: Local-Machine Config {{{
