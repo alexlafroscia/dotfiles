@@ -9,5 +9,8 @@
 vscode/globalStorage
 vscode/workspaceStorage
 
+# NeoVim Plugins
+nvim/plugged
+
 # Rope Temp Files
 .ropeproject
