@@ -157,11 +157,10 @@ Plug 'w0rp/ale'                           " Linter
 Plug 'christoomey/vim-tmux-navigator'
 
 " Autocomplete {{{3
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'autozimu/LanguageClient-neovim', {
-    \ 'branch': 'next',
-    \ 'do': 'bash install.sh',
-    \ }
+Plug 'neoclide/coc.nvim', {
+      \ 'tag': '*',
+      \ 'do': './install.sh'
+      \ }
 
 " Language Support {{{3
 " JavaScript {{{4
@@ -173,7 +172,6 @@ Plug 'cdata/vim-tagged-template'
 
 " TypeScript {{{4
 Plug 'HerringtonDarkholme/yats.vim'
-Plug 'mhartington/nvim-typescript',       { 'do': ':UpdateRemotePlugins' }
 
 " Elm {{{4
 Plug 'ElmCast/elm-vim'
