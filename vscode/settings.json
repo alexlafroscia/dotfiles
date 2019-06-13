@@ -6,7 +6,6 @@
   "editor.fontSize": 14,
   "editor.tabSize": 2,
   "editor.minimap.enabled": false,
-  "editor.formatOnSave": true,
   "breadcrumbs.enabled": true,
   "workbench.startupEditor": "newUntitledFile",
 
@@ -30,7 +29,12 @@
     "**/dist": true,
     "**/tmp": true
   },
-  
+
+  "files.associations": {
+    ".graphqlconfig": "json",
+    "*.workflow": "hcl"
+  },
+
   // Ignore build files in search
   "search.exclude": {
     "**/node_modules": true,
@@ -63,27 +67,43 @@
     }
   ],
 
+  // Auto-Format
+  "editor.formatOnSave": true,
+
   // JavaScript
   "javascript.updateImportsOnFileMove.enabled": "always",
+  "javascript.implicitProjectConfig.experimentalDecorators": true,
+  "npm.packageManager": "yarn",
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+
+  // JSON
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
 
   // TypeScript
   "typescript.updateImportsOnFileMove.enabled": "always",
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
 
-  // HandleBras
+  // HandleBars
   "[handlebars]": {
     "editor.formatOnSave": false
   },
 
   // Emmet
   "emmet.showExpandedAbbreviation": "never",
-  "window.zoomLevel": 0,
+
+  // Integrated Terminal
   "terminal.integrated.confirmOnExit": true,
-  "explorer.confirmDragAndDrop": false,
-  "githubPullRequests.hosts": [
-    {
-      "host": "https://github.com",
-      "username": "oauth",
-      "token": "system"
-    }
-  ],
+  "terminal.integrated.shell.osx": "/usr/local/bin/zsh"
 }
