@@ -154,19 +154,19 @@ fi
 
 # -- asdf ---------------------------------------------------------------------
 
-if exists "kubectl"; then
+if exists "asdf"; then
   # ASDF is cloned manually into home directory
   if [[ -d "$HOME/.asdf/.git" ]]; then
-    export ASDF_DIR="$HOME/.asdf" 
+    export ASDF_DIR="$HOME/.asdf"
   fi
-  
+
   # ASDF is installed through Homebrew
   if [[ -d "/usr/local/opt/asdf" ]]; then
     export ASDF_DIR="/usr/local/opt/asdf"
   fi
-  
+
   export ASDF_DATA_DIR="$HOME/.asdf"
-  
+
   source $ASDF_DIR/asdf.sh
 fi
 
