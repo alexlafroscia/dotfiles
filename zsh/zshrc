@@ -171,6 +171,11 @@ if exists "asdf"; then
 fi
 
 # -- Yarn ---------------------------------------------------------------------
+# Add manually-installed `yarn` to $PATH if necessary
+if [[ -d "$HOME/.yarn/bin" ]]; then
+  [[ ":$PATH:" == *":$HOME/.yarn/bin:"* ]] || PATH="$HOME/.yarn/bin:$PATH"
+fi
+
 # Make the shell aware of global packages installed by Yarn
 local yarn_global_modules="$XDG_CONFIG_HOME/yarn/global/node_modules"
 if [[ -d "$yarn_global_modules/.bin" && ":$PATH:" != *":$yarn_global_modules/.bin:"* ]]; then
