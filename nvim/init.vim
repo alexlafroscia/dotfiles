@@ -168,7 +168,6 @@ Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
 Plug 'rhysd/npm-debug-log.vim'
 Plug 'neovim/node-host',                  { 'do': 'npm install' }
-Plug 'cdata/vim-tagged-template'
 
 " TypeScript {{{4
 Plug 'HerringtonDarkholme/yats.vim'
