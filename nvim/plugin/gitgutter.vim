@@ -1,1 +1,0 @@
-cnoreabbrev Gundo GitGutterUndoHunk

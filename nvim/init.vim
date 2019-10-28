@@ -147,7 +147,6 @@ Plug 'editorconfig/editorconfig-vim'
 
 " Git
 Plug 'tpope/vim-fugitive'                 " Git stuff in Vim
-Plug 'airblade/vim-gitgutter'
 Plug 'junegunn/gv.vim',                   { 'on': 'GV' }
 Plug 'jez/vim-github-hub'                 " Filetype for hub pull requests
 
@@ -157,10 +156,7 @@ Plug 'w0rp/ale'                           " Linter
 Plug 'christoomey/vim-tmux-navigator'
 
 " Autocomplete {{{3
-Plug 'neoclide/coc.nvim', {
-      \ 'tag': '*',
-      \ 'do': './install.sh'
-      \ }
+Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 
 " Language Support {{{3
 " JavaScript {{{4
