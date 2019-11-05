@@ -18,11 +18,12 @@ ZSH="$HOME/.oh-my-zsh"
 ZSH_CUSTOM="$DOTFILES/zsh/custom"
 fpath=( "$DOTFILES/zsh/custom" $fpath)
 
-# -- Theme ---------------------------------------------------------------------
-export NVIM_TUI_ENABLE_TRUE_COLOR=1
-ZSH_THEME="pure"
+# -- oh-my-zsh ---------------------------------------------------------------
 
-# -- ZSH Plugins ---------------------------------------------------------------
+# Configure `vi-mode` plugin
+MODE_INDICATOR=" "
+
+# Set plugins
 plugins=(git tmux npm bower vi-mode pj zsh-syntax-highlighting)
 if exists "virtualenvwrapper"; then plugins+=virtualenvwrapper; fi
 
@@ -36,8 +37,18 @@ if exists "brew"; then
   fi
 fi
 
-# -- Oh My Zsh -----------------------------------------------------------------
+# Disable oh-my-zsh theme; using Pure instead
+ZSH_THEME=""
+
 source $ZSH/oh-my-zsh.sh
+
+# -- Theme ---------------------------------------------------------------------
+export NVIM_TUI_ENABLE_TRUE_COLOR=1
+
+# Configuration from `pure` README
+fpath+=("$DOTFILES/zsh/pure")
+autoload -U promptinit; promptinit
+prompt pure
 
 # -- Named Directories ---------------------------------------------------------
 unsetopt auto_name_dirs

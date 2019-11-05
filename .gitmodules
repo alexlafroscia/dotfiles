@@ -1,6 +1,6 @@
-[submodule "zsh/custom/themes/pure"]
-	path = zsh/custom/themes/pure
-	url = git@github.com:alexlafroscia/pure.git
+[submodule "zsh/pure"]
+	path = zsh/pure
+	url = https://github.com/sindresorhus/pure
 [submodule "zsh/custom/plugins/zsh-syntax-highlighting"]
 	path = zsh/custom/plugins/zsh-syntax-highlighting
 	url = https://github.com/zsh-users/zsh-syntax-highlighting.git
