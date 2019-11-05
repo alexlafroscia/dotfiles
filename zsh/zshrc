@@ -24,18 +24,17 @@ fpath=( "$DOTFILES/zsh/custom" $fpath)
 MODE_INDICATOR=" "
 
 # Set plugins
-plugins=(git tmux npm bower vi-mode pj zsh-syntax-highlighting)
-if exists "virtualenvwrapper"; then plugins+=virtualenvwrapper; fi
-
-fpath=($DOTFILES/zsh/custom/completion $fpath)
-
-# Add Homebrew completions to config if they can be found
-if exists "brew"; then
-  local brew_completions="$(brew --prefix)/share/zsh/site-functions"
-  if [[ -d $brew_completions ]]; then
-    fpath=($fpath $brew_completions)
-  fi
-fi
+plugins=(
+  asdf
+  brew
+  docker
+  git
+  npm
+  tmux
+  vi-mode
+  yarn
+  zsh-syntax-highlighting
+)
 
 # Disable oh-my-zsh theme; using Pure instead
 ZSH_THEME=""
@@ -55,6 +54,12 @@ unsetopt auto_name_dirs
 
 # -- Completion Config ---------------------------------------------------------
 zstyle ':completion:*:*:vim:*:*files' ignored-patterns '*.class'
+
+# Add Homebrew completions to config if they can be found
+local brew_completions="$(brew --prefix)/share/zsh/site-functions"
+if [[ -d $brew_completions ]]; then
+  fpath=($fpath $brew_completions)
+fi
 
 # -- Command History -----------------------------------------------------------
 export HISTSIZE=500
@@ -170,24 +175,6 @@ fi
 if [[ $(uname) == 'Darwin' ]]; then
   # Load OSX config
   source $DOTFILES/zsh/zshrc.osx
-fi
-
-# -- asdf ---------------------------------------------------------------------
-
-if exists "asdf"; then
-  # ASDF is cloned manually into home directory
-  if [[ -d "$HOME/.asdf/.git" ]]; then
-    export ASDF_DIR="$HOME/.asdf"
-  fi
-
-  # ASDF is installed through Homebrew
-  if [[ -d "/usr/local/opt/asdf" ]]; then
-    export ASDF_DIR="/usr/local/opt/asdf"
-  fi
-
-  export ASDF_DATA_DIR="$HOME/.asdf"
-
-  source $ASDF_DIR/asdf.sh
 fi
 
 # -- Yarn ---------------------------------------------------------------------
