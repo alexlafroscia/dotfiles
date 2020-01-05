@@ -136,7 +136,7 @@ zstyle ':completion:*:*:hub:*' user-commands ${${(M)${(k)commands}:#git-*}/git-/
 _git-delete-tag() { compadd "$@" $(git tag) }
 
 if [ "$IS_VSCODE" ]; then
-  git config core.editor "$EDITOR --wait"
+  export GIT_EDITOR="$EDITOR --wait"
 fi
 
 # -- Tmux ----------------------------------------------------------------------
