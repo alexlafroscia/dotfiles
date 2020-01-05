@@ -21,3 +21,5 @@ let g:fzf_colors = {
 \   'prompt':  ['fg', 'Normal'],
 \   'marker':  ['fg', 'MatchParen']
 \ }
+
+let g:fzf_layout = { 'window': 'call CreateCenteredFloatingWindow()' }
