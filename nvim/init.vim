@@ -88,6 +88,8 @@ if has("autocmd")
 
   autocmd BufRead,BufNewFile gitconfig set ft=.gitconfig
 
+  autocmd BufRead,BufNewFile *.tsx set ft=typescript.jsx
+
   " When term starts, auto go into insert mode
   autocmd TermOpen * startinsert
 
@@ -99,8 +101,8 @@ endif
 
 " Creates a floating window with a most recent buffer to be used
 function! CreateCenteredFloatingWindow()
-  let width = float2nr(&columns * 0.6)
-  let height = float2nr(&lines * 0.6)
+  let width = float2nr(&columns * 0.8)
+  let height = float2nr(&lines * 0.8)
   let top = ((&lines - height) / 2) - 1
   let left = (&columns - width) / 2
   let opts = {'relative': 'editor', 'row': top, 'col': left, 'width': width, 'height': height, 'style': 'minimal'}
@@ -190,26 +192,27 @@ Plug 'editorconfig/editorconfig-vim'
 
 " Git
 Plug 'tpope/vim-fugitive'                 " Git stuff in Vim
+Plug 'tpope/vim-rhubarb'
 Plug 'junegunn/gv.vim',                   { 'on': 'GV' }
 Plug 'jez/vim-github-hub'                 " Filetype for hub pull requests
 
 " Task Running
-Plug 'tpope/vim-dispatch'                 " Run tasks asychronously in Tmux
-Plug 'w0rp/ale'                           " Linter
 Plug 'christoomey/vim-tmux-navigator'
 
 " Autocomplete {{{3
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
+" Plug 'neovim/nvim-lsp'
 
 " Language Support {{{3
 " JavaScript {{{4
 Plug 'pangloss/vim-javascript'
+Plug 'jonsmithers/vim-html-template-literals'
 Plug 'mxw/vim-jsx'
 Plug 'rhysd/npm-debug-log.vim'
 Plug 'neovim/node-host',                  { 'do': 'npm install' }
 
 " TypeScript {{{4
-Plug 'HerringtonDarkholme/yats.vim'
+" Plug 'leafgarland/typescript-vim'
 
 " Elm {{{4
 Plug 'ElmCast/elm-vim'
@@ -243,6 +246,7 @@ Plug 'cespare/vim-toml'
 Plug 'reedes/vim-pencil'                  " Markdown, Writing
 Plug 'godlygeek/tabular',                 { 'for': 'markdown' } " Needed for vim-markdown
 Plug 'plasticboy/vim-markdown',           { 'for': 'markdown' }
+Plug 'jxnblk/vim-mdx-js'
 
 " Elixir {{{4
 Plug 'elixir-editors/vim-elixir'
@@ -317,10 +321,7 @@ set completeopt-=preview
 
 syntax enable
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-set t_ut=                " fix 256 colors in tmux http://sunaku.github.io/vim-256color-bce.html
 if has("termguicolors")  " set true colors
-    let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-    let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
     set termguicolors
   endif
 set background=dark

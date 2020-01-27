@@ -23,3 +23,6 @@ let g:fzf_colors = {
 \ }
 
 let g:fzf_layout = { 'window': 'call CreateCenteredFloatingWindow()' }
+
+command! -bang -nargs=? -complete=dir Files
+    \ call fzf#vim#files(<q-args>, {'options': ['--layout=reverse', '--info=inline', '--preview', 'bat --color always {}']}, <bang>0)
