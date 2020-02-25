@@ -4,6 +4,29 @@
   "git.changedSign.hlGroup": "GitGutterChange",
   "git.removedSign.hlGroup": "GitGutterDelete",
   "git.topRemovedSign.hlGroup": "GitGutterDelete",
-  "git.changeRemovedSign.hlGroup": "GitGutterChangeDelete"
+  "git.changeRemovedSign.hlGroup": "GitGutterChangeDelete",
+
+  // coc-eslint configuration
+  "eslint.autoFixOnSave": true,
+
+  // coc-tsserver configuration
+  "tsserver.tsdk": "/Users/alafroscia/.config/yarn/global/node_modules/typescript/lib",
+  "tsserver.implicitProjectConfig.experimentalDecorators": true,
+  "tsserver.reportStyleChecksAsWarnings": false,
+  "javascript.format.enabled": false,
+  "javascript.showUnused": false,
+  "javascript.suggestionActions.enabled": false,
+
+  // coc-tailwind configuration
+  "tailwindCSS.jsLanguages": [
+    "javascript",
+    "javascript.jsx",
+    "javascriptreact",
+    "reason",
+    "typescriptreact"
+  ],
+  "tailwindCSS.htmlLanguages": [
+    "html.handlebars"
+  ]
 }
 

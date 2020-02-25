@@ -1,3 +1,14 @@
+" === Installed coc plugins === {{{1
+let g:coc_global_extensions = [
+  \ 'coc-ember',
+  \ 'coc-eslint',
+  \ 'coc-git',
+  \ 'coc-json',
+  \ 'coc-stylelint',
+  \ 'coc-tailwindcss',
+  \ 'coc-tsserver',
+  \ ]
+
 " === coc.nvim Configuration === {{{1
 
 " NOTE: coc.nvim has main configuration file in `$DOTFILES/nvim/coc-settings.json`
@@ -87,6 +98,8 @@ omap af <Plug>(coc-funcobj-a)
 nmap <silent> <C-d> <Plug>(coc-range-select)
 xmap <silent> <C-d> <Plug>(coc-range-select)
 
+nnoremap <leader>d <Plug>(coc-codeaction)
+
 " === Plugin Config === {{{1
 
 " === coc-git === {{{2
@@ -100,7 +113,7 @@ nnoremap <silent> <leader>hi :CocCommand git.chinkInfo<cr>
 nmap [h <Plug>(coc-git-prevchunk)
 nmap ]h <Plug>(coc-git-nextchunk)
 " show chunk diff at current position
-nmap hs <Plug>(coc-git-chunkinfo)
+nmap ghi <Plug>(coc-git-chunkinfo)
 " create text object for git chunks
 omap ic <Plug>(coc-text-object-inner)
 xmap ic <Plug>(coc-text-object-inner)
