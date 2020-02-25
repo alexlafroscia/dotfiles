@@ -55,11 +55,6 @@ unsetopt auto_name_dirs
 # -- Completion Config ---------------------------------------------------------
 zstyle ':completion:*:*:vim:*:*files' ignored-patterns '*.class'
 
-# Add Homebrew completions to config if they can be found
-local brew_completions="$(brew --prefix)/share/zsh/site-functions"
-if [[ -d $brew_completions ]]; then
-  fpath=($fpath $brew_completions)
-fi
 
 # -- Command History -----------------------------------------------------------
 export HISTSIZE=500
