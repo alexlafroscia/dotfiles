@@ -201,7 +201,6 @@ Plug 'christoomey/vim-tmux-navigator'
 
 " Autocomplete {{{3
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
-" Plug 'neovim/nvim-lsp'
 
 " Language Support {{{3
 " JavaScript {{{4
