@@ -34,3 +34,6 @@ ember.d.ts
 
 # Yarn Error
 yarn-error.log
+
+# ESLint Cache
+.eslintcache
