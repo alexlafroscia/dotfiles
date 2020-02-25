@@ -1,0 +1,6 @@
+# Add HAML as a recognized file type
+--type-add
+haml:*.haml
+
+--type-add
+haml:*.html.erb

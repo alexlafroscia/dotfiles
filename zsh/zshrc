@@ -138,6 +138,9 @@ if [ -f ~/.fzf.zsh ]; then
   export FZF_CTRL_T_OPTS="--preview \"bat --color always {}\""
 fi
 
+# -- ripgrep -------------------------------------------------------------------
+export RIPGREP_CONFIG_PATH="$DOTFILES/ripgreprc"
+
 # -- OS-Specific Config --------------------------------------------------------
 if [[ $(uname) == 'Darwin' ]]; then
   # Load OSX config
