@@ -120,6 +120,7 @@ alias fuck='$(thefuck $(fc -ln -1))'
 
 # -- Add HOME bin to $PATH -----------------------------------------------------
 [[ ":$PATH:" == *":$HOME/bin:"* ]] || PATH="$HOME/bin:$PATH"
+[[ ":$PATH:" == *":$HOME/.bin:"* ]] || PATH="$HOME/.bin:$PATH"
 
 # -- Add DOTFILES bin to PATH --------------------------------------------------
 [[ ":$PATH:" == *":$DOTFILES/bin:"* ]] || PATH="$DOTFILES/bin:$PATH"
