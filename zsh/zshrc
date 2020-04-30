@@ -29,9 +29,11 @@ if exists "virtualenvwrapper"; then plugins+=virtualenvwrapper; fi
 fpath=($DOTFILES/zsh/custom/completion $fpath)
 
 # Add Homebrew completions to config if they can be found
-local brew_completions="$(brew --prefix)/share/zsh/site-functions"
-if [[ -d $brew_completions ]]; then
-  fpath=($fpath $brew_completions)
+if exists "brew"; then
+  local brew_completions="$(brew --prefix)/share/zsh/site-functions"
+  if [[ -d $brew_completions ]]; then
+    fpath=($fpath $brew_completions)
+  fi
 fi
 
 # -- Oh My Zsh -----------------------------------------------------------------
@@ -61,7 +63,7 @@ fi
 if [ "$IS_VSCODE" ]; then
   export EDITOR="$(which code)"
 else
-  export EDITOR="$(brew --prefix)/bin/nvim"
+  export EDITOR="$(which nvim)"
 fi
 
 # -- Aliases -------------------------------------------------------------------
@@ -148,8 +150,6 @@ fi
 if [[ $(uname) == 'Darwin' ]]; then
   # Load OSX config
   source $DOTFILES/zsh/zshrc.osx
-elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
-  # Load Linux config
 fi
 
 # -- asdf ---------------------------------------------------------------------
