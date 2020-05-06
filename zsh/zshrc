@@ -83,10 +83,13 @@ if exists "fdfind"; then alias fd=fdfind; fi
 
 alias vim=nvim
 alias vi=nvim
-alias dm=docker-machine
-alias dc=docker-compose
-alias docker-cleanup=docker ps -a | grep Exit | cut -d ' ' -f 1 | xargs docker rm
 alias edit="$EDITOR"
+
+if exists "docker"; then
+  alias dm=docker-machine
+  alias dc=docker-compose
+  alias docker-cleanup=docker ps -a | grep Exit | cut -d ' ' -f 1 | xargs docker rm
+fi
 
 # -- Functions -----------------------------------------------------------------
 
