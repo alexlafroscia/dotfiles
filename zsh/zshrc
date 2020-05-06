@@ -79,6 +79,8 @@ if exists "hub"; then alias git=hub; fi
 
 if exists "gittower"; then alias tower='gittower `git rev-parse --show-toplevel`'; fi
 
+if exists "fdfind"; then alias fd=fdfind; fi
+
 alias vim=nvim
 alias vi=nvim
 alias dm=docker-machine
@@ -142,7 +144,11 @@ if [ -f ~/.fzf.zsh ]; then
   source ~/.fzf.zsh
   export FZF_TMUX=1
   export FZF_DEFAULT_OPTS='--color 16,info:6'
-  export FZF_DEFAULT_COMMAND="fd --type file --follow --hidden --exclude .git"
+  if exists "fdfind"; then
+    export FZF_DEFAULT_COMMAND="fdfind --type file --follow --hidden --exclude .git"
+  else
+    export FZF_DEFAULT_COMMAND="fd --type file --follow --hidden --exclude .git"
+  fi
   export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 fi
 
