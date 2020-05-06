@@ -109,7 +109,7 @@ nnoremap <leader>gt :call OpenInGitTower()<CR>
 " Section: Load vim-plug plugins {{{
 
 " Specify plugins {{{2
-call plug#begin()
+call plug#begin(stdpath('data') . '/plugged')
 
 " UI {{{3
 Plug 'haishanh/night-owl.vim'
