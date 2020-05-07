@@ -160,6 +160,12 @@ if [[ -d "$yarn_global_modules/.bin" && ":$PATH:" != *":$yarn_global_modules/.bi
   export PATH="$PATH:$yarn_global_modules/.bin"
 fi
 
+# -- Volta ---------------------------------------------------------------------
+if [[ -d "$HOME/.volta" ]]; then
+  export VOLTA_HOME="$HOME/.volta"
+  export PATH="$VOLTA_HOME/bin:$PATH"
+fi
+
 # -- Go ------------------------------------------------------------------------
 # Add $GOTPATH/bin to the $PATH
 export GOPATH=$HOME/Code/go
