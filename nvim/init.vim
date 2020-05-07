@@ -52,14 +52,6 @@ set splitright
 let g:python_host_prog = $ASDF_DIR . '/installs/python/2.7.10/bin/python'
 let g:python3_host_prog = $ASDF_DIR . '/installs/python/3.5.0/bin/python'
 " }}}2
-" Configure grep to use The Silver Searcher {{{2
-if executable('ag')
-  " Use ag over grep
-  set grepprg=ag\ --nogroup\ --nocolor
-
-  command -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
-endif
-" }}}2
 " }}}1
 " Section: Autocommands {{{1
 " --------------------------
