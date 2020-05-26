@@ -52,6 +52,9 @@ set splitright
 let g:python_host_prog = $ASDF_DIR . '/installs/python/2.7.10/bin/python'
 let g:python3_host_prog = $ASDF_DIR . '/installs/python/3.5.0/bin/python'
 " }}}2
+" Point to the Node executables in `volta` {{{2
+let g:node_host_prog = $VOLTA_HOME . '/tools/image/packages/neovim/4.9.0/bin/cli.js'
+" }}}2
 " }}}1
 " Section: Autocommands {{{1
 " --------------------------
@@ -198,7 +201,6 @@ Plug 'pangloss/vim-javascript'
 Plug 'jonsmithers/vim-html-template-literals'
 Plug 'mxw/vim-jsx'
 Plug 'rhysd/npm-debug-log.vim'
-Plug 'neovim/node-host',                  { 'do': 'npm install' }
 
 " TypeScript {{{4
 " Plug 'leafgarland/typescript-vim'
