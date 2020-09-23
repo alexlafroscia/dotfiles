@@ -49,8 +49,8 @@ set splitbelow
 set splitright
 " }}}2
 " Point to the Python executables in `asdf` {{{2
-let g:python_host_prog = $ASDF_DIR . '/installs/python/2.7.10/bin/python'
-let g:python3_host_prog = $ASDF_DIR . '/installs/python/3.5.0/bin/python'
+let g:python_host_prog = $ASDF_DATA_DIR . '/installs/python/2.7.18/bin/python'
+let g:python3_host_prog = $ASDF_DATA_DIR . '/installs/python/3.8.5/bin/python'
 " }}}2
 " Point to the Node executables in `volta` {{{2
 let g:node_host_prog = $VOLTA_HOME . '/tools/image/packages/neovim/4.9.0/bin/cli.js'

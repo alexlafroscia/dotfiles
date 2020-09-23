@@ -18,8 +18,10 @@ ZSH="$HOME/.oh-my-zsh"
 ZSH_CUSTOM="$DOTFILES/zsh/custom"
 fpath=( "$DOTFILES/zsh/custom" $fpath)
 
-# -- oh-my-zsh ---------------------------------------------------------------
+# -- asdf ----------------------------------------------------------------------
+export ASDF_DATA_DIR="$HOME/.asdf"
 
+# -- oh-my-zsh -----------------------------------------------------------------
 # Configure `vi-mode` plugin
 MODE_INDICATOR=" "
 
