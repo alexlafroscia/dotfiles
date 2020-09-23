@@ -210,7 +210,7 @@ Plug 'rhysd/npm-debug-log.vim'
 Plug 'peitalin/vim-jsx-typescript'
 
 " Elm {{{4
-Plug 'ElmCast/elm-vim'
+Plug 'ElmCast/elm-vim',                   { 'for': 'elm' }
 
 " Handlebars
 Plug 'joukevandermaas/vim-ember-hbs'
@@ -223,17 +223,17 @@ Plug 'mattn/emmet-vim'
 Plug 'hail2u/vim-css3-syntax',            { 'for': 'css' }
 
 " Sass {{{4
-Plug 'cakebaker/scss-syntax.vim'
+Plug 'cakebaker/scss-syntax.vim',         { 'for': 'sass' }
 
 " Ruby {{{4
 Plug 'vim-ruby/vim-ruby',                 { 'for': 'ruby' }
-Plug 'tpope/vim-rails'
+Plug 'tpope/vim-rails',                   { 'for': 'ruby' }
 
 " Python {{{4
 Plug 'klen/python-mode',                  { 'for': 'python' }
 
 " Rust {{{4
-Plug 'wellbredgrapefruit/tomdoc.vim',     { 'for': 'ruby' }
+Plug 'wellbredgrapefruit/tomdoc.vim'
 Plug 'wting/rust.vim'
 Plug 'cespare/vim-toml'
 
