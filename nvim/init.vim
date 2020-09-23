@@ -158,6 +158,7 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'retorillo/airline-tablemode.vim'
 Plug 'ryanoasis/vim-webdevicons'
 Plug 'junegunn/goyo.vim'
+Plug 'nvim-treesitter/nvim-treesitter'
 
 " Project Navigation {{{3
 Plug 'junegunn/fzf',                      { 'dir': '~/.fzf', 'do': './install --all' }
