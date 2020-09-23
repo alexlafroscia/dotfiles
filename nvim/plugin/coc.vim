@@ -1,16 +1,3 @@
-" === Installed coc plugins === {{{1
-let g:coc_global_extensions = [
-  \ 'coc-ember',
-  \ 'coc-eslint',
-  \ 'coc-git',
-  \ 'coc-json',
-  \ 'coc-prettier',
-  \ 'coc-rls',
-  \ 'coc-stylelint',
-  \ 'coc-tailwindcss',
-  \ 'coc-tsserver',
-  \ ]
-
 " === coc.nvim Configuration === {{{1
 
 " NOTE: coc.nvim has main configuration file in `$DOTFILES/nvim/coc-settings.json`
@@ -130,3 +117,12 @@ omap ic <Plug>(coc-text-object-inner)
 xmap ic <Plug>(coc-text-object-inner)
 omap ac <Plug>(coc-text-object-outer)
 xmap ac <Plug>(coc-text-object-outer)
+
+" === coc-acctions === {{{2
+
+" Remap for do codeAction of selected region
+function! s:cocActionsOpenFromSelected(type) abort
+  execute 'CocCommand actions.open ' . a:type
+endfunction
+xmap <silent> <leader>a :<C-u>execute 'CocCommand actions.open ' . visualmode()<CR>
+nmap <silent> <leader>a :<C-u>set operatorfunc=<SID>cocActionsOpenFromSelected<CR>g@

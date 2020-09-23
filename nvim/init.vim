@@ -191,9 +191,15 @@ Plug 'jez/vim-github-hub'                 " Filetype for hub pull requests
 
 " Task Running
 Plug 'christoomey/vim-tmux-navigator'
+Plug 'dense-analysis/ale'
 
 " Autocomplete {{{3
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
+Plug 'iamcco/coc-tailwindcss', { 'do': 'yarn install --frozen-lockfile' }
+Plug 'neoclide/coc-git', { 'do': 'yarn install --frozen-lockfile' }
+Plug 'neoclide/coc-json', { 'do': 'yarn install --frozen-lockfile' }
+Plug 'neoclide/coc-rls', { 'do': 'yarn install --frozen-lockfile' }
+Plug 'neoclide/coc-tsserver', { 'do': 'yarn install --frozen-lockfile' }
 
 " Language Support {{{3
 " JavaScript {{{4
