@@ -83,8 +83,6 @@ if has("autocmd")
 
   autocmd BufRead,BufNewFile gitconfig set ft=.gitconfig
 
-  autocmd BufRead,BufNewFile *.tsx set ft=typescript.jsx
-
   " When term starts, auto go into insert mode
   autocmd TermOpen * startinsert
 
@@ -204,13 +202,13 @@ Plug 'neoclide/coc-tsserver', { 'do': 'yarn install --frozen-lockfile' }
 
 " Language Support {{{3
 " JavaScript {{{4
-Plug 'pangloss/vim-javascript'
+Plug 'yuezk/vim-js'
 Plug 'jonsmithers/vim-html-template-literals'
-Plug 'mxw/vim-jsx'
+Plug 'MaxMEllon/vim-jsx-pretty'
 Plug 'rhysd/npm-debug-log.vim'
 
 " TypeScript {{{4
-" Plug 'leafgarland/typescript-vim'
+Plug 'peitalin/vim-jsx-typescript'
 
 " Elm {{{4
 Plug 'ElmCast/elm-vim'
