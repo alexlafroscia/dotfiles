@@ -154,7 +154,6 @@ Plug 'haishanh/night-owl.vim'
 Plug 'vim-airline/vim-airline'            " Handy info
 Plug 'vim-airline/vim-airline-themes'
 Plug 'retorillo/airline-tablemode.vim'
-Plug 'ryanoasis/vim-webdevicons'
 Plug 'junegunn/goyo.vim'
 Plug 'nvim-treesitter/nvim-treesitter'
 
