@@ -151,9 +151,8 @@ call plug#begin(stdpath('data') . '/plugged')
 
 " UI {{{3
 Plug 'haishanh/night-owl.vim'
-Plug 'vim-airline/vim-airline'            " Handy info
-Plug 'vim-airline/vim-airline-themes'
-Plug 'retorillo/airline-tablemode.vim'
+Plug 'itchyny/lightline.vim'
+Plug 'maximbaz/lightline-ale'
 Plug 'junegunn/goyo.vim'
 Plug 'nvim-treesitter/nvim-treesitter'
 
@@ -251,9 +250,6 @@ call plug#end()
 " Load plugin configurations {{{2
 " For some reason, a few plugins seem to have config options that cannot be
 " placed in the `plugins` directory. Those settings can be found here instead.
-
-" vim-airline {{{3
-let g:airline_powerline_fonts = 1 " Enable the patched Powerline fonts
 
 " emmet-vim {{{3
 let g:user_emmet_leader_key='<C-E>'
