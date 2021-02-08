@@ -154,7 +154,6 @@ Plug 'haishanh/night-owl.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'maximbaz/lightline-ale'
 Plug 'junegunn/goyo.vim'
-Plug 'nvim-treesitter/nvim-treesitter'
 
 " Project Navigation {{{3
 Plug 'junegunn/fzf',                      { 'dir': '~/.fzf', 'do': './install --all' }
@@ -179,62 +178,32 @@ Plug 'dhruvasagar/vim-table-mode',        { 'on': 'TableModeEnable' }
 Plug 'kana/vim-textobj-user'
 Plug 'jasonlong/vim-textobj-css'
 Plug 'editorconfig/editorconfig-vim'
+Plug 'junegunn/vim-peekaboo'
 
 " Git
 Plug 'tpope/vim-fugitive'                 " Git stuff in Vim
 Plug 'tpope/vim-rhubarb'
 Plug 'junegunn/gv.vim',                   { 'on': 'GV' }
 Plug 'jez/vim-github-hub'                 " Filetype for hub pull requests
+Plug 'airblade/vim-gitgutter'
 
 " Task Running
 Plug 'christoomey/vim-tmux-navigator'
-Plug 'dense-analysis/ale'
+Plug 'tpope/vim-dispatch'                 " Recommended for `vim-test`
+Plug 'vim-test/vim-test'
+Plug 'puremourning/vimspector'
 
 " Autocomplete {{{3
-Plug 'neoclide/coc.nvim', { 'branch': 'release' }
-Plug 'iamcco/coc-tailwindcss', { 'do': 'yarn install --frozen-lockfile' }
-Plug 'neoclide/coc-git', { 'do': 'yarn install --frozen-lockfile' }
-Plug 'neoclide/coc-json', { 'do': 'yarn install --frozen-lockfile' }
-Plug 'neoclide/coc-rls', { 'do': 'yarn install --frozen-lockfile' }
-Plug 'neoclide/coc-tsserver', { 'do': 'yarn install --frozen-lockfile' }
+Plug 'dense-analysis/ale'
+Plug 'neovim/nvim-lspconfig'
+Plug 'nvim-lua/completion-nvim'
+Plug 'kosayoda/nvim-lightbulb'
 
 " Language Support {{{3
-" JavaScript {{{4
-Plug 'yuezk/vim-js'
-Plug 'jonsmithers/vim-html-template-literals'
-Plug 'MaxMEllon/vim-jsx-pretty'
-Plug 'rhysd/npm-debug-log.vim'
-
-" TypeScript {{{4
-Plug 'peitalin/vim-jsx-typescript'
-
-" Elm {{{4
-Plug 'ElmCast/elm-vim',                   { 'for': 'elm' }
-
-" Handlebars
-Plug 'joukevandermaas/vim-ember-hbs'
-
-" HTML {{{4
-Plug 'othree/html5.vim'
-Plug 'mattn/emmet-vim'
-
-" CSS {{{4
-Plug 'hail2u/vim-css3-syntax',            { 'for': 'css' }
-
-" Sass {{{4
-Plug 'cakebaker/scss-syntax.vim',         { 'for': 'sass' }
+Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }
 
 " Ruby {{{4
-Plug 'vim-ruby/vim-ruby',                 { 'for': 'ruby' }
 Plug 'tpope/vim-rails',                   { 'for': 'ruby' }
-
-" Python {{{4
-Plug 'klen/python-mode',                  { 'for': 'python' }
-
-" Rust {{{4
-Plug 'wellbredgrapefruit/tomdoc.vim'
-Plug 'wting/rust.vim'
-Plug 'cespare/vim-toml'
 
 " Markdown {{{4
 Plug 'reedes/vim-pencil'                  " Markdown, Writing
@@ -244,7 +213,6 @@ Plug 'jxnblk/vim-mdx-js'
 
 " Elixir {{{4
 Plug 'elixir-editors/vim-elixir'
-Plug 'slashmili/alchemist.vim'
 
 call plug#end()
 " Load plugin configurations {{{2
