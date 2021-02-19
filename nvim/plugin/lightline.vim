@@ -10,9 +10,12 @@ let g:lightline = {
   \   'left': [
   \     ['mode'],
   \     ['readonly', 'filename', 'modified'],
-  \     ['linter_checking', 'linter_errors', 'linter_warnings', 'linter_infos', 'linter_ok']
+  \     []
   \   ],
   \   'right': [
+  \     ['linter_checking', 'linter_errors', 'linter_warnings', 'linter_infos', 'linter_ok'],
+  \     ['lsp_ready'],
+  \     ['lineinfo']
   \   ]
   \ },
   \ 'component_expand': {
@@ -22,14 +25,29 @@ let g:lightline = {
   \   'linter_errors': 'lightline#ale#errors',
   \   'linter_ok': 'lightline#ale#ok',
   \ },
+  \ 'component_function': {
+  \   'treesitter': 'GetTreesitterStatus',
+  \   'lsp_ready': 'LSPServerReady'
+  \ },
   \ 'component_type': {
   \   'linter_warnings': 'warning',
   \   'linter_errors': 'error',
   \ }
   \ }
 
+function! LSPServerReady()
+  let lsp_clients_length = luaeval('#vim.lsp.buf_get_clients()')
+
+  if lsp_clients_length == 0
+    return 'No LSP'
+  endif
+
+  let ready = luaeval('vim.lsp.buf.server_ready()')
+  return ready ? '' : 'Preparing LSP'
+endfunction
+
 let g:lightline#ale#indicator_checking = "\uf110"
-let g:lightline#ale#indicator_infos = "\uf129a :"
-let g:lightline#ale#indicator_warnings = "\uf071 :"
-let g:lightline#ale#indicator_errors = "\uf05e :"
+let g:lightline#ale#indicator_infos = "\uf129a "
+let g:lightline#ale#indicator_warnings = "\uf071 "
+let g:lightline#ale#indicator_errors = "\uf05e "
 let g:lightline#ale#indicator_ok = "\uf00c"
