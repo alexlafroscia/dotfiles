@@ -1,0 +1,3 @@
+pager: "less -FX"
+prompt: enabled
+git_protocol: ssh
