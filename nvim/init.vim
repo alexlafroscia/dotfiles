@@ -52,6 +52,11 @@ set splitright
 let g:python_host_prog = $ASDF_DATA_DIR . '/installs/python/2.7.18/bin/python'
 let g:python3_host_prog = $ASDF_DATA_DIR . '/installs/python/3.8.5/bin/python'
 " }}}2
+" Point to the Ruby executable in `asdf` {{{2
+" Ruby host program look-up supports evaluating a string to look up the path dynamically
+" This is not the case for other hosts
+let g:ruby_host_prog = "asdf which neovim-ruby-host"
+" }}}2
 " Point to the Node executables in `volta` {{{2
 " Uses the `system` function to allow Volta to provide the path dynamically
 " Newline must be trimmed off to avoid issue with Volta adding it to command output
