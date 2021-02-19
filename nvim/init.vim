@@ -209,6 +209,9 @@ Plug 'kosayoda/nvim-lightbulb'
 " Language Support {{{3
 Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }
 
+" Handlebars
+Plug 'joukevandermaas/vim-ember-hbs'
+
 " Ruby {{{4
 Plug 'tpope/vim-rails',                   { 'for': 'ruby' }
 
