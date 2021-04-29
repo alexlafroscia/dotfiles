@@ -11,3 +11,6 @@ vscode/workspaceStorage
 
 # Rope Temp Files
 .ropeproject
+
+# Packer Compiled Output
+nvim/plugin/packer_compiled.vim

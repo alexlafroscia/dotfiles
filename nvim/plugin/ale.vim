@@ -13,6 +13,7 @@ let g:ale_fixers = {
 \  'html': ['prettier'],
 \  'javascript': ['prettier', 'eslint'],
 \  'json': ['prettier'],
+\  'jsonc': ['prettier'],
 \  'markdown': ['prettier'],
 \  'rust': ['rustfmt'],
 \  'sass': ['prettier'],
@@ -33,3 +34,7 @@ let g:ale_sign_info = "i"
 " Show error info for line when cursor is on that line
 let g:ale_virtualtext_cursor = 1
 let g:ale_virtualtext_prefix = "🔥 "
+
+" Use `eslint_d` to speed up linting
+let g:ale_javascript_eslint_executable = 'eslint_d'
+let g:ale_javascript_eslint_use_global = 1

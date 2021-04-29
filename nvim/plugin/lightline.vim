@@ -1,7 +1,7 @@
 " Reference:
 " https://github.com/skbolton/titan/blob/da9cae1d70b2bc7fbcb50a585971f3e297be2ede/nvim/nvim/status-line.vim
 let g:lightline = {
-  \ 'colorscheme': 'embark',
+  \ 'colorscheme': 'night_owl',
   \ 'separator': {
   \   'left': "\uE0B8 ",
   \   'right': " \uE0BA"

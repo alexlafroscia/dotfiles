@@ -151,93 +151,11 @@ endfunction
 nnoremap <leader>gt :call OpenInGitTower()<CR>
 " }}}
 " }}}
-" Section: Load vim-plug plugins {{{
+" Section: Load packer plugins {{{
 
-" Specify plugins {{{2
-call plug#begin(stdpath('data') . '/plugged')
+lua require('plugins')
 
-" UI {{{3
-Plug 'haishanh/night-owl.vim'
-Plug 'itchyny/lightline.vim'
-Plug 'maximbaz/lightline-ale'
-Plug 'junegunn/goyo.vim'
-
-" Project Navigation {{{3
-Plug 'junegunn/fzf',                      { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
-Plug 'mhinz/vim-grepper'
-Plug 'rbgrouleff/bclose.vim'              " Required by ranger.vim
-Plug 'francoiscabrol/ranger.vim'
-
-" File Navigation {{{3
-Plug 'vim-scripts/matchit.zip'            " More powerful % matching
-Plug 'Lokaltog/vim-easymotion'            " Move like the wind!
-Plug 'jeffkreeftmeijer/vim-numbertoggle'  " Smarter line numbers
-Plug 'kshenoy/vim-signature'              " Show marks in the gutter
-Plug 'haya14busa/incsearch.vim'           " Better search highlighting
-
-" Editing {{{3
-Plug 'tpope/vim-surround'                 " Change word surroundings
-Plug 'tpope/vim-commentary'               " Comments stuff
-Plug 'tpope/vim-repeat'
-Plug 'tpope/vim-endwise'
-Plug 'dhruvasagar/vim-table-mode',        { 'on': 'TableModeEnable' }
-Plug 'kana/vim-textobj-user'
-Plug 'jasonlong/vim-textobj-css'
-Plug 'editorconfig/editorconfig-vim'
-Plug 'junegunn/vim-peekaboo'
-
-" Git
-Plug 'tpope/vim-fugitive'                 " Git stuff in Vim
-Plug 'tpope/vim-rhubarb'
-Plug 'junegunn/gv.vim',                   { 'on': 'GV' }
-Plug 'jez/vim-github-hub'                 " Filetype for hub pull requests
-Plug 'airblade/vim-gitgutter'
-
-" Task Running
-Plug 'christoomey/vim-tmux-navigator'
-Plug 'tpope/vim-dispatch'                 " Recommended for `vim-test`
-Plug 'vim-test/vim-test'
-Plug 'puremourning/vimspector'
-
-" Autocomplete {{{3
-Plug 'dense-analysis/ale'
-Plug 'neovim/nvim-lspconfig'
-Plug 'nvim-lua/completion-nvim'
-Plug 'kosayoda/nvim-lightbulb'
-
-" Language Support {{{3
-Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }
-
-" Handlebars
-Plug 'joukevandermaas/vim-ember-hbs'
-
-" Ruby {{{4
-Plug 'tpope/vim-rails',                   { 'for': 'ruby' }
-
-" Markdown {{{4
-Plug 'reedes/vim-pencil'                  " Markdown, Writing
-Plug 'godlygeek/tabular',                 { 'for': 'markdown' } " Needed for vim-markdown
-Plug 'plasticboy/vim-markdown',           { 'for': 'markdown' }
-Plug 'jxnblk/vim-mdx-js'
-
-" Elixir {{{4
-Plug 'elixir-editors/vim-elixir'
-
-call plug#end()
 " Load plugin configurations {{{2
-" For some reason, a few plugins seem to have config options that cannot be
-" placed in the `plugins` directory. Those settings can be found here instead.
-
-" emmet-vim {{{3
-let g:user_emmet_leader_key='<C-E>'
-
-let g:user_emmet_settings = {
-  \    'html' : {
-  \        'quote_char': "'"
-  \    }
-  \}
-" }}}3
 
 " ranger.vim {{{3
 let g:ranger_replace_netrw = 1 " open ranger when vim open a directory
