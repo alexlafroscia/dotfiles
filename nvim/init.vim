@@ -13,7 +13,7 @@ set showcmd       " display incomplete commands
 set laststatus=2  " Always display the status line
 set autowrite     " Automatically :write before running commands
 set noshowmode
-set timeoutlen=1000
+set timeoutlen=500
 set ttimeoutlen=0
 set tabstop=2
 set shiftwidth=2
@@ -79,8 +79,7 @@ if has("autocmd")
   " Automatically clean trailing whitespace
   autocmd BufWritePre * :%s/\s\+$//e
 
-  autocmd BufRead,BufNewFile COMMIT_EDITMSG call pencil#init({'wrap': 'soft'})
-                                        \ | set textwidth=0
+  autocmd BufRead,BufNewFile COMMIT_EDITMSG set textwidth=0
 
   autocmd BufRead,BufNewFile *.md set filetype=markdown
 
@@ -97,43 +96,6 @@ if has("autocmd")
   autocmd TermOpen * setlocal listchars= nonumber norelativenumber
 endif
 " }}}1
-" Section: Functions {{{
-
-" Creates a floating window with a most recent buffer to be used
-function! CreateCenteredFloatingWindow()
-  let width = float2nr(&columns * 0.8)
-  let height = float2nr(&lines * 0.8)
-  let top = ((&lines - height) / 2) - 1
-  let left = (&columns - width) / 2
-  let opts = {'relative': 'editor', 'row': top, 'col': left, 'width': width, 'height': height, 'style': 'minimal'}
-  let top = "╭" . repeat("─", width - 2) . "╮"
-  let mid = "│" . repeat(" ", width - 2) . "│"
-  let bot = "╰" . repeat("─", width - 2) . "╯"
-  let lines = [top] + repeat([mid], height - 2) + [bot]
-  let s:buf = nvim_create_buf(v:false, v:true)
-  call nvim_buf_set_lines(s:buf, 0, -1, v:true, lines)
-  call nvim_open_win(s:buf, v:true, opts)
-  set winhl=Normal:Floating
-  let opts.row += 1
-  let opts.height -= 2
-  let opts.col += 2
-  let opts.width -= 4
-  call nvim_open_win(nvim_create_buf(v:false, v:true), v:true, opts)
-  au BufWipeout <buffer> exe 'bw '.s:buf
-endfunction
-
-function! OnTermExit(job_id, code, event) dict
-  if a:code == 0
-    bd!
-  endif
-endfunction
-
-" Open a terminal command in a floating window
-function! OpenTerm(cmd)
-  call CreateCenteredFloatingWindow()
-  call termopen(a:cmd, { 'on_exit': function('OnTermExit') })
-endfunction
-" }}}
 " Section: External Functions {{{
 
 " Open current file in Marked {{{
@@ -164,11 +126,6 @@ let g:ranger_replace_netrw = 1 " open ranger when vim open a directory
 
 " Normal Mode Remaps {{{2
 
-nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
-
-" Smarter pasting
-nnoremap <Leader>p :set invpaste paste?<CR>
-
 " -- Smart indent when entering insert mode with i on empty lines --------------
 function! IndentWithI()
   if len(getline('.')) == 0
@@ -198,21 +155,15 @@ nnoremap td :tabclose<CR>
 nnoremap <silent> <c-j> :TmuxNavigateDown<cr>
 
 " }}}2
-" Insert Mode Remaps {{{2
-
-set completeopt-=preview
-
-" }}}2
 " }}}1
 " Section: Theme {{{
 
 syntax enable
-let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 if has("termguicolors")  " set true colors
-    set termguicolors
-  endif
-set background=dark
-colorscheme night-owl
+  set termguicolors
+endif
+
+colorscheme night_owl
 
 " }}}
 " Section: Local-Machine Config {{{

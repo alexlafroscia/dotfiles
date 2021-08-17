@@ -3,7 +3,7 @@ vim.cmd [[packadd packer.nvim]]
 
 return require('packer').startup(function()
   -- UI
-  use '~/Code/night-owl.vim'
+  use '~/Code/github.com/alexlafroscia/night-owl.vim'
   use 'itchyny/lightline.vim'
   use 'maximbaz/lightline-ale'
 
@@ -22,12 +22,33 @@ return require('packer').startup(function()
   use 'simeji/winresizer'
   use 'junegunn/goyo.vim'
 
--- Editing
+  -- Editing
   use 'tpope/vim-surround'                 -- Change word surroundings
   use 'tpope/vim-commentary'               -- Comments stuff
   use 'tpope/vim-repeat'
   use 'tpope/vim-endwise'
   use 'junegunn/vim-peekaboo'
+  use {
+    "folke/which-key.nvim",
+    config = function()
+      require("which-key").setup {
+        -- your configuration comes here
+        -- or leave it empty to use the default settings
+        -- refer to the configuration section below
+      }
+    end
+  }
+  use {
+    "folke/zen-mode.nvim",
+    config = function()
+      require("zen-mode").setup {
+        -- your configuration comes here
+        -- or leave it empty to use the default settings
+        -- refer to the configuration section below
+      }
+    end,
+    cmd = 'ZenMode'
+  }
 
   -- File Navigation
   use 'vim-scripts/matchit.zip'            -- More powerful % matching
@@ -35,16 +56,15 @@ return require('packer').startup(function()
   use 'jeffkreeftmeijer/vim-numbertoggle'  -- Smarter line numbers
   use 'kshenoy/vim-signature'              -- Show marks in the gutter
   use 'haya14busa/incsearch.vim'           -- Better search highlighting
-  use 'liuchengxu/vista.vim'
 
   -- Tree Sitter
   use {
     'nvim-treesitter/nvim-treesitter',
     run = ':TSUpdate',
-    require = {
-      'nvim-treesitter/playground',
-      'nvim-treesitter/nvim-treesitter-refactor'
-    },
+    -- require = {
+    --   'nvim-treesitter/playground',
+    --   'nvim-treesitter/nvim-treesitter-refactor'
+    -- },
     config = [[require('config/treesitter')]]
   }
 
@@ -60,6 +80,7 @@ return require('packer').startup(function()
         require('gitsigns').setup {}
      end
    }
+  use 'sindrets/diffview.nvim'
 
   -- Auto-Complete
   use 'dense-analysis/ale'
@@ -72,6 +93,11 @@ return require('packer').startup(function()
     config = [[require('config/compe')]]
   }
   use 'kosayoda/nvim-lightbulb'
+  use {
+    'folke/trouble.nvim',
+    requires = 'kyazdani42/nvim-web-devicons',
+    config = [[require('config/trouble')]]
+  }
 
   -- Task Running
   use 'christoomey/vim-tmux-navigator'

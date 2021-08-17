@@ -2,7 +2,7 @@
 local parser_config = require "nvim-treesitter.parsers".get_parser_configs()
 parser_config.glimmer = {
   install_info = {
-    url = "~/Code/tree-sitter-glimmer",
+    url = "~/Code/github.com/alexlafroscia/tree-sitter-glimmer",
     files = {
       "src/parser.c",
       "src/scanner.c"
@@ -29,11 +29,5 @@ require'nvim-treesitter.configs'.setup {
   },
   highlight = {
     enable = true,
-
-    custom_captures = {
-      -- HTML Customization
-      -- Highlight a DOCTYPE like a comment
-      ["doctype"] = "Comment",
-    },
   },
 }
