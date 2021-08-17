@@ -7,6 +7,7 @@ source "$DOTFILES/scripts/helpers/functions.sh"
 
 # -- Set up $PATH --------------------------------------------------------------
 [[ ":$PATH:" == *":$/usr/local/bin:"* ]] || PATH="/usr/local/bin:$PATH"
+[[ ":$PATH:" == *":$/usr/local/sbin:"* ]] || PATH="/usr/local/sbin:$PATH"
 
 # -- Local Configuration (Before Default) --------------------------------------
 if [[ -f "$DOTFILES/zsh/zshrc.local.pre" ]]; then
@@ -15,8 +16,8 @@ fi
 
 # -- Zsh -----------------------------------------------------------------------
 ZSH="$HOME/.oh-my-zsh"
-ZSH_CUSTOM="$DOTFILES/zsh/custom"
-fpath=( "$DOTFILES/zsh/custom" $fpath)
+ZSH_CUSTOM="$DOTFILES/zsh/custom" # oh-my-zsh customization directory
+fpath=( "$DOTFILES/zsh/functions" "$DOTFILES/zsh/pure" $fpath)
 
 # -- asdf ----------------------------------------------------------------------
 export ASDF_DATA_DIR="$HOME/.asdf"
@@ -46,17 +47,11 @@ source $ZSH/oh-my-zsh.sh
 # -- Theme ---------------------------------------------------------------------
 export NVIM_TUI_ENABLE_TRUE_COLOR=1
 
-# Configuration from `pure` README
-fpath+=("$DOTFILES/zsh/pure")
 autoload -U promptinit; promptinit
 prompt pure
 
 # -- Named Directories ---------------------------------------------------------
 unsetopt auto_name_dirs
-
-# -- Completion Config ---------------------------------------------------------
-zstyle ':completion:*:*:vim:*:*files' ignored-patterns '*.class'
-
 
 # -- Command History -----------------------------------------------------------
 export HISTSIZE=500
@@ -85,14 +80,16 @@ if [[ -f "$DOTFILES/aliases" ]]; then
 fi
 
 if [[ -f "$HOME/.aliases" ]]; then
-    source $HOME/.aliases
+  source $HOME/.aliases
 fi
-
-if exists "hub"; then alias git=hub; fi
 
 if exists "gittower"; then alias tower='gittower `git rev-parse --show-toplevel`'; fi
 
 if exists "fdfind"; then alias fd=fdfind; fi
+
+if exists "exa"; then alias e=exa; fi
+
+if exists "proj"; then alias gp='cd `proj -a $HOME/Code | fzf --preview="exa --oneline $HOME/Code/{}"`'; fi
 
 alias vim=nvim
 alias vi=nvim
@@ -105,9 +102,6 @@ if exists "docker"; then
 fi
 
 # -- Git -----------------------------------------------------------------------
-zstyle ':completion:*:*:hub:*' user-commands ${${(M)${(k)commands}:#git-*}/git-/}
-_git-delete-tag() { compadd "$@" $(git tag) }
-
 if [ "$IS_VSCODE" ]; then
   export GIT_EDITOR="$EDITOR --wait"
 fi
