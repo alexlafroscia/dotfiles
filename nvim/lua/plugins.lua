@@ -5,7 +5,7 @@ return require('packer').startup(function()
   -- UI
   use '~/Code/github.com/alexlafroscia/night-owl.vim'
   use 'itchyny/lightline.vim'
-  use 'maximbaz/lightline-ale'
+  use 'spywhere/lightline-lsp'
 
   -- Project Navigation
   use {
@@ -83,7 +83,6 @@ return require('packer').startup(function()
   use 'sindrets/diffview.nvim'
 
   -- Auto-Complete
-  use 'dense-analysis/ale'
   use {
     'neovim/nvim-lspconfig',
     config = [[require('config/lspconfig')]]

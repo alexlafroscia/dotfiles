@@ -2,10 +2,6 @@
 " https://github.com/skbolton/titan/blob/da9cae1d70b2bc7fbcb50a585971f3e297be2ede/nvim/nvim/status-line.vim
 let g:lightline = {
   \ 'colorscheme': 'night_owl',
-  \ 'separator': {
-  \   'left': "\uE0B8 ",
-  \   'right': " \uE0BA"
-  \ },
   \ 'active': {
   \   'left': [
   \     ['mode'],
@@ -13,41 +9,29 @@ let g:lightline = {
   \     []
   \   ],
   \   'right': [
-  \     ['linter_checking', 'linter_errors', 'linter_warnings', 'linter_infos', 'linter_ok'],
-  \     ['lsp_ready'],
+  \     ['linter_errors', 'linter_warnings', 'linter_infos', 'linter_hints', 'linter_ok'],
+  \     [],
   \     ['lineinfo']
   \   ]
   \ },
   \ 'component_expand': {
-  \   'linter_checking': 'lightline#ale#checking',
-  \   'linter_infos': 'lightline#ale#infos',
-  \   'linter_warnings': 'lightline#ale#warnings',
-  \   'linter_errors': 'lightline#ale#errors',
-  \   'linter_ok': 'lightline#ale#ok',
-  \ },
-  \ 'component_function': {
-  \   'treesitter': 'GetTreesitterStatus',
-  \   'lsp_ready': 'LSPServerReady'
+  \   'linter_hints': 'lightline#lsp#hints',
+  \   'linter_infos': 'lightline#lsp#infos',
+  \   'linter_warnings': 'lightline#lsp#warnings',
+  \   'linter_errors': 'lightline#lsp#errors',
+  \   'linter_ok': 'lightline#lsp#ok',
   \ },
   \ 'component_type': {
+  \   'linter_hints': 'right',
+  \   'linter_infos': 'right',
   \   'linter_warnings': 'warning',
   \   'linter_errors': 'error',
+  \   'linter_ok': 'right',
   \ }
   \ }
 
-function! LSPServerReady()
-  let lsp_clients_length = luaeval('#vim.lsp.buf_get_clients()')
-
-  if lsp_clients_length == 0
-    return 'No LSP'
-  endif
-
-  let ready = luaeval('vim.lsp.buf.server_ready()')
-  return ready ? '' : 'Preparing LSP'
-endfunction
-
-let g:lightline#ale#indicator_checking = "\uf110"
-let g:lightline#ale#indicator_infos = "\uf129a "
-let g:lightline#ale#indicator_warnings = "\uf071 "
-let g:lightline#ale#indicator_errors = "\uf05e "
-let g:lightline#ale#indicator_ok = "\uf00c"
+let g:lightline#lsp#indicator_hints = "\uf002 "
+let g:lightline#lsp#indicator_infos = "\uf129 "
+let g:lightline#lsp#indicator_warnings = "\uf071 "
+let g:lightline#lsp#indicator_errors = "\uf05e "
+let g:lightline#lsp#indicator_ok = "\uf00c"
