@@ -27,6 +27,16 @@ lspconfig.ember.setup{
   capabilities = cmpLsp.update_capabilities(vim.lsp.protocol.make_client_capabilities()),
 }
 
+-- Svelte Configuration Set-Up
+lspconfig.svelte.setup{
+  capabilities = cmpLsp.update_capabilities(vim.lsp.protocol.make_client_capabilities()),
+}
+
+-- TailwindCSS Configuration Set-Up
+lspconfig.tailwindcss.setup{
+  capabilities = cmpLsp.update_capabilities(vim.lsp.protocol.make_client_capabilities()),
+}
+
 -- TSServer Configuration Set-Up
 lspconfig.tsserver.setup {
   capabilities = cmpLsp.update_capabilities(vim.lsp.protocol.make_client_capabilities()),
