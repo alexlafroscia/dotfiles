@@ -1,5 +1,4 @@
 local lspconfig = require('lspconfig')
-local configs = require('lspconfig/configs')
 local util = require('lspconfig/util')
 local cmpLsp = require('cmp_nvim_lsp')
 
@@ -9,17 +8,6 @@ local on_attach = function(client, bufnr)
   if client.resolved_capabilities.document_formatting then
     vim.cmd("autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()")
   end
-end
-
--- Add custom entry for Ember Language Server
-if not lspconfig.els then
-  configs.els = {
-    default_config = {
-      cmd = {'/Users/alafroscia/Code/github.com/alexlafroscia/ember-language-server/bin/ember-language-server.js', '--stdio'},
-      filetypes = {'handlebars', 'html.handlebars'},
-      root_dir = util.root_pattern('package.json', '.git')
-    }
-  }
 end
 
 -- RLS Configuration Set-Up
@@ -33,6 +21,11 @@ end
 --   }
 -- }
 lspconfig.rust_analyzer.setup {}
+
+-- Ember Configuration Set-Up
+lspconfig.ember.setup{
+  capabilities = cmpLsp.update_capabilities(vim.lsp.protocol.make_client_capabilities()),
+}
 
 -- TSServer Configuration Set-Up
 lspconfig.tsserver.setup {
@@ -60,7 +53,7 @@ lspconfig.tsserver.setup {
 lspconfig.vimls.setup {}
 
 -- Ember Language Server
-lspconfig.els.setup {
+lspconfig.ember.setup {
   capabilities = cmpLsp.update_capabilities(vim.lsp.protocol.make_client_capabilities()),
   settings = {
     useBuiltinLinting = false,
