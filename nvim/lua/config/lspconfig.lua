@@ -1,6 +1,7 @@
 local lspconfig = require('lspconfig')
 local configs = require('lspconfig/configs')
 local util = require('lspconfig/util')
+local cmpLsp = require('cmp_nvim_lsp')
 
 -- Add custom entry for Ember Language Server
 if not lspconfig.els then
@@ -26,7 +27,9 @@ end
 lspconfig.rust_analyzer.setup {}
 
 -- TSServer Configuration Set-Up
-lspconfig.tsserver.setup {}
+lspconfig.tsserver.setup {
+  capabilities = cmpLsp.update_capabilities(vim.lsp.protocol.make_client_capabilities()),
+}
 
 -- Deno LSP Set-Up
 -- lspconfig.denols.setup{
@@ -43,6 +46,7 @@ lspconfig.vimls.setup {}
 
 -- Ember Language Server
 lspconfig.els.setup {
+  capabilities = cmpLsp.update_capabilities(vim.lsp.protocol.make_client_capabilities()),
   settings = {
     useBuiltinLinting = false,
   },
