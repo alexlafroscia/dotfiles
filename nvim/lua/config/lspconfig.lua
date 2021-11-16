@@ -30,6 +30,7 @@ lspconfig.ember.setup{
 -- Svelte Configuration Set-Up
 lspconfig.svelte.setup{
   capabilities = cmpLsp.update_capabilities(vim.lsp.protocol.make_client_capabilities()),
+  on_attach = on_attach,
 }
 
 -- TailwindCSS Configuration Set-Up
