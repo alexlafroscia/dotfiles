@@ -92,6 +92,7 @@ local languages = {
   scss = { formatter },
   css = { formatter },
   markdown = { formatter },
+  handlebars = { formatter },
 }
 
 lspconfig.efm.setup {
