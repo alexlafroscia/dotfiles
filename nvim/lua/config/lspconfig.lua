@@ -10,18 +10,6 @@ local on_attach = function(client, bufnr)
   end
 end
 
--- RLS Configuration Set-Up
--- lspconfig.rls.setup {
---   settings = {
---     rust = {
---       unstable_features = true,
---       build_on_save = false,
---       all_features = ture,
---     }
---   }
--- }
-lspconfig.rust_analyzer.setup {}
-
 -- Ember Configuration Set-Up
 lspconfig.ember.setup{
   capabilities = cmpLsp.update_capabilities(vim.lsp.protocol.make_client_capabilities()),

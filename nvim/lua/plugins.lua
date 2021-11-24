@@ -105,6 +105,17 @@ return require('packer').startup(function()
     requires = 'kyazdani42/nvim-web-devicons',
     config = [[require('config/trouble')]]
   }
+  use {
+    'simrat39/rust-tools.nvim',
+    requires = {
+      'nvim-lua/popup.nvim',
+      'nvim-lua/plenary.nvim'
+    },
+    ft = 'rust',
+    config = function()
+      require('rust-tools').setup({})
+    end
+  }
 
   -- Task Running
   use 'christoomey/vim-tmux-navigator'
