@@ -1,6 +1,6 @@
-local lspconfig = require('lspconfig')
-local util = require('lspconfig/util')
-local cmpLsp = require('cmp_nvim_lsp')
+local lspconfig = require("lspconfig")
+local util = require("lspconfig/util")
+local cmpLsp = require("cmp_nvim_lsp")
 
 -- Run this when an LSP attaches to a buffer
 local on_attach = function(client, bufnr)
@@ -11,32 +11,40 @@ local on_attach = function(client, bufnr)
 end
 
 -- Ember Configuration Set-Up
-lspconfig.ember.setup{
-  capabilities = cmpLsp.update_capabilities(vim.lsp.protocol.make_client_capabilities()),
-}
+lspconfig.ember.setup({
+  capabilities = cmpLsp.update_capabilities(
+    vim.lsp.protocol.make_client_capabilities()
+  ),
+})
 
 -- Svelte Configuration Set-Up
-lspconfig.svelte.setup{
-  capabilities = cmpLsp.update_capabilities(vim.lsp.protocol.make_client_capabilities()),
+lspconfig.svelte.setup({
+  capabilities = cmpLsp.update_capabilities(
+    vim.lsp.protocol.make_client_capabilities()
+  ),
   on_attach = on_attach,
-}
+})
 
 -- TailwindCSS Configuration Set-Up
-lspconfig.tailwindcss.setup{
-  capabilities = cmpLsp.update_capabilities(vim.lsp.protocol.make_client_capabilities()),
-}
+lspconfig.tailwindcss.setup({
+  capabilities = cmpLsp.update_capabilities(
+    vim.lsp.protocol.make_client_capabilities()
+  ),
+})
 
 -- TSServer Configuration Set-Up
-lspconfig.tsserver.setup {
-  capabilities = cmpLsp.update_capabilities(vim.lsp.protocol.make_client_capabilities()),
+lspconfig.tsserver.setup({
+  capabilities = cmpLsp.update_capabilities(
+    vim.lsp.protocol.make_client_capabilities()
+  ),
   on_attach = function(client, buffer)
     -- Disable formatting from `tsserver`; `efm` will format through ESLint/Pretier
     client.resolved_capabilities.document_formatting = false
     client.resolved_capabilities.document_range_formatting = false
 
     on_attach(client, buffer)
-  end
-}
+  end,
+})
 
 -- Deno LSP Set-Up
 -- lspconfig.denols.setup{
@@ -49,21 +57,23 @@ lspconfig.tsserver.setup {
 -- }
 
 -- Vim Language Server
-lspconfig.vimls.setup {}
+lspconfig.vimls.setup({})
 
 -- Ember Language Server
-lspconfig.ember.setup {
-  capabilities = cmpLsp.update_capabilities(vim.lsp.protocol.make_client_capabilities()),
+lspconfig.ember.setup({
+  capabilities = cmpLsp.update_capabilities(
+    vim.lsp.protocol.make_client_capabilities()
+  ),
   settings = {
     useBuiltinLinting = false,
   },
-}
+})
 
 -- SolarGraph (Ruby) Language Server
-lspconfig.solargraph.setup {}
+lspconfig.solargraph.setup({})
 
 -- SourceKit (Swift/C/CPP) Language Server
-lspconfig.sourcekit.setup {}
+lspconfig.sourcekit.setup({})
 
 -- LSP to wrap linters (eslint & prettier)
 local formatter = {
@@ -95,7 +105,7 @@ local languages = {
   handlebars = { formatter },
 }
 
-lspconfig.efm.setup {
+lspconfig.efm.setup({
   on_attach = on_attach,
   filetypes = vim.tbl_keys(languages),
   init_options = {
@@ -103,10 +113,10 @@ lspconfig.efm.setup {
   },
   settings = {
     rootMarkers = {
-      ".git/",        -- Otherwise, use the git repo root
+      ".git/", -- Otherwise, use the git repo root
       "package.json", -- Use a `package.json` if present (for mono-repos)
     },
     lintDebounce = 500,
     languages = languages,
-  }
-}
+  },
+})
