@@ -15,6 +15,7 @@ set autowrite     " Automatically :write before running commands
 set noshowmode
 set timeoutlen=500
 set ttimeoutlen=0
+set updatetime=1000
 set tabstop=2
 set shiftwidth=2
 set shiftround
