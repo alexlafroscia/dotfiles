@@ -10,71 +10,84 @@ local on_attach = function(client, bufnr)
   end
 end
 
+-- Broadcast capabilities based on `nvim-cmp`
+local capabilities = cmpLsp.update_capabilities(
+  vim.lsp.protocol.make_client_capabilities()
+)
+
 -- Ember Configuration Set-Up
 lspconfig.ember.setup({
-  capabilities = cmpLsp.update_capabilities(
-    vim.lsp.protocol.make_client_capabilities()
-  ),
+  capabilities = capabilities,
+  on_attach = on_attach,
 })
 
 -- Svelte Configuration Set-Up
 lspconfig.svelte.setup({
-  capabilities = cmpLsp.update_capabilities(
-    vim.lsp.protocol.make_client_capabilities()
-  ),
+  capabilities = capabilities,
   on_attach = on_attach,
 })
 
 -- TailwindCSS Configuration Set-Up
 lspconfig.tailwindcss.setup({
-  capabilities = cmpLsp.update_capabilities(
-    vim.lsp.protocol.make_client_capabilities()
-  ),
+  capabilities = capabilities,
+  on_attach = on_attach,
 })
 
 -- TSServer Configuration Set-Up
 lspconfig.tsserver.setup({
-  capabilities = cmpLsp.update_capabilities(
-    vim.lsp.protocol.make_client_capabilities()
-  ),
+  capabilities = capabilities,
   on_attach = function(client, buffer)
-    -- Disable formatting from `tsserver`; `efm` will format through ESLint/Pretier
+    -- Disable formatting from `tsserver`
     client.resolved_capabilities.document_formatting = false
     client.resolved_capabilities.document_range_formatting = false
 
     on_attach(client, buffer)
   end,
+  root_dir = util.root_pattern(
+    "package.json",
+    "tsconfig.json",
+    "jsconfig.json"
+  ),
 })
 
 -- Deno LSP Set-Up
--- lspconfig.denols.setup{
---   filetypes = { "typescript" },
---   init_options = {
---     enable = true,
---     lint = true,
---     unstable = true,
---   }
--- }
+lspconfig.denols.setup({
+  capabilities = capabilities,
+  init_options = {
+    enable = true,
+    lint = true,
+    unstable = true,
+  },
+  on_attach = on_attach,
+  root_dir = util.root_pattern("deno.json", "deno.jsonc"),
+})
 
 -- Vim Language Server
-lspconfig.vimls.setup({})
+lspconfig.vimls.setup({
+  capabilities = capabilities,
+  on_attach = on_attach,
+})
 
 -- Ember Language Server
 lspconfig.ember.setup({
-  capabilities = cmpLsp.update_capabilities(
-    vim.lsp.protocol.make_client_capabilities()
-  ),
+  capabilities = capabilities,
+  on_attach = on_attach,
   settings = {
     useBuiltinLinting = false,
   },
 })
 
 -- SolarGraph (Ruby) Language Server
-lspconfig.solargraph.setup({})
+lspconfig.solargraph.setup({
+  capabilities = capabilities,
+  on_attach = on_attach,
+})
 
 -- SourceKit (Swift/C/CPP) Language Server
-lspconfig.sourcekit.setup({})
-
+lspconfig.sourcekit.setup({
+  capabilities = capabilities,
+  on_attach = on_attach,
+})
 
 -- null-ls.nvim
 lspconfig["null-ls"].setup({
