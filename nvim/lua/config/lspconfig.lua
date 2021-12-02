@@ -75,48 +75,9 @@ lspconfig.solargraph.setup({})
 -- SourceKit (Swift/C/CPP) Language Server
 lspconfig.sourcekit.setup({})
 
--- LSP to wrap linters (eslint & prettier)
-local formatter = {
-  formatCommand = "prettier --stdin --stdin-filepath ${INPUT}",
-  formatStdin = true,
-}
-local linter = {
-  lintCommand = "eslint -f visualstudio --stdin --stdin-filename ${INPUT}",
-  -- lintCommand = "eslint -f unix --stdin --stdin-filename ${INPUT}",
-  lintIgnoreExitCode = true,
-  lintStdin = true,
-  lintFormats = { "%f(%l,%c): %tarning %m", "%f(%l,%c): %rror %m" },
-  formatCommand = "eslint --fix-to-stdout --stdin --stdin-filename=${INPUT}",
-  formatStdin = true,
-}
-local languages = {
-  typescript = { formatter, linter },
-  javascript = { formatter, linter },
-  typescriptreact = { formatter, linter },
-  ["typescript.tsx"] = { formatter, linter },
-  javascriptreact = { formatter, linter },
-  ["javascript.jsx"] = { formatter, linter },
-  yaml = { formatter },
-  json = { formatter },
-  html = { formatter },
-  scss = { formatter },
-  css = { formatter },
-  markdown = { formatter },
-  handlebars = { formatter },
-}
 
-lspconfig.efm.setup({
+-- null-ls.nvim
+lspconfig["null-ls"].setup({
+  capabilities = capabilities,
   on_attach = on_attach,
-  filetypes = vim.tbl_keys(languages),
-  init_options = {
-    documentFormatting = true,
-  },
-  settings = {
-    rootMarkers = {
-      ".git/", -- Otherwise, use the git repo root
-      "package.json", -- Use a `package.json` if present (for mono-repos)
-    },
-    lintDebounce = 500,
-    languages = languages,
-  },
 })

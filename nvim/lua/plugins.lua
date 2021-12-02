@@ -83,10 +83,7 @@ return require("packer").startup(function()
   use("sindrets/diffview.nvim")
 
   -- Auto-Complete
-  use({
-    "neovim/nvim-lspconfig",
-    config = [[require('config/lspconfig')]],
-  })
+  use("neovim/nvim-lspconfig")
   use({
     "hrsh7th/nvim-cmp",
     requires = {
@@ -121,6 +118,18 @@ return require("packer").startup(function()
     ft = "rust",
     config = function()
       require("rust-tools").setup({})
+    end,
+  })
+  use({
+    "jose-elias-alvarez/null-ls.nvim",
+    requires = {
+      "neovim/nvim-lspconfig",
+      "nvim-lua/plenary.nvim",
+    },
+    config = function()
+      -- Note: `null-ls` *must* be configured before `lspconfig`
+      require("config/null-ls")
+      require("config/lspconfig")
     end,
   })
 

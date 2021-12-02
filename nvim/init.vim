@@ -108,6 +108,7 @@ nnoremap <leader>gt :call OpenInGitTower()<CR>
 " Section: Load packer plugins {{{
 
 lua require('plugins')
+lua require('config');
 
 " Load plugin configurations {{{2
 
