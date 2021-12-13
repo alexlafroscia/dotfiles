@@ -88,9 +88,3 @@ lspconfig.sourcekit.setup({
   capabilities = capabilities,
   on_attach = on_attach,
 })
-
--- null-ls.nvim
-lspconfig["null-ls"].setup({
-  capabilities = capabilities,
-  on_attach = on_attach,
-})

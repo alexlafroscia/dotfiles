@@ -1,6 +1,7 @@
 local null_ls = require("null-ls")
+local lspconfig = require("config.lspconfig")
 
-null_ls.config({
+null_ls.setup({
   sources = {
     -- Formatters
     null_ls.builtins.formatting.prettierd.with({
@@ -32,4 +33,7 @@ null_ls.config({
     -- Code Actions
     null_ls.builtins.code_actions.eslint_d,
   },
+
+  -- Pass through to LSP config
+  on_attach = lspconfig.on_attach,
 })
