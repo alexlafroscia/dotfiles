@@ -2,6 +2,8 @@ local lspconfig = require("lspconfig")
 local util = require("lspconfig/util")
 local cmpLsp = require("cmp_nvim_lsp")
 
+local M = {}
+
 -- Run this when an LSP attaches to a buffer
 local on_attach = function(client, bufnr)
   -- If the LSP supports formatting, allow for format-on-save through LSP
@@ -9,6 +11,7 @@ local on_attach = function(client, bufnr)
     vim.cmd("autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()")
   end
 end
+M.on_attach = on_attach;
 
 -- Broadcast capabilities based on `nvim-cmp`
 local capabilities = cmpLsp.update_capabilities(
@@ -88,3 +91,5 @@ lspconfig.sourcekit.setup({
   capabilities = capabilities,
   on_attach = on_attach,
 })
+
+return M;

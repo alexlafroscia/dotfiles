@@ -121,7 +121,11 @@ return require("packer").startup(function()
     },
     ft = "rust",
     config = function()
-      require("rust-tools").setup({})
+      require("rust-tools").setup({
+        server = {
+          on_attach = require('config.lspconfig').on_attach
+        },
+      })
     end,
   })
   use({
