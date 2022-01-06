@@ -74,6 +74,13 @@ else
   export EDITOR="$(which nvim)"
 fi
 
+# -- Add HOME bin to $PATH -----------------------------------------------------
+[[ ":$PATH:" == *":$HOME/bin:"* ]] || PATH="$HOME/bin:$PATH"
+[[ ":$PATH:" == *":$HOME/.bin:"* ]] || PATH="$HOME/.bin:$PATH"
+
+# -- Add DOTFILES bin to PATH --------------------------------------------------
+[[ ":$PATH:" == *":$DOTFILES/bin:"* ]] || PATH="$DOTFILES/bin:$PATH"
+
 # -- Aliases -------------------------------------------------------------------
 if [[ -f "$DOTFILES/aliases" ]]; then
   source $DOTFILES/aliases
@@ -113,13 +120,6 @@ alias tmux="tmux -2"
 # -- TheFuck -------------------------------------------------------------------
 #    https://github.com/nvbn/thefuck
 alias fuck='$(thefuck $(fc -ln -1))'
-
-# -- Add HOME bin to $PATH -----------------------------------------------------
-[[ ":$PATH:" == *":$HOME/bin:"* ]] || PATH="$HOME/bin:$PATH"
-[[ ":$PATH:" == *":$HOME/.bin:"* ]] || PATH="$HOME/.bin:$PATH"
-
-# -- Add DOTFILES bin to PATH --------------------------------------------------
-[[ ":$PATH:" == *":$DOTFILES/bin:"* ]] || PATH="$DOTFILES/bin:$PATH"
 
 # -- fzf -----------------------------------------------------------------------
 if [ -f ~/.fzf.zsh ]; then
