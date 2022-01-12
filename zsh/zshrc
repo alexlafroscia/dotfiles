@@ -96,7 +96,7 @@ if exists "fdfind"; then alias fd=fdfind; fi
 
 if exists "exa"; then alias e=exa; fi
 
-if exists "proj"; then alias gp='cd `proj -a $HOME/Code | fzf --preview="exa --oneline $HOME/Code/{}"`'; fi
+if exists "proj"; then alias gp='cd `proj -a $HOME/Code | fzf --preview="exa --oneline {}"`'; fi
 
 alias vim=nvim
 alias vi=nvim
