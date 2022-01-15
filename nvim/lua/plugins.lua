@@ -3,7 +3,7 @@ vim.cmd([[packadd packer.nvim]])
 
 return require("packer").startup(function()
   -- UI
-  use("~/Code/github.com/alexlafroscia/night-owl.vim")
+  use("alexlafroscia/night-owl.vim")
   use("itchyny/lightline.vim")
   use("spywhere/lightline-lsp")
 
@@ -123,7 +123,7 @@ return require("packer").startup(function()
     config = function()
       require("rust-tools").setup({
         server = {
-          on_attach = require('config.lspconfig').on_attach
+          on_attach = require("config.lspconfig").on_attach,
         },
       })
     end,
