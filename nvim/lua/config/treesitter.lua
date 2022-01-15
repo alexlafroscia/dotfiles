@@ -1,16 +1,3 @@
--- Configure local Glimmer grammar
-local parser_config = require("nvim-treesitter.parsers").get_parser_configs()
-parser_config.glimmer = {
-  install_info = {
-    url = "~/Code/github.com/alexlafroscia/tree-sitter-glimmer",
-    files = {
-      "src/parser.c",
-      "src/scanner.c",
-    },
-  },
-  filetype = "handlebars",
-}
-
 require("nvim-treesitter.configs").setup({
   -- ensure_installed = "maintained",
   playground = {
