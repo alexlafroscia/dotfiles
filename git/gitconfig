@@ -145,10 +145,15 @@
 
 [core]
   excludesfile = ~/.gitignore_global
-  pager = delta --plus-color="#012800" --minus-color="#340001"
+  pager = delta
 
 [interactive]
-    diffFilter = delta --color-only
+  diffFilter = delta --color-only
+
+[delta]
+  navigate = true
+  plus-style = syntax "#012800"
+  minus-style = normal "#340001"
 
 [rerere]
   enabled = 1
