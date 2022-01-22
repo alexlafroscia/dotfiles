@@ -145,10 +145,6 @@ if [[ -d "$HOME/.volta" ]]; then
 fi
 
 
-# -- Kubectl
-if exists "kubectl"; then
-  source <(kubectl completion zsh)
-fi
 
 # -- Local Configuration (After Default) ---------------------------------------
 if [[ -f "$DOTFILES/zsh/zshrc.local" ]]; then
