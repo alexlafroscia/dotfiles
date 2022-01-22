@@ -138,12 +138,6 @@ fi
 # -- ripgrep -------------------------------------------------------------------
 export RIPGREP_CONFIG_PATH="$DOTFILES/ripgreprc"
 
-# -- OS-Specific Config --------------------------------------------------------
-if [[ $(uname) == 'Darwin' ]]; then
-  # Load OSX config
-  source $DOTFILES/zsh/zshrc.osx
-fi
-
 # -- Volta ---------------------------------------------------------------------
 if [[ -d "$HOME/.volta" ]]; then
   export VOLTA_HOME="$HOME/.volta"
