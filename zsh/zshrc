@@ -144,10 +144,6 @@ if [[ -d "$HOME/.volta" ]]; then
   export PATH="$VOLTA_HOME/bin:$PATH"
 fi
 
-# -- Go ------------------------------------------------------------------------
-# Add $GOTPATH/bin to the $PATH
-export GOPATH=$HOME/Code/go
-[[ ":$PATH:" == *":$GOPATH/bin:"* ]] || PATH="$PATH:$GOPATH/bin"
 
 # -- Kubectl
 if exists "kubectl"; then
