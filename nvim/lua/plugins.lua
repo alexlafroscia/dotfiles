@@ -9,10 +9,9 @@ return require("packer").startup(function()
 
   -- Project Navigation
   use({
-    "junegunn/fzf",
-    run = "./install --all",
+    "junegunn/fzf.vim",
+    requires = "junegunn/fzf",
   })
-  use("junegunn/fzf.vim")
   use("mhinz/vim-grepper")
   use({
     "francoiscabrol/ranger.vim",

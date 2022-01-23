@@ -14,41 +14,13 @@ if [[ -f "$DOTFILES/zsh/zshrc.local.pre" ]]; then
   source $DOTFILES/zsh/zshrc.local.pre
 fi
 
-# -- Zsh -----------------------------------------------------------------------
-ZSH="$HOME/.oh-my-zsh"
-ZSH_CUSTOM="$DOTFILES/zsh/custom" # oh-my-zsh customization directory
-fpath=( "$DOTFILES/zsh/functions" "$DOTFILES/zsh/pure" $fpath)
-
-# -- asdf ----------------------------------------------------------------------
-export ASDF_DATA_DIR="$HOME/.asdf"
-
-# -- oh-my-zsh -----------------------------------------------------------------
-# Configure `vi-mode` plugin
-MODE_INDICATOR=" "
-
-# Set plugins
-plugins=(
-  asdf
-  brew
-  docker
-  git
-  npm
-  tmux
-  vi-mode
-  yarn
-  zsh-syntax-highlighting
-)
-
-# Disable oh-my-zsh theme; using Pure instead
-ZSH_THEME=""
-
-source $ZSH/oh-my-zsh.sh
+# -- Extra Completions ---------------------------------------------------------
+fpath=("$DOTFILES/zsh/functions" $fpath)
+autoload -Uz compinit
+compinit -u
 
 # -- Theme ---------------------------------------------------------------------
 export NVIM_TUI_ENABLE_TRUE_COLOR=1
-
-autoload -U promptinit; promptinit
-prompt pure
 
 # -- Named Directories ---------------------------------------------------------
 unsetopt auto_name_dirs
@@ -60,6 +32,13 @@ export SAVEHIST=500
 # -- Options -------------------------------------------------------------------
 unsetopt correct_all
 unsetopt correct
+
+# -- Vim Mode ------------------------------------------------------------------
+bindkey -v
+
+# -- Navigating History --------------------------------------------------------
+bindkey '^P' history-beginning-search-backward
+bindkey '^N' history-beginning-search-forward
 
 # -- Variables -----------------------------------------------------------------
 if [ "$TERM_PROGRAM" = "vscode" ]; then
@@ -82,14 +61,6 @@ fi
 [[ ":$PATH:" == *":$DOTFILES/bin:"* ]] || PATH="$DOTFILES/bin:$PATH"
 
 # -- Aliases -------------------------------------------------------------------
-if [[ -f "$DOTFILES/aliases" ]]; then
-  source $DOTFILES/aliases
-fi
-
-if [[ -f "$HOME/.aliases" ]]; then
-  source $HOME/.aliases
-fi
-
 if exists "gittower"; then alias tower='gittower `git rev-parse --show-toplevel`'; fi
 
 if exists "fdfind"; then alias fd=fdfind; fi
@@ -121,9 +92,22 @@ alias tmux="tmux -2"
 #    https://github.com/nvbn/thefuck
 alias fuck='$(thefuck $(fc -ln -1))'
 
+# -- ripgrep -------------------------------------------------------------------
+export RIPGREP_CONFIG_PATH="$DOTFILES/ripgreprc"
+
+# -- Volta ---------------------------------------------------------------------
+if [[ -d "$HOME/.volta" ]]; then
+  export VOLTA_HOME="$HOME/.volta"
+  export PATH="$VOLTA_HOME/bin:$PATH"
+fi
+
 # -- fzf -----------------------------------------------------------------------
-if [ -f ~/.fzf.zsh ]; then
-  source ~/.fzf.zsh
+if exists "fzf"; then
+  # Set up auto-complete
+  [[ $- == *i* ]] && source "$(brew --prefix fzf)/shell/completion.zsh" 2> /dev/null
+  # Set up keybindings
+  source "$(brew --prefix fzf)/shell/key-bindings.zsh"
+
   export FZF_TMUX=1
   export FZF_DEFAULT_OPTS='--color 16,info:6'
   if exists "fdfind"; then
@@ -135,16 +119,11 @@ if [ -f ~/.fzf.zsh ]; then
   export FZF_CTRL_T_OPTS="--preview \"bat --color always {}\""
 fi
 
-# -- ripgrep -------------------------------------------------------------------
-export RIPGREP_CONFIG_PATH="$DOTFILES/ripgreprc"
+# -- Starship Prompt -----------------------------------------------------------
+eval "$(starship init zsh)"
 
-# -- Volta ---------------------------------------------------------------------
-if [[ -d "$HOME/.volta" ]]; then
-  export VOLTA_HOME="$HOME/.volta"
-  export PATH="$VOLTA_HOME/bin:$PATH"
-fi
-
-
+# -- ZSH Syntax Highlighting ---------------------------------------------------
+source $DOTFILES/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # -- Local Configuration (After Default) ---------------------------------------
 if [[ -f "$DOTFILES/zsh/zshrc.local" ]]; then

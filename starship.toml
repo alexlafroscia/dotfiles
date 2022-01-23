@@ -1,0 +1,7 @@
+[character]
+success_symbol = "[❯](purple)"
+
+[directory]
+style = "blue"
+truncation_length = 5
+
