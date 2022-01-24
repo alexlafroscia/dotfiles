@@ -15,13 +15,13 @@ map(
 map(
   "n",
   "<leader>xw",
-  "<cmd>TroubleToggle lsp_workspace_diagnostics<cr>",
+  "<cmd>TroubleToggle workspace_diagnostics<cr>",
   { silent = true, noremap = true }
 )
 map(
   "n",
   "<leader>xd",
-  "<cmd>TroubleToggle lsp_document_diagnostics<cr>",
+  "<cmd>TroubleToggle document_diagnostics<cr>",
   { silent = true, noremap = true }
 )
 map(
