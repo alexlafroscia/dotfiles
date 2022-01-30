@@ -90,7 +90,7 @@ alias tmux="tmux -2"
 
 # -- TheFuck -------------------------------------------------------------------
 #    https://github.com/nvbn/thefuck
-alias fuck='$(thefuck $(fc -ln -1))'
+eval $(thefuck --alias)
 
 # -- ripgrep -------------------------------------------------------------------
 export RIPGREP_CONFIG_PATH="$DOTFILES/ripgreprc"
