@@ -69,6 +69,9 @@ if exists "exa"; then alias e=exa; fi
 
 if exists "proj"; then alias gp='cd `proj -a $HOME/Code | fzf --preview="exa --oneline {}"`'; fi
 
+# Add colored output to `ls`
+alias ls="ls --color"
+
 alias vim=nvim
 alias vi=nvim
 alias edit="$EDITOR"
