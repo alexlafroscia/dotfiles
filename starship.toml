@@ -5,3 +5,5 @@ success_symbol = "[❯](purple)"
 style = "blue"
 truncation_length = 5
 
+[git_branch]
+style = 'purple'
