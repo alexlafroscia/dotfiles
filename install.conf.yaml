@@ -1,0 +1,57 @@
+- defaults:
+    link:
+      relink: true
+
+# Create directory for coding projects
+- create:
+    - ~/Code
+
+# Install Homebrew and all packages from the `Brewfile`
+- brewfile:
+    - Brewfile
+
+# zsh and oh-my-zsh
+- shell:
+    - [rm -rf ~/.oh-my-zsh, Delete existing oh-my-zsh install if present]
+    - [
+        sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)",
+        Downloading oh-my-zsh,
+      ]
+    - [rm ~/.zshrc, Delete oh-my-zsh config]
+- link:
+    ~/.zshrc: zsh/zshrc
+
+# Configure all the things!
+- link:
+    # NeoVim configuration files
+    ~/.config/nvim: nvim
+
+    # tmux configuration file
+    ~/.tmux.conf: tmux/tmux.conf
+
+    # git configuration files
+    ~/.gitignore_global: git/gitignore_global
+    ~/.gitconfig: git/gitconfig
+
+    # gh configuration files
+    ~/.config/gh: gh
+
+    # thefuck configuration files
+    ~/.config/thefuck: thefuck
+
+    # Karabiner configuration files
+    ~/.config/karabiner: karabiner
+
+    # ranger configuration files
+    ~/.config/ranger: ranger
+
+    # ripgrep configuration file
+    ~/.ripgreprc: ripgreprc
+
+    # starship configuration file
+    ~/.config/starship.toml: starship.toml
+
+# Install terminfo configurations
+- shell:
+    - tic -x ./terminals/xterm-256color-italic.terminfo
+    - tic -x ./terminals/tmux-256color.terminfo

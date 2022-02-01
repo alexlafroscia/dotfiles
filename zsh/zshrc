@@ -2,8 +2,10 @@
 export XDG_CONFIG_HOME="$HOME/.config"
 export DOTFILES="$HOME/.dotfiles"
 
-# Helper scripts
-source "$DOTFILES/scripts/helpers/functions.sh"
+# -- Helper Functions ----------------------------------------------------------
+exists() {
+  type "$1" >/dev/null 2>/dev/null
+}
 
 # -- Set up $PATH --------------------------------------------------------------
 [[ ":$PATH:" == *":$/usr/local/bin:"* ]] || PATH="/usr/local/bin:$PATH"

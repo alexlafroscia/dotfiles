@@ -13,7 +13,7 @@ My dotfile configuration. Covers Neovim, TMUX, Git, ZSH and some other things, t
 
 2. Run the installation script
    ```bash
-   ~/.dotfiles/install.sh
+   ~/.dotfiles/install
    ```
 
 3. Unless you're me, change the Git configuration to your own name and email address
