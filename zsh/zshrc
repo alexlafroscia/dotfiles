@@ -38,6 +38,21 @@ unsetopt correct
 # -- Vim Mode ------------------------------------------------------------------
 bindkey -v
 
+# -- Fancy Ctrl-Z --------------------------------------------------------------
+# Allow `Ctrl-Z` to return to the program that was put into the background
+# From https://blog.sher.pl/2014/03/21/how-to-boost-your-vim-productivity/#vii-use-ctrl-z-to-switch-back-to-vim
+fancy-ctrl-z() {
+  if [[ $#BUFFER -eq 0 ]]; then
+    BUFFER="fg"
+    zle accept-line
+  else
+    zle push-input
+    zle clear-screen
+  fi
+}
+zle -N fancy-ctrl-z
+bindkey '^Z' fancy-ctrl-z
+
 # -- Navigating History --------------------------------------------------------
 bindkey '^P' history-beginning-search-backward
 bindkey '^N' history-beginning-search-forward
