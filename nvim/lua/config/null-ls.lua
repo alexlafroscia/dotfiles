@@ -5,33 +5,33 @@ null_ls.setup({
   sources = {
     -- Formatters
     null_ls.builtins.formatting.prettierd.with({
-      filetypes = {
-        -- Defaults
-        "javascript",
-        "javascriptreact",
-        "typescript",
-        "typescriptreact",
-        "vue",
-        "css",
-        "scss",
-        "less",
-        "html",
-        "json",
-        "yaml",
-        "markdown",
-        "graphql",
-        -- Additional
+      extra_filetypes = {
         "handlebars",
       },
+      condition = function(utils)
+        return utils.root_has_file({ ".prettierrc" })
+      end,
     }),
-    null_ls.builtins.formatting.eslint_d,
+    null_ls.builtins.formatting.eslint_d.with({
+      condition = function(utils)
+        return utils.root_has_file({ ".eslintrc.js", ".eslintrc.json" })
+      end,
+    }),
     null_ls.builtins.formatting.stylua,
 
     -- Diagnostics
-    null_ls.builtins.diagnostics.eslint_d,
+    null_ls.builtins.diagnostics.eslint_d.with({
+      condition = function(utils)
+        return utils.root_has_file({ ".eslintrc.js", ".eslintrc.json" })
+      end,
+    }),
 
     -- Code Actions
-    null_ls.builtins.code_actions.eslint_d,
+    null_ls.builtins.code_actions.eslint_d.with({
+      condition = function(utils)
+        return utils.root_has_file({ ".eslintrc.js", ".eslintrc.json" })
+      end,
+    }),
   },
 
   -- Pass through to LSP config
