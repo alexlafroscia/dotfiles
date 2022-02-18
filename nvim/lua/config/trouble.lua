@@ -20,7 +20,7 @@ map(
 )
 map(
   "n",
-  "<leader>xd",
+  "<leader>xf",
   "<cmd>TroubleToggle document_diagnostics<cr>",
   { silent = true, noremap = true }
 )
