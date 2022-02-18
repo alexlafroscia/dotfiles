@@ -93,6 +93,8 @@ alias vim=nvim
 alias vi=nvim
 alias edit="$EDITOR"
 
+alias gst="git status"
+
 if exists "docker"; then
   alias dm=docker-machine
   alias dc=docker-compose
