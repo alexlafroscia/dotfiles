@@ -11,7 +11,7 @@ local on_attach = function(client, bufnr)
     vim.cmd("autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()")
   end
 end
-M.on_attach = on_attach;
+M.on_attach = on_attach
 
 -- Broadcast capabilities based on `nvim-cmp`
 local capabilities = cmpLsp.update_capabilities(
@@ -92,4 +92,4 @@ lspconfig.sourcekit.setup({
   on_attach = on_attach,
 })
 
-return M;
+return M
