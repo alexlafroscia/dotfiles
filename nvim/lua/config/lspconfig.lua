@@ -65,6 +65,12 @@ lspconfig.denols.setup({
   root_dir = util.root_pattern("deno.json", "deno.jsonc"),
 })
 
+-- JSON Language Server
+lspconfig.jsonls.setup({
+  capabilities = capabilities,
+  on_attach = on_attach,
+})
+
 -- Vim Language Server
 lspconfig.vimls.setup({
   capabilities = capabilities,
