@@ -18,12 +18,6 @@ local capabilities = cmpLsp.update_capabilities(
   vim.lsp.protocol.make_client_capabilities()
 )
 
--- Ember Configuration Set-Up
-lspconfig.ember.setup({
-  capabilities = capabilities,
-  on_attach = on_attach,
-})
-
 -- Svelte Configuration Set-Up
 lspconfig.svelte.setup({
   capabilities = capabilities,
