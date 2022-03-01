@@ -28,6 +28,7 @@ lspconfig.svelte.setup({
 lspconfig.tailwindcss.setup({
   capabilities = capabilities,
   on_attach = on_attach,
+  root_dir = util.root_pattern("tailwind.config.js"),
 })
 
 -- TSServer Configuration Set-Up
@@ -78,6 +79,7 @@ lspconfig.ember.setup({
   settings = {
     useBuiltinLinting = false,
   },
+  root_dir = util.root_pattern("ember-cli-build.js"),
 })
 
 -- SolarGraph (Ruby) Language Server
