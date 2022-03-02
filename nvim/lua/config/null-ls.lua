@@ -9,7 +9,7 @@ null_ls.setup({
         "handlebars",
       },
       condition = function(utils)
-        return utils.root_has_file({ ".prettierrc" })
+        return utils.root_has_file({ ".prettierrc", ".prettierignore" })
       end,
     }),
     null_ls.builtins.formatting.eslint_d.with({
