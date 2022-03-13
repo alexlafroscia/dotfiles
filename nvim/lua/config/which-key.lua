@@ -49,3 +49,14 @@ wk.register({
     },
   },
 })
+
+-- Visual-Mode Key Bindings
+wk.register({
+  g = {
+    -- LSP-powered Navigation
+    a = {
+      "<cmd>CodeActionMenu<CR>",
+      "Show Code Actions",
+    },
+  },
+})
