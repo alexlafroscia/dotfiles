@@ -26,7 +26,6 @@ return require("packer").startup(function()
   use("tpope/vim-commentary") -- Comments stuff
   use("tpope/vim-repeat")
   use("tpope/vim-endwise")
-  use("junegunn/vim-peekaboo")
   use({
     "folke/which-key.nvim",
     config = [[require('config/which-key')]],
