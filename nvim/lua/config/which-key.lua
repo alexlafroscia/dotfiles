@@ -6,6 +6,7 @@ wk.setup({
   -- refer to the configuration section below
 })
 
+-- Normal-Mode Key Bindings
 wk.register({
   g = {
     -- LSP-powered Navigation
@@ -22,6 +23,7 @@ wk.register({
       "<cmd>lua vim.lsp.buf.rename()",
       "Rename",
     },
+    r = { "<cmd>Trouble lsp_references<cr>", "Open References in Trouble" },
     t = {
       "<cmd>lua vim.lsp.buf.type_definition()<CR>",
       "Go to Type Definition",
@@ -29,6 +31,20 @@ wk.register({
   },
 
   K = { "<cmd>lua vim.lsp.buf.hover()<CR>", "Show Documentation" },
+
+  x = {
+    f = {
+      "<cmd>TroubleToggle document_diagnostics<cr>",
+      "Open Document Diagnostics in Trouble",
+    },
+    l = { "<cmd>TroubleToggle loclist<cr>", "Open loclist in Trouble" },
+    q = { "<cmd>TroubleToggle quickfix<cr>", "Open quickfix in Trouble" },
+    x = { "<cmd>TroubleToggle<cr>", "Open Trouble" },
+    w = {
+      "<cmd>TroubleToggle workspace_diagnostics<cr>",
+      "Open Workspace Diagnostics in Trouble",
+    },
+  },
 
   -- -- Navigate Diagnostics
   ["["] = {
