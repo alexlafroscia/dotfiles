@@ -7,3 +7,6 @@ truncation_length = 5
 
 [git_branch]
 style = 'purple'
+
+[nodejs]
+detect_extensions = []
