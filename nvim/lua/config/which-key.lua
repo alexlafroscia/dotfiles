@@ -32,21 +32,7 @@ wk.register({
 
   K = { "<cmd>lua vim.lsp.buf.hover()<CR>", "Show Documentation" },
 
-  x = {
-    f = {
-      "<cmd>TroubleToggle document_diagnostics<cr>",
-      "Open Document Diagnostics in Trouble",
-    },
-    l = { "<cmd>TroubleToggle loclist<cr>", "Open loclist in Trouble" },
-    q = { "<cmd>TroubleToggle quickfix<cr>", "Open quickfix in Trouble" },
-    x = { "<cmd>TroubleToggle<cr>", "Open Trouble" },
-    w = {
-      "<cmd>TroubleToggle workspace_diagnostics<cr>",
-      "Open Workspace Diagnostics in Trouble",
-    },
-  },
-
-  -- -- Navigate Diagnostics
+  -- Navigate Diagnostics
   ["["] = {
     d = { "<cmd>lua vim.diagnostic.goto_prev()<CR>", "Go to Next Diagnostic" },
     e = {
@@ -65,6 +51,22 @@ wk.register({
     },
   },
 })
+
+wk.register({
+  x = {
+    f = {
+      "<cmd>TroubleToggle document_diagnostics<cr>",
+      "Open Document Diagnostics in Trouble",
+    },
+    l = { "<cmd>TroubleToggle loclist<cr>", "Open loclist in Trouble" },
+    q = { "<cmd>TroubleToggle quickfix<cr>", "Open quickfix in Trouble" },
+    x = { "<cmd>TroubleToggle<cr>", "Open Trouble" },
+    w = {
+      "<cmd>TroubleToggle workspace_diagnostics<cr>",
+      "Open Workspace Diagnostics in Trouble",
+    },
+  },
+}, { prefix = "<leader>" })
 
 -- Visual-Mode Key Bindings
 wk.register({
