@@ -101,6 +101,11 @@ if exists "docker"; then
   alias docker-cleanup=docker ps -a | grep Exit | cut -d ' ' -f 1 | xargs docker rm
 fi
 
+# -- Homebrew ------------------------------------------------------------------
+if [[ -f "/opt/homebrew/bin/brew" ]]; then
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+fi
+
 # -- Git -----------------------------------------------------------------------
 if [ "$IS_VSCODE" ]; then
   export GIT_EDITOR="$EDITOR --wait"
