@@ -171,3 +171,9 @@
 
 [init]
   defaultBranch = main
+
+[commit]
+  gpgsign = true
+
+[gpg]
+  program = /usr/local/MacGPG2/bin/gpg2
