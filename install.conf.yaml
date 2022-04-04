@@ -5,6 +5,7 @@
 # Create directory for coding projects
 - create:
     - ~/Code
+    - ~/.config
 
 # Install Homebrew and all packages from the `Brewfile`
 - brewfile:
