@@ -20,7 +20,7 @@ wk.register({
     },
     d = { "<cmd>lua vim.lsp.buf.definition()<CR>", "Go to Definition" },
     R = {
-      "<cmd>lua vim.lsp.buf.rename()",
+      "<cmd>lua vim.lsp.buf.rename()<CR>",
       "Rename",
     },
     r = { "<cmd>Trouble lsp_references<cr>", "Open References in Trouble" },
