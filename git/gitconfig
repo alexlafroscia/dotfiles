@@ -128,6 +128,9 @@
   # 'git push' will push the current branch to its tracking branch
   # the usual default is to push all branches
   default = tracking
+  # Automatically create a non-existant remote branch when pushing
+  # for the first time; no more `--set-upstream origin $BRANCH`
+  autoSetupRemote = true
 
 [diff]
   tool = Kaleidoscope
