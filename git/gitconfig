@@ -175,8 +175,11 @@
 [init]
   defaultBranch = main
 
+# Sign commits using key from 1Password
+# Requires user/signingkey setting; see 1Password config recommendations
 [commit]
   gpgsign = true
-
 [gpg]
-  program = /usr/local/MacGPG2/bin/gpg2
+  format = ssh
+[gpg "ssh"]
+  program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
